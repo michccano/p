@@ -18,7 +18,7 @@ $arr = array();
 
 if ($result->num_rows > 0) {
     while($row = $result->fetch_assoc()) {
-    array_push($arr,array("droplet_name"=>$row["droplet_name"]));
+    array_push($arr,array("droplet_name"=>$row["droplet_name"],"id"=>$row["id"]));
   }
 } else {
   echo "0 results";

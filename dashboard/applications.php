@@ -251,12 +251,9 @@
 <script src="./dist/js/adminlte.min.js"></script>
 <!-- AdminLTE for demo purposes -->
 <script src="./dist/js/demo.js"></script>
-<!-- FLOT CHARTS -->
-<script src="./plugins/flot/jquery.flot.js"></script>
-<!-- FLOT RESIZE PLUGIN - allows the chart to redraw when the window is resized -->
-<script src="./plugins/flot-old/jquery.flot.resize.min.js"></script>
-<!-- FLOT PIE PLUGIN - also used to draw donut charts -->
-<script src="./plugins/flot-old/jquery.flot.pie.min.js"></script>
+
+
+
 <!-- Page script -->
 <script>
 
@@ -279,10 +276,16 @@ $.ajax(settings).done(function (response) {
   var response = JSON.parse(response);
   for(var i=0; i<response.data.length; i++){
 
-        $("#huddles").append('<div class="row"><div class="col-md-12"><!-- DIRECT CHAT --><div class="card direct-chat direct-chat-warning card-primary card-outline"><div class="card-header"><div class="row"><div class="col-9"><h3 class="card-title">'+response.data[i].droplet_name+'</h3></div><div class="col-3"><ul class="navbar-nav ml-auto"><!-- Messages Dropdown Menu --><li class="nav-item dropdown"><a class="nav-link" data-toggle="dropdown" href="#" aria-expanded="false"><i class="far fa-comments"></i></a><div class="dropdown-menu dropdown-menu-lg dropdown-menu-right" style="left: inherit; right: 0px;"><a href="#" class="dropdown-item"><!-- Message Start --><div class="media"><img src="../dist/img/user1-128x128.jpg" alt="User Avatar" class="img-size-50 mr-3 img-circle"><div class="media-body"><h3 class="dropdown-item-title">Brad Diesel<span class="float-right text-sm text-danger"><i class="fas fa-star"></i></span></h3><p class="text-sm">Call me whenever you can...</p><p class="text-sm text-muted"><i class="far fa-clock mr-1"></i> 4 Hours Ago</p></div></div><!-- Message End --></a><div class="dropdown-divider"></div><a href="#" class="dropdown-item"><!-- Message Start --><div class="media"><img src="../dist/img/user8-128x128.jpg" alt="User Avatar" class="img-size-50 img-circle mr-3"><div class="media-body"><h3 class="dropdown-item-title">John Pierce<span class="float-right text-sm text-muted"><i class="fas fa-star"></i></span></h3><p class="text-sm">I got your message bro</p><p class="text-sm text-muted"><i class="far fa-clock mr-1"></i> 4 Hours Ago</p></div></div><!-- Message End --></a><div class="dropdown-divider"></div><a href="#" class="dropdown-item"><!-- Message Start --><div class="media"><img src="../dist/img/user3-128x128.jpg" alt="User Avatar" class="img-size-50 img-circle mr-3"><div class="media-body"><h3 class="dropdown-item-title">Nora Silvester<span class="float-right text-sm text-warning"><i class="fas fa-star"></i></span></h3><p class="text-sm">The subject goes here</p><p class="text-sm text-muted"><i class="far fa-clock mr-1"></i> 4 Hours Ago</p></div></div><!-- Message End --></a><div class="dropdown-divider"></div><a href="#" class="dropdown-item dropdown-footer">See All Messages</a></div></li></ul></div></div></div><div class="card-header">sdfsdf</div></div></br></br>');
+        $("#huddles").append('<div onclick="goto_app('+response.data[i].id+')" class="row"><div class="col-md-12"><!-- DIRECT CHAT --><div class="card direct-chat direct-chat-warning card-primary card-outline"><div class="card-header"><div class="row"><div class="col-9"><h3 class="card-title">'+response.data[i].droplet_name+'</h3></div><div class="col-3"><ul class="navbar-nav ml-auto"><!-- Messages Dropdown Menu --><li class="nav-item dropdown"><a class="nav-link" data-toggle="dropdown" href="#" aria-expanded="false"><i class="far fa-comments"></i></a><div class="dropdown-menu dropdown-menu-lg dropdown-menu-right" style="left: inherit; right: 0px;"><a href="#" class="dropdown-item"><!-- Message Start --><div class="media"><img src="../dist/img/user1-128x128.jpg" alt="User Avatar" class="img-size-50 mr-3 img-circle"><div class="media-body"><h3 class="dropdown-item-title">Brad Diesel<span class="float-right text-sm text-danger"><i class="fas fa-star"></i></span></h3><p class="text-sm">Call me whenever you can...</p><p class="text-sm text-muted"><i class="far fa-clock mr-1"></i> 4 Hours Ago</p></div></div><!-- Message End --></a><div class="dropdown-divider"></div><a href="#" class="dropdown-item"><!-- Message Start --><div class="media"><img src="../dist/img/user8-128x128.jpg" alt="User Avatar" class="img-size-50 img-circle mr-3"><div class="media-body"><h3 class="dropdown-item-title">John Pierce<span class="float-right text-sm text-muted"><i class="fas fa-star"></i></span></h3><p class="text-sm">I got your message bro</p><p class="text-sm text-muted"><i class="far fa-clock mr-1"></i> 4 Hours Ago</p></div></div><!-- Message End --></a><div class="dropdown-divider"></div><a href="#" class="dropdown-item"><!-- Message Start --><div class="media"><img src="../dist/img/user3-128x128.jpg" alt="User Avatar" class="img-size-50 img-circle mr-3"><div class="media-body"><h3 class="dropdown-item-title">Nora Silvester<span class="float-right text-sm text-warning"><i class="fas fa-star"></i></span></h3><p class="text-sm">The subject goes here</p><p class="text-sm text-muted"><i class="far fa-clock mr-1"></i> 4 Hours Ago</p></div></div><!-- Message End --></a><div class="dropdown-divider"></div><a href="#" class="dropdown-item dropdown-footer">See All Messages</a></div></li></ul></div></div></div><div class="card-header">sdfsdf</div></div></br></br>');
 
   }
 });
+
+
+
+function goto_app(id){
+  localStorage.id = id;
+}
 
 
   $(function () {

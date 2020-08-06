@@ -404,8 +404,8 @@ var settings = {
     "Authorization": "Bearer 8181eecdf383dc2f28484a441a5ca5c4ef91c9cff6cb94909d0d9c1848e2924c"
   },
 
-
- "data":{"name":"example1.com","region":$("#locations").val(),"size":dic[value],"image":"wordpress-18-04","ssh_keys":[107149],"backups":false,"ipv6":true,"user_data":null,"private_networking":null,"volumes": null,"tags":["web"]}
+//wordpress-18-04
+ "data":{"name":"example1.com","region":$("#locations").val(),"size":dic[value],"image":"ubuntu-18-04-x64","ssh_keys":[107149],"backups":false,"ipv6":true,"user_data":null,"private_networking":null,"volumes": null,"tags":["web"],"monitoring":true}
 
 };
 
@@ -455,25 +455,24 @@ $.ajax(settings).done(function (response) {
 
 
 function init_droplet(response){
-
 var settings = {
-  "url": "http://127.0.0.1:8000/api/team/init_droplet",
+  "url": "http://localhost:8000/system/droplet.php",
   "method": "POST",
   "timeout": 0,
   "headers": {
-    "Content-Type": "application/json",
-    "Authorization": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJhdWQiOiIxIiwianRpIjoiMTYzZjY0OTJhNDAxNTY1M2IwNGMzZTk4NTI3NmQwZjE0Zjc2OTNlODc4NmMzNzlkNDlhNGFhMmMwYTRhMTUwMDc0Y2RhYTkwMDk5OTQyNTkiLCJpYXQiOjE1OTY0NTM0MTksIm5iZiI6MTU5NjQ1MzQxOSwiZXhwIjoxNjI3OTg5NDE5LCJzdWIiOiIyIiwic2NvcGVzIjpbXX0.aqwGns2xq0Cv3LVgbrwxkQFxWQwPEsZ8ZcsBTE9omlFvQEmcuuwA_Uw24tJ4f382D2cK04r63Txe07r4WwLRvgH8B2IbUJNxksXOo3Z7UeQGA7lJHQCbtM_lznQnBmB362GF35PJ6PF18FBkRIywtslLpffP20Mwfy78g6OVa7k03PFDj0KqiKCy_l3i9CPlDY_rdawsGElQS41qqZtu2PlIyULujnBxqWw_CCmuWToW8uE82hR3nDS8BdTG3i6MY3Tu3BzSN_dpWb2AM53V3UkSRjqQ7V-iVkkK0Yk_rn3xtYCUItEbRpcu8WxJ_8gq7xcqz8BSfAGeVnBZ-k7J7SOWOR3Q4yElkDQ5ApXpYeF36ghPPb6DL3wevjnp94LvwxqQLo87lKVS7pHwY1MbJBOPxwpfDuRSjcqddYodhfYkLvTBvKvMhBMRh5JYmnQdlNopHAYuoXjvg8BWn2n_xV5XVppRBNJLpQkuXz1MQJrGlenHHyCBLP1c5YNe8pUn6PWJMBIqcBaLyaX3rnzkhDcERANpEXKNkDBxcOuscs9j1usUJ6RtOLLBiLabFtyz41WLygg6azmciqTKrKtm7xz2RoXD79qGMMPZ8Zr3i2O9dhvj9o6rY4ErFHHgdcZrG2lP-DSkMLXNVr4jZFtnBeLmlOew05N-m5WDCFtdhbA",
-   
+    "Content-Type": "application/x-www-form-urlencoded",
+    "Authorization": "Bearer 8181eecdf383dc2f28484a441a5ca5c4ef91c9cff6cb94909d0d9c1848e2924c"
   },
-
-"data": JSON.stringify({"droplet_id":response.droplet.droplet_id,"email":"mccano@protonmail.com","status":0,"wpinfo":"sdf","droplet_name":response.droplet.droplet_name}),
+  "data": {
+    "name": response.droplet.droplet_name,
+    "email": localStorage.email,
+    "droplet_id": response.droplet.droplet_id,
+    "droplet_name": response.droplet.droplet_name,
+  }
 };
 
 $.ajax(settings).done(function (response) {
-
-
-console.log(response);
-
+  console.log(response);
 });
 
 }

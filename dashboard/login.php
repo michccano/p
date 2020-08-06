@@ -108,6 +108,7 @@ var settings = {
 };
 
 $.ajax(settings).done(function (response) {
+  localStorage.email = $("#email").val();
  // localStorage.token = response.access_token;
  var tmp = JSON.parse(response);
 
