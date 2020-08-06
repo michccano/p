@@ -409,7 +409,15 @@
 
                <p>
 This section presents the application disk usage and lists the webroot directories and database tables that are consuming the disk space.</p>
+</br></br>
+           <p><b>FILES USAGE</b></p>
+
+               <p>
+Current application web files usage is</p>
+
                   </div>
+
+
                   <div class="tab-pane fade" id="custom-tabs-four-profile" role="tabpanel" aria-labelledby="custom-tabs-four-profile-tab">
                      Mauris tincidunt mi at erat gravida, eget tristique urna bibendum. Mauris pharetra purus ut ligula tempor, et vulputate metus facilisis. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Maecenas sollicitudin, nisi a luctus interdum, nisl ligula placerat mi, quis posuere purus ligula eu lectus. Donec nunc tellus, elementum sit amet ultricies at, posuere nec nunc. Nunc euismod pellentesque diam. 
                   </div>
