@@ -1572,7 +1572,7 @@ $.ajax(settings).done(function (response) {
  $("#total_dbs").html('<b>'+response.db_data.total_size+'</b>');
 
   for(var i=0; i<response.disk_data.message.length; i++){
-    alert(response.disk_data.message[i].folder);
+    
     if(response.disk_data.message[i].folder!=""){
 
       $("#files_list").append("<div class='row'><div class='col-3'><p>"+response.disk_data.message[i].folder+"</div><div class='col-3'><p class='text-right'>"+response.disk_data.message[i].size+"</p></div></div></p>");
