@@ -19,7 +19,7 @@ if ($conn->connect_error) {
 $sql = "SELECT * from droplets where id=".$_GET["id"];
 $result = $conn->query($sql);
 
-
+//asdasd
 $arr = array();
 
 if ($result->num_rows > 0) {
