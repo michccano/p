@@ -673,7 +673,7 @@ Current application database usage is&nbsp;<span id="total_dbs"></span></p>
                                     <a class="nav-link text-uppercase" id="custom-tabs-for-bot-traffic-tab" data-toggle="pill" href="#custom-tabs-for-bot-traffic" role="tab" aria-controls="custom-tabs-for-bot-traffic" aria-selected="false">Bot Traffic</a>
                                 </li>
                                 <li class="nav-item">
-                                    <a class="nav-link text-uppercase" id="custom-tabs-for-url-requests-tab" data-toggle="pill" href="#custom-tabs-for-url-requests" role="tab" aria-controls="custom-tabs-for-url-requests" aria-selected="false">URL Requests</a>
+                                    <a class="nav-link text-uppercase" id="custom-tabs-for-url-requests-tab" data-toggle="pill" href="#url-requests" role="tab" aria-controls="custom-tabs-for-url-requests" aria-selected="false">URL Requests</a>
                                 </li>
                                 <li class="nav-item">
                                     <a class="nav-link text-uppercase" id="custom-tabs-for-status-codes-tab" data-toggle="pill" href="#custom-tabs-for-status-codes" role="tab" aria-controls="custom-tabs-for-status-codes" aria-selected="false">Status Codes</a>
@@ -708,17 +708,9 @@ Current application database usage is&nbsp;<span id="total_dbs"></span></p>
                                                                 <td class="p-2"></td>
                                                             </tr>
                                                         </thead>
-                                                        <tbody>
-                                                            <tr>
-                                                                <td class="p-2">134.209.186.62</td>
-                                                                <td class="p-2">2</td>
-                                                                <td class="p-2">Details +</td>
-                                                            </tr>
-                                                            <tr>
-                                                                <td class="p-2">134.209.186.62</td>
-                                                                <td class="p-2">2</td>
-                                                                <td class="p-2">Details +</td>
-                                                            </tr>
+                                                        <tbody id="ip_list">
+                                                            
+                                                            
                                                         </tbody>
                                                     </table>
                                                 </div>
@@ -752,7 +744,7 @@ Current application database usage is&nbsp;<span id="total_dbs"></span></p>
                                                             <td class="p-2">Request Count</td>
                                                         </tr>
                                                         </thead>
-                                                        <tbody>
+                                                        <tbody >
                                                         <tr>
                                                             <td class="p-2">Zgrab</td>
                                                             <td class="p-2">2</td>
@@ -764,7 +756,7 @@ Current application database usage is&nbsp;<span id="total_dbs"></span></p>
                                         </div>
                                     </div>
                                 </div>
-                                <div class="tab-pane fade" id="custom-tabs-for-url-requests" role="tabpanel" aria-labelledby="custom-tabs-for-url-requests-tab">
+                                <div class="tab-pane fade" id="url-requests" role="tabpanel" aria-labelledby="custom-tabs-for-url-requests-tab">
                                     <div class="row">
                                         <div class="col-md-9">
                                             <div class="row">
@@ -790,12 +782,8 @@ Current application database usage is&nbsp;<span id="total_dbs"></span></p>
                                                             <td class="p-2"></td>
                                                         </tr>
                                                         </thead>
-                                                        <tbody>
-                                                        <tr>
-                                                            <td class="p-2">/ReportServer</td>
-                                                            <td class="p-2">2</td>
-                                                            <td class="p-2">Details +</td>
-                                                        </tr>
+                                                        <tbody id="url_list">
+                                                        
                                                         </tbody>
                                                     </table>
                                                 </div>
@@ -829,12 +817,8 @@ Current application database usage is&nbsp;<span id="total_dbs"></span></p>
                                                             <td class="p-2"></td>
                                                         </tr>
                                                         </thead>
-                                                        <tbody>
-                                                        <tr>
-                                                            <td class="p-2">404</td>
-                                                            <td class="p-2">2</td>
-                                                            <td class="p-2">Details +</td>
-                                                        </tr>
+                                                        <tbody id="status_list">
+                                                       
                                                         </tbody>
                                                     </table>
                                                 </div>
@@ -1512,6 +1496,7 @@ Current application database usage is&nbsp;<span id="total_dbs"></span></p>
 
 <script>
 
+
 $("#access_details").click(function(e){
 
  $("#main_content").html( $("#access_details_content").html());
@@ -1604,6 +1589,49 @@ for(var i=0; i<response.db_data.tables.length; i++){
 
     $("#traffic_link").click(function(e){
         $("#main_content").html( $("#traffic_content").html());
+
+var settings = {
+  "url": "system/apache.php",
+  "method": "GET",
+  "timeout": 0,
+  "headers": {
+    "Content-Type": "application/x-www-form-urlencoded",
+    "Authorization": "Bearer "+localStorage.token
+  },
+
+  "data":{"id":localStorage.id}
+  
+};
+
+
+$.ajax(settings).done(function (response) {
+
+  var response = JSON.parse(response);
+  
+  
+  for(var i=0; i<response.data.length; i++){
+    
+   $("#ip_list").append('<tr><td class="p-2">'+response.data[i].ip+'</td><td class="p-2">2</td><td class="p-2">'+response.data[i].count+'</td></tr>');
+
+  }
+ 
+  for(var i=0; i<response.urls.length; i++){
+  
+
+    $("#url_list").append('<tr><td class="p-2">'+response.urls[i].url+'</td><td class="p-2">2</td><td class="p-2">'+response.urls[i].count+'</td></tr>');
+                                                    }
+
+
+  for(var i=0; i<response.status.length; i++){
+  
+
+    $("#status_list").append('<tr><td class="p-2">'+response.status[i].status+'</td><td class="p-2">2</td><td class="p-2">'+response.status[i].count+'</td></tr>');
+                                                    }
+ 
+
+
+       
+    }); 
 
     });
 
