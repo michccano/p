@@ -1,0 +1,20 @@
+.search_btn{
+    padding: 6px 10px 7px;
+    background: #ddd;
+    font-size: 17px;
+    border: none;
+    cursor: pointer;
+}
+.border-radius-none{
+    border-radius: 5px 0 0 5px;
+}
+.font-25{
+    font-size: 25px;
+}
+.log-container-tab{
+    max-height: 400px;
+    overflow: scroll;
+}
+.log-container-tab p{
+    font-size: 13px;
+}

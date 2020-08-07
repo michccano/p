@@ -13,6 +13,7 @@
     <link rel="stylesheet" href="https://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css">
     <!-- Theme style -->
     <link rel="stylesheet" href="./dist/css/adminlte.min.css">
+    <link rel="stylesheet" href="./dist/css/style.css">
     <!-- Google Font: Source Sans Pro -->
     <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700" rel="stylesheet">
 </head>
@@ -93,12 +94,12 @@
                         </a>
                         <ul class="nav nav-treeview" style="display: none;">
                             <li class="nav-item">
-                                <a href="./index.html" class="nav-link">
+                                <a href="javascript:void(0)" class="nav-link" id="access_log_link">
                                     <p>Access Log</p>
                                 </a>
                             </li>
                             <li class="nav-item">
-                                <a href="./index.html" class="nav-link">
+                                <a href="javascript:void(0)" class="nav-link" id="error_log_link">
                                     <p>Error Log</p>
                                 </a>
                             </li>
@@ -819,19 +820,19 @@
             <p>Analyzing logs is essential to understand web requests, the status of requests, visitors’ IP, and viewed pages and user-agents, etc.</p>
             <p>This section presents logs of Apache (for dynamic requests such as PHP requests), NGINX (for static assets such as images/JS/CSS), and PHP (detailed PHP process information such as files/routes, CPU and memory consumption).</p>
 
-            <div  class="row">
+            <div  class="row mt-5">
                 <div class="col-12">
                     <div class="card card-primary card-outline card-outline-tabs">
                         <div class="card-header p-0 border-bottom-0">
                             <ul class="nav nav-tabs" id="custom-tabs-for-tab" role="tablist">
                                 <li class="nav-item">
-                                    <a class="nav-link active text-uppercase" id="custom-tabs-for-apache-tab" data-toggle="pill" href="#custom-tabs-for-apache" role="tab" aria-controls="custom-tabs-for-apache" aria-selected="true">Requested Pages</a>
+                                    <a class="nav-link active text-uppercase" id="custom-tabs-for-apache-tab" data-toggle="pill" href="#custom-tabs-for-apache" role="tab" aria-controls="custom-tabs-for-apache" aria-selected="true">Apache</a>
                                 </li>
                                 <li class="nav-item">
-                                    <a class="nav-link text-uppercase" id="custom-tabs-for-nginx-tab" data-toggle="pill" href="#custom-tabs-for-nginx" role="tab" aria-controls="custom-tabs-for-nginx" aria-selected="false">Running Processes</a>
+                                    <a class="nav-link text-uppercase" id="custom-tabs-for-nginx-tab" data-toggle="pill" href="#custom-tabs-for-nginx" role="tab" aria-controls="custom-tabs-for-nginx" aria-selected="false">Nginx</a>
                                 </li>
                                 <li class="nav-item">
-                                    <a class="nav-link text-uppercase" id="custom-tabs-for-accesslog-php-tab" data-toggle="pill" href="#custom-tabs-for-accesslog-php" role="tab" aria-controls="custom-tabs-for-accesslog-php" aria-selected="false">Slow Pages</a>
+                                    <a class="nav-link text-uppercase" id="custom-tabs-for-accesslog-php-tab" data-toggle="pill" href="#custom-tabs-for-accesslog-php" role="tab" aria-controls="custom-tabs-for-accesslog-php" aria-selected="false">php</a>
                                 </li>
                             </ul>
                         </div>
@@ -841,37 +842,38 @@
                                     <div class="row">
                                         <div class="col-md-9">
                                             <div class="row">
-                                                <div class="col-md-8"><span class="text-uppercase"><b>TOP REQUESTED PHP PAGES</b></span><a href="#"><i class="fa fa-redo ml-2"></i></a> </div>
-                                                <div class="col-md-4">
-                                                    <select class="form-control">
-                                                        <option>15 Minutes</option>
-                                                        <option>30 Minutes</option>
-                                                        <option>1 Hour</option>
-                                                        <option>1 Day</option>
-                                                    </select>
+                                                <div class="col-md-7 mb-3"><span class="text-uppercase"><b>APACHE LOGS</b></span> </div>
+                                                <div class="col-md-5 mb-3">
+                                                    <form action="" class="w-75 float-left">
+                                                        <input type="text" class="form-control float-left w-75 border-radius-none" placeholder="Search" name="search">
+                                                        <button type="submit" class="float-left search_btn"><i class="fa fa-search"></i></button>
+                                                    </form>
+                                                    <a href="" class="float-left font-25"><i class="fa fa-filter mr-3"></i> </a>
+                                                    <a href="" class="float-left font-25"><i class="fa fa-redo"></i> </a>
+
                                                 </div>
-                                                <div class="col-md-8"></div>
-                                                <div class="col-md-4">
-                                                    <span class="small">06/08/2020 18:22 - 06/08/2020 18:37</span>
+                                                <div class="col-md-12 log-container-tab border">
+                                                    <p class="bg-gray p-2 m-0">162.158.167.28 - - [07/Aug/2020:07:51:25 +0000] "POST /xmlrpc.php HTTP/1.0" 200 441 "-" "Mozill a/5.0 (X11; Ubuntu; Linux x86_64; rv:62.0) Gecko/20100101 Firefox/62.0"</p>
+                                                    <p class="p-2 m-0">162.158.167.28 - - [07/Aug/2020:07:51:25 +0000] "POST /xmlrpc.php HTTP/1.0" 200 441 "-" "Mozill a/5.0 (X11; Ubuntu; Linux x86_64; rv:62.0) Gecko/20100101 Firefox/62.0"</p>
+                                                    <p class="bg-gray p-2 m-0">162.158.167.28 - - [07/Aug/2020:07:51:25 +0000] "POST /xmlrpc.php HTTP/1.0" 200 441 "-" "Mozill a/5.0 (X11; Ubuntu; Linux x86_64; rv:62.0) Gecko/20100101 Firefox/62.0"</p>
+                                                    <p class="p-2 m-0">162.158.167.28 - - [07/Aug/2020:07:51:25 +0000] "POST /xmlrpc.php HTTP/1.0" 200 441 "-" "Mozill a/5.0 (X11; Ubuntu; Linux x86_64; rv:62.0) Gecko/20100101 Firefox/62.0"</p>
+                                                    <p class="bg-gray p-2 m-0">162.158.167.28 - - [07/Aug/2020:07:51:25 +0000] "POST /xmlrpc.php HTTP/1.0" 200 441 "-" "Mozill a/5.0 (X11; Ubuntu; Linux x86_64; rv:62.0) Gecko/20100101 Firefox/62.0"</p>
+                                                    <p class="p-2 m-0">162.158.167.28 - - [07/Aug/2020:07:51:25 +0000] "POST /xmlrpc.php HTTP/1.0" 200 441 "-" "Mozill a/5.0 (X11; Ubuntu; Linux x86_64; rv:62.0) Gecko/20100101 Firefox/62.0"</p>
+                                                    <p class="bg-gray p-2 m-0">162.158.167.28 - - [07/Aug/2020:07:51:25 +0000] "POST /xmlrpc.php HTTP/1.0" 200 441 "-" "Mozill a/5.0 (X11; Ubuntu; Linux x86_64; rv:62.0) Gecko/20100101 Firefox/62.0"</p>
+                                                    <p class="p-2 m-0">162.158.167.28 - - [07/Aug/2020:07:51:25 +0000] "POST /xmlrpc.php HTTP/1.0" 200 441 "-" "Mozill a/5.0 (X11; Ubuntu; Linux x86_64; rv:62.0) Gecko/20100101 Firefox/62.0"</p>
+                                                    <p class="bg-gray p-2 m-0">162.158.167.28 - - [07/Aug/2020:07:51:25 +0000] "POST /xmlrpc.php HTTP/1.0" 200 441 "-" "Mozill a/5.0 (X11; Ubuntu; Linux x86_64; rv:62.0) Gecko/20100101 Firefox/62.0"</p>
+                                                    <p class="p-2 m-0">162.158.167.28 - - [07/Aug/2020:07:51:25 +0000] "POST /xmlrpc.php HTTP/1.0" 200 441 "-" "Mozill a/5.0 (X11; Ubuntu; Linux x86_64; rv:62.0) Gecko/20100101 Firefox/62.0"</p>
+                                                    <p class="bg-gray p-2 m-0">162.158.167.28 - - [07/Aug/2020:07:51:25 +0000] "POST /xmlrpc.php HTTP/1.0" 200 441 "-" "Mozill a/5.0 (X11; Ubuntu; Linux x86_64; rv:62.0) Gecko/20100101 Firefox/62.0"</p>
+                                                    <p class="p-2 m-0">162.158.167.28 - - [07/Aug/2020:07:51:25 +0000] "POST /xmlrpc.php HTTP/1.0" 200 441 "-" "Mozill a/5.0 (X11; Ubuntu; Linux x86_64; rv:62.0) Gecko/20100101 Firefox/62.0"</p>
+                                                    <p class="bg-gray p-2 m-0">162.158.167.28 - - [07/Aug/2020:07:51:25 +0000] "POST /xmlrpc.php HTTP/1.0" 200 441 "-" "Mozill a/5.0 (X11; Ubuntu; Linux x86_64; rv:62.0) Gecko/20100101 Firefox/62.0"</p>
+                                                    <p class="p-2 m-0">162.158.167.28 - - [07/Aug/2020:07:51:25 +0000] "POST /xmlrpc.php HTTP/1.0" 200 441 "-" "Mozill a/5.0 (X11; Ubuntu; Linux x86_64; rv:62.0) Gecko/20100101 Firefox/62.0"</p>
+                                                    <p class="bg-gray p-2 m-0">162.158.167.28 - - [07/Aug/2020:07:51:25 +0000] "POST /xmlrpc.php HTTP/1.0" 200 441 "-" "Mozill a/5.0 (X11; Ubuntu; Linux x86_64; rv:62.0) Gecko/20100101 Firefox/62.0"</p>
+                                                    <p class="p-2 m-0">162.158.167.28 - - [07/Aug/2020:07:51:25 +0000] "POST /xmlrpc.php HTTP/1.0" 200 441 "-" "Mozill a/5.0 (X11; Ubuntu; Linux x86_64; rv:62.0) Gecko/20100101 Firefox/62.0"</p>
+                                                    <p class="bg-gray p-2 m-0">162.158.167.28 - - [07/Aug/2020:07:51:25 +0000] "POST /xmlrpc.php HTTP/1.0" 200 441 "-" "Mozill a/5.0 (X11; Ubuntu; Linux x86_64; rv:62.0) Gecko/20100101 Firefox/62.0"</p>
+                                                    <p class="p-2 m-0">162.158.167.28 - - [07/Aug/2020:07:51:25 +0000] "POST /xmlrpc.php HTTP/1.0" 200 441 "-" "Mozill a/5.0 (X11; Ubuntu; Linux x86_64; rv:62.0) Gecko/20100101 Firefox/62.0"</p>
+                                                    <p class="bg-gray p-2 m-0">162.158.167.28 - - [07/Aug/2020:07:51:25 +0000] "POST /xmlrpc.php HTTP/1.0" 200 441 "-" "Mozill a/5.0 (X11; Ubuntu; Linux x86_64; rv:62.0) Gecko/20100101 Firefox/62.0"</p>
                                                 </div>
-                                                <div class="col-md-12">
-                                                    <table class="w-100 mt-3">
-                                                        <thead class="font-weight-bold bg-gray">
-                                                        <tr>
-                                                            <td class="p-2">Page URLs</td>
-                                                            <td class="p-2">Avg. Duration <small>(in sec)</small></td>
-                                                            <td class="p-2">Request Count</td>
-                                                        </tr>
-                                                        </thead>
-                                                        <tbody>
-                                                        <tr>
-                                                            <td class="p-2">/index.php</td>
-                                                            <td class="p-2">1</td>
-                                                            <td class="p-2">1</td>
-                                                        </tr>
-                                                        </tbody>
-                                                    </table>
-                                                </div>
+                                                <small class="w-100 text-right">Showing the recent 1000 log entries. For full logs use <a href="javascript:void(0)">SSH/SFTP</a>.</small>
                                             </div>
                                         </div>
                                     </div>
@@ -881,28 +883,38 @@
                                     <div class="row">
                                         <div class="col-md-9">
                                             <div class="row">
-                                                <div class="col-md-8"><span class="text-uppercase"><b>CURRENTLY RUNNING PHP PROCESSES</b></span><a href="#"><i class="fa fa-redo ml-2"></i></a> </div>
+                                                <div class="col-md-7 mb-3"><span class="text-uppercase"><b>nginx LOGS</b></span> </div>
+                                                <div class="col-md-5 mb-3">
+                                                    <form action="" class="w-75 float-left">
+                                                        <input type="text" class="form-control float-left w-75 border-radius-none" placeholder="Search" name="search">
+                                                        <button type="submit" class="float-left search_btn"><i class="fa fa-search"></i></button>
+                                                    </form>
+                                                    <a href="" class="float-left font-25"><i class="fa fa-filter mr-3"></i> </a>
+                                                    <a href="" class="float-left font-25"><i class="fa fa-redo"></i> </a>
 
-                                                <div class="col-md-12">
-                                                    <table class="w-100 mt-3">
-                                                        <thead class="font-weight-bold bg-gray">
-                                                        <tr>
-                                                            <td class="p-2">Process Name</td>
-                                                            <td class="p-2">CPU%</td>
-                                                            <td class="p-2">Memory%</td>
-                                                            <td class="p-2">Duration <small>(in sec)</small></td>
-                                                        </tr>
-                                                        </thead>
-                                                        <tbody>
-                                                        <tr>
-                                                            <td class="p-2">Zgrab</td>
-                                                            <td class="p-2">2</td>
-                                                            <td class="p-2">2</td>
-                                                            <td class="p-2">2</td>
-                                                        </tr>
-                                                        </tbody>
-                                                    </table>
                                                 </div>
+                                                <div class="col-md-12 log-container-tab border">
+                                                    <p class="bg-gray p-2 m-0">162.158.167.28 - - [07/Aug/2020:07:51:25 +0000] "POST /xmlrpc.php HTTP/1.0" 200 441 "-" "Mozill a/5.0 (X11; Ubuntu; Linux x86_64; rv:62.0) Gecko/20100101 Firefox/62.0"</p>
+                                                    <p class="p-2 m-0">162.158.167.28 - - [07/Aug/2020:07:51:25 +0000] "POST /xmlrpc.php HTTP/1.0" 200 441 "-" "Mozill a/5.0 (X11; Ubuntu; Linux x86_64; rv:62.0) Gecko/20100101 Firefox/62.0"</p>
+                                                    <p class="bg-gray p-2 m-0">162.158.167.28 - - [07/Aug/2020:07:51:25 +0000] "POST /xmlrpc.php HTTP/1.0" 200 441 "-" "Mozill a/5.0 (X11; Ubuntu; Linux x86_64; rv:62.0) Gecko/20100101 Firefox/62.0"</p>
+                                                    <p class="p-2 m-0">162.158.167.28 - - [07/Aug/2020:07:51:25 +0000] "POST /xmlrpc.php HTTP/1.0" 200 441 "-" "Mozill a/5.0 (X11; Ubuntu; Linux x86_64; rv:62.0) Gecko/20100101 Firefox/62.0"</p>
+                                                    <p class="bg-gray p-2 m-0">162.158.167.28 - - [07/Aug/2020:07:51:25 +0000] "POST /xmlrpc.php HTTP/1.0" 200 441 "-" "Mozill a/5.0 (X11; Ubuntu; Linux x86_64; rv:62.0) Gecko/20100101 Firefox/62.0"</p>
+                                                    <p class="p-2 m-0">162.158.167.28 - - [07/Aug/2020:07:51:25 +0000] "POST /xmlrpc.php HTTP/1.0" 200 441 "-" "Mozill a/5.0 (X11; Ubuntu; Linux x86_64; rv:62.0) Gecko/20100101 Firefox/62.0"</p>
+                                                    <p class="bg-gray p-2 m-0">162.158.167.28 - - [07/Aug/2020:07:51:25 +0000] "POST /xmlrpc.php HTTP/1.0" 200 441 "-" "Mozill a/5.0 (X11; Ubuntu; Linux x86_64; rv:62.0) Gecko/20100101 Firefox/62.0"</p>
+                                                    <p class="p-2 m-0">162.158.167.28 - - [07/Aug/2020:07:51:25 +0000] "POST /xmlrpc.php HTTP/1.0" 200 441 "-" "Mozill a/5.0 (X11; Ubuntu; Linux x86_64; rv:62.0) Gecko/20100101 Firefox/62.0"</p>
+                                                    <p class="bg-gray p-2 m-0">162.158.167.28 - - [07/Aug/2020:07:51:25 +0000] "POST /xmlrpc.php HTTP/1.0" 200 441 "-" "Mozill a/5.0 (X11; Ubuntu; Linux x86_64; rv:62.0) Gecko/20100101 Firefox/62.0"</p>
+                                                    <p class="p-2 m-0">162.158.167.28 - - [07/Aug/2020:07:51:25 +0000] "POST /xmlrpc.php HTTP/1.0" 200 441 "-" "Mozill a/5.0 (X11; Ubuntu; Linux x86_64; rv:62.0) Gecko/20100101 Firefox/62.0"</p>
+                                                    <p class="bg-gray p-2 m-0">162.158.167.28 - - [07/Aug/2020:07:51:25 +0000] "POST /xmlrpc.php HTTP/1.0" 200 441 "-" "Mozill a/5.0 (X11; Ubuntu; Linux x86_64; rv:62.0) Gecko/20100101 Firefox/62.0"</p>
+                                                    <p class="p-2 m-0">162.158.167.28 - - [07/Aug/2020:07:51:25 +0000] "POST /xmlrpc.php HTTP/1.0" 200 441 "-" "Mozill a/5.0 (X11; Ubuntu; Linux x86_64; rv:62.0) Gecko/20100101 Firefox/62.0"</p>
+                                                    <p class="bg-gray p-2 m-0">162.158.167.28 - - [07/Aug/2020:07:51:25 +0000] "POST /xmlrpc.php HTTP/1.0" 200 441 "-" "Mozill a/5.0 (X11; Ubuntu; Linux x86_64; rv:62.0) Gecko/20100101 Firefox/62.0"</p>
+                                                    <p class="p-2 m-0">162.158.167.28 - - [07/Aug/2020:07:51:25 +0000] "POST /xmlrpc.php HTTP/1.0" 200 441 "-" "Mozill a/5.0 (X11; Ubuntu; Linux x86_64; rv:62.0) Gecko/20100101 Firefox/62.0"</p>
+                                                    <p class="bg-gray p-2 m-0">162.158.167.28 - - [07/Aug/2020:07:51:25 +0000] "POST /xmlrpc.php HTTP/1.0" 200 441 "-" "Mozill a/5.0 (X11; Ubuntu; Linux x86_64; rv:62.0) Gecko/20100101 Firefox/62.0"</p>
+                                                    <p class="p-2 m-0">162.158.167.28 - - [07/Aug/2020:07:51:25 +0000] "POST /xmlrpc.php HTTP/1.0" 200 441 "-" "Mozill a/5.0 (X11; Ubuntu; Linux x86_64; rv:62.0) Gecko/20100101 Firefox/62.0"</p>
+                                                    <p class="bg-gray p-2 m-0">162.158.167.28 - - [07/Aug/2020:07:51:25 +0000] "POST /xmlrpc.php HTTP/1.0" 200 441 "-" "Mozill a/5.0 (X11; Ubuntu; Linux x86_64; rv:62.0) Gecko/20100101 Firefox/62.0"</p>
+                                                    <p class="p-2 m-0">162.158.167.28 - - [07/Aug/2020:07:51:25 +0000] "POST /xmlrpc.php HTTP/1.0" 200 441 "-" "Mozill a/5.0 (X11; Ubuntu; Linux x86_64; rv:62.0) Gecko/20100101 Firefox/62.0"</p>
+                                                    <p class="bg-gray p-2 m-0">162.158.167.28 - - [07/Aug/2020:07:51:25 +0000] "POST /xmlrpc.php HTTP/1.0" 200 441 "-" "Mozill a/5.0 (X11; Ubuntu; Linux x86_64; rv:62.0) Gecko/20100101 Firefox/62.0"</p>
+                                                </div>
+                                                <small class="w-100 text-right">Showing the recent 1000 log entries. For full logs use <a href="javascript:void(0)">SSH/SFTP</a>.</small>
                                             </div>
                                         </div>
                                     </div>
@@ -911,39 +923,38 @@
                                     <div class="row">
                                         <div class="col-md-9">
                                             <div class="row">
-                                                <div class="col-md-8"><span class="text-uppercase"><b>SLOW REQUESTED PHP PAGES</b></span><a href="#"><i class="fa fa-redo ml-2"></i></a> </div>
-                                                <div class="col-md-4">
-                                                    <select class="form-control">
-                                                        <option>15 Minutes</option>
-                                                        <option>30 Minutes</option>
-                                                        <option>1 Hour</option>
-                                                        <option>1 Day</option>
-                                                    </select>
+                                                <div class="col-md-7 mb-3"><span class="text-uppercase"><b>php LOGS</b></span> </div>
+                                                <div class="col-md-5 mb-3">
+                                                    <form action="" class="w-75 float-left">
+                                                        <input type="text" class="form-control float-left w-75 border-radius-none" placeholder="Search" name="search">
+                                                        <button type="submit" class="float-left search_btn"><i class="fa fa-search"></i></button>
+                                                    </form>
+                                                    <a href="" class="float-left font-25"><i class="fa fa-filter mr-3"></i> </a>
+                                                    <a href="" class="float-left font-25"><i class="fa fa-redo"></i> </a>
+
                                                 </div>
-                                                <div class="col-md-8"></div>
-                                                <div class="col-md-4">
-                                                    <span class="small">06/08/2020 18:22 - 06/08/2020 18:37</span>
+                                                <div class="col-md-12 log-container-tab border">
+                                                    <p class="bg-gray p-2 m-0">162.158.167.28 - - [07/Aug/2020:07:51:25 +0000] "POST /xmlrpc.php HTTP/1.0" 200 441 "-" "Mozill a/5.0 (X11; Ubuntu; Linux x86_64; rv:62.0) Gecko/20100101 Firefox/62.0"</p>
+                                                    <p class="p-2 m-0">162.158.167.28 - - [07/Aug/2020:07:51:25 +0000] "POST /xmlrpc.php HTTP/1.0" 200 441 "-" "Mozill a/5.0 (X11; Ubuntu; Linux x86_64; rv:62.0) Gecko/20100101 Firefox/62.0"</p>
+                                                    <p class="bg-gray p-2 m-0">162.158.167.28 - - [07/Aug/2020:07:51:25 +0000] "POST /xmlrpc.php HTTP/1.0" 200 441 "-" "Mozill a/5.0 (X11; Ubuntu; Linux x86_64; rv:62.0) Gecko/20100101 Firefox/62.0"</p>
+                                                    <p class="p-2 m-0">162.158.167.28 - - [07/Aug/2020:07:51:25 +0000] "POST /xmlrpc.php HTTP/1.0" 200 441 "-" "Mozill a/5.0 (X11; Ubuntu; Linux x86_64; rv:62.0) Gecko/20100101 Firefox/62.0"</p>
+                                                    <p class="bg-gray p-2 m-0">162.158.167.28 - - [07/Aug/2020:07:51:25 +0000] "POST /xmlrpc.php HTTP/1.0" 200 441 "-" "Mozill a/5.0 (X11; Ubuntu; Linux x86_64; rv:62.0) Gecko/20100101 Firefox/62.0"</p>
+                                                    <p class="p-2 m-0">162.158.167.28 - - [07/Aug/2020:07:51:25 +0000] "POST /xmlrpc.php HTTP/1.0" 200 441 "-" "Mozill a/5.0 (X11; Ubuntu; Linux x86_64; rv:62.0) Gecko/20100101 Firefox/62.0"</p>
+                                                    <p class="bg-gray p-2 m-0">162.158.167.28 - - [07/Aug/2020:07:51:25 +0000] "POST /xmlrpc.php HTTP/1.0" 200 441 "-" "Mozill a/5.0 (X11; Ubuntu; Linux x86_64; rv:62.0) Gecko/20100101 Firefox/62.0"</p>
+                                                    <p class="p-2 m-0">162.158.167.28 - - [07/Aug/2020:07:51:25 +0000] "POST /xmlrpc.php HTTP/1.0" 200 441 "-" "Mozill a/5.0 (X11; Ubuntu; Linux x86_64; rv:62.0) Gecko/20100101 Firefox/62.0"</p>
+                                                    <p class="bg-gray p-2 m-0">162.158.167.28 - - [07/Aug/2020:07:51:25 +0000] "POST /xmlrpc.php HTTP/1.0" 200 441 "-" "Mozill a/5.0 (X11; Ubuntu; Linux x86_64; rv:62.0) Gecko/20100101 Firefox/62.0"</p>
+                                                    <p class="p-2 m-0">162.158.167.28 - - [07/Aug/2020:07:51:25 +0000] "POST /xmlrpc.php HTTP/1.0" 200 441 "-" "Mozill a/5.0 (X11; Ubuntu; Linux x86_64; rv:62.0) Gecko/20100101 Firefox/62.0"</p>
+                                                    <p class="bg-gray p-2 m-0">162.158.167.28 - - [07/Aug/2020:07:51:25 +0000] "POST /xmlrpc.php HTTP/1.0" 200 441 "-" "Mozill a/5.0 (X11; Ubuntu; Linux x86_64; rv:62.0) Gecko/20100101 Firefox/62.0"</p>
+                                                    <p class="p-2 m-0">162.158.167.28 - - [07/Aug/2020:07:51:25 +0000] "POST /xmlrpc.php HTTP/1.0" 200 441 "-" "Mozill a/5.0 (X11; Ubuntu; Linux x86_64; rv:62.0) Gecko/20100101 Firefox/62.0"</p>
+                                                    <p class="bg-gray p-2 m-0">162.158.167.28 - - [07/Aug/2020:07:51:25 +0000] "POST /xmlrpc.php HTTP/1.0" 200 441 "-" "Mozill a/5.0 (X11; Ubuntu; Linux x86_64; rv:62.0) Gecko/20100101 Firefox/62.0"</p>
+                                                    <p class="p-2 m-0">162.158.167.28 - - [07/Aug/2020:07:51:25 +0000] "POST /xmlrpc.php HTTP/1.0" 200 441 "-" "Mozill a/5.0 (X11; Ubuntu; Linux x86_64; rv:62.0) Gecko/20100101 Firefox/62.0"</p>
+                                                    <p class="bg-gray p-2 m-0">162.158.167.28 - - [07/Aug/2020:07:51:25 +0000] "POST /xmlrpc.php HTTP/1.0" 200 441 "-" "Mozill a/5.0 (X11; Ubuntu; Linux x86_64; rv:62.0) Gecko/20100101 Firefox/62.0"</p>
+                                                    <p class="p-2 m-0">162.158.167.28 - - [07/Aug/2020:07:51:25 +0000] "POST /xmlrpc.php HTTP/1.0" 200 441 "-" "Mozill a/5.0 (X11; Ubuntu; Linux x86_64; rv:62.0) Gecko/20100101 Firefox/62.0"</p>
+                                                    <p class="bg-gray p-2 m-0">162.158.167.28 - - [07/Aug/2020:07:51:25 +0000] "POST /xmlrpc.php HTTP/1.0" 200 441 "-" "Mozill a/5.0 (X11; Ubuntu; Linux x86_64; rv:62.0) Gecko/20100101 Firefox/62.0"</p>
+                                                    <p class="p-2 m-0">162.158.167.28 - - [07/Aug/2020:07:51:25 +0000] "POST /xmlrpc.php HTTP/1.0" 200 441 "-" "Mozill a/5.0 (X11; Ubuntu; Linux x86_64; rv:62.0) Gecko/20100101 Firefox/62.0"</p>
+                                                    <p class="bg-gray p-2 m-0">162.158.167.28 - - [07/Aug/2020:07:51:25 +0000] "POST /xmlrpc.php HTTP/1.0" 200 441 "-" "Mozill a/5.0 (X11; Ubuntu; Linux x86_64; rv:62.0) Gecko/20100101 Firefox/62.0"</p>
                                                 </div>
-                                                <div class="col-md-12">
-                                                    <table class="w-100 mt-3">
-                                                        <thead class="font-weight-bold bg-gray">
-                                                        <tr>
-                                                            <td class="p-2">Page Requests</td>
-                                                            <td class="p-2">Request Count</td>
-                                                            <td class="p-2">Max Time <small>(in sec)</small></td>
-                                                            <td class="p-2">Avg. Time <small>(in sec)</small></td>
-                                                        </tr>
-                                                        </thead>
-                                                        <tbody>
-                                                        <tr>
-                                                            <td class="p-2">/ReportServer</td>
-                                                            <td class="p-2">2</td>
-                                                            <td class="p-2">30</td>
-                                                            <td class="p-2">20</td>
-                                                        </tr>
-                                                        </tbody>
-                                                    </table>
-                                                </div>
+                                                <small class="w-100 text-right">Showing the recent 1000 log entries. For full logs use <a href="javascript:void(0)">SSH/SFTP</a>.</small>
                                             </div>
                                         </div>
                                     </div>
@@ -990,6 +1001,57 @@
                             </div>
                         </div>
                         <!-- /.card -->
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="card-footer"></div>
+
+</div>
+
+
+
+<!-- Error log content -->
+<div  id="error_log_content" style="display:none;">
+    <div  class="card  card-primary card-outline">
+        <div class="card-header">
+            <h3 class="card-title text-uppercase">error LOGS</h3>
+
+            <!--<div class="card-tools">
+               <a href="create-huddle.php" class="btn btn-primary">START A NEW APPLICATION</a>
+            </div>-->
+        </div>
+
+        <div class="card-body">
+            <p>Analyzing logs is essential to understand web requests, the status of requests, visitors’ IP, and viewed pages and user-agents, etc.</p>
+            <p>This section presents logs of Apache (for dynamic requests such as PHP requests), NGINX (for static assets such as images/JS/CSS), and PHP (detailed PHP process information such as files/routes, CPU and memory consumption).</p>
+
+            <div  class="row mt-5">
+                <div class="col-12">
+                    <div class="row">
+                        <div class="col-md-9">
+                            <div class="row">
+                                <div class="col-md-7 mb-3"><span class="text-uppercase"><b>apache error LOGS</b></span> </div>
+                                <div class="col-md-5 mb-3">
+                                    <form action="" class="w-75 float-left">
+                                        <input type="text" class="form-control float-left w-75 border-radius-none" placeholder="Search" name="search">
+                                        <button type="submit" class="float-left search_btn"><i class="fa fa-search"></i></button>
+                                    </form>
+                                    <a href="" class="float-left font-25"><i class="fa fa-filter mr-3"></i> </a>
+                                    <a href="" class="float-left font-25"><i class="fa fa-redo"></i> </a>
+
+                                </div>
+                                <div class="col-md-12 log-container-tab border">
+                                    <p class="bg-gray p-2 m-0">[Sat Aug 01 13:35:32.563606 2020] [proxy_fcgi:error] [pid 20004] [client 141.101.97.56:48030] AH01071: Got error 'PHP message: PHP Fatal error: Class 'WP_Customize_Control' not found in /home/381373.cloudwaysapps.com/nygetsxnum/public_html/wp-includes/customize/class-wp-widget-form-customize-control.php on line 17\n', referer: http://site.ru</p>
+                                    <p class="p-2 m-0">[Sat Aug 01 13:35:32.563606 2020] [proxy_fcgi:error] [pid 20004] [client 141.101.97.56:48030] AH01071: Got error 'PHP message: PHP Fatal error: Class 'WP_Customize_Control' not found in /home/381373.cloudwaysapps.com/nygetsxnum/public_html/wp-includes/customize/class-wp-widget-form-customize-control.php on line 17\n', referer: http://site.ru</p>
+                                    <p class="bg-gray p-2 m-0">[Sat Aug 01 13:35:32.563606 2020] [proxy_fcgi:error] [pid 20004] [client 141.101.97.56:48030] AH01071: Got error 'PHP message: PHP Fatal error: Class 'WP_Customize_Control' not found in /home/381373.cloudwaysapps.com/nygetsxnum/public_html/wp-includes/customize/class-wp-widget-form-customize-control.php on line 17\n', referer: http://site.ru</p>
+                                    <p class="p-2 m-0">[Sat Aug 01 13:35:32.563606 2020] [proxy_fcgi:error] [pid 20004] [client 141.101.97.56:48030] AH01071: Got error 'PHP message: PHP Fatal error: Class 'WP_Customize_Control' not found in /home/381373.cloudwaysapps.com/nygetsxnum/public_html/wp-includes/customize/class-wp-widget-form-customize-control.php on line 17\n', referer: http://site.ru</p>
+                                </div>
+                                <small class="w-100 text-right">Showing the recent 1000 log entries. For full logs use <a href="javascript:void(0)">SSH/SFTP</a>.</small>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -1266,6 +1328,16 @@
 
     $("#running_crons_link").click(function(e){
         $("#main_content").html( $("#running_crons_content").html());
+
+    });
+
+    $("#access_log_link").click(function(e){
+        $("#main_content").html( $("#access_log_content").html());
+
+    });
+
+    $("#error_log_link").click(function(e){
+        $("#main_content").html( $("#error_log_content").html());
 
     });
 
