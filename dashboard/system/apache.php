@@ -72,6 +72,8 @@ foreach($status as $k=>$v){
 array_push($arr2,array("status"=>$k,"count"=> $v));
 }
 
+//asd
+
 
 $a = array("data"=>$arr,"urls"=>$arr1,"status"=>$arr2);
 
