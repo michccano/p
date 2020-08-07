@@ -16,6 +16,7 @@ foreach($arr as $a){
 //	echo $tmp[1];
 }
 
+//asd
 
 $servername = "localhost";
 $username = "root";
