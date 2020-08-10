@@ -18,3 +18,70 @@
 .log-container-tab p{
     font-size: 13px;
 }
+
+/* -- Register Page CSS -- */
+.login-box-msg{
+    color: #000;
+}
+.register-logo a{
+    color: white !important;
+}
+.register-page{
+    background: linear-gradient(166deg,rgba(46,57,191,1) 0,rgba(46,57,191,1) 74%,rgba(37,46,176,1) 74%,rgba(37,46,176,1) 100%);
+}
+.login-with-socialmedia{
+    text-align: center;
+    font-weight: lighter !important;
+}
+
+.login-with-socialmedia span{
+    margin-right: 7px;
+    border-radius: 5px;
+    padding: 5px 15px;
+    font-size: 20px;
+    cursor: pointer;
+}
+.login-with-socialmedia span .fa-linkedin-in{
+    color: #0086b6;
+}
+.login-with-socialmedia span .fa-github{
+    color: #000;
+}
+.login-with-socialmedia span .fa-google-plus-g{
+    color: #dc4b38;
+}
+.register-divider{
+    width: 100%;
+    text-align: center;
+    border-bottom: 1px solid #ced4da;
+    line-height: 0.1em;
+    margin: 10px 0 20px;
+    font-weight: lighter;
+}
+.register-divider span {
+    background:#fff;
+    padding:0 10px;
+}
+
+/* -- Login Page CSS -- */
+
+.login-page-slider-container{
+    padding: 0;
+    background: radial-gradient(circle,rgba(20,38,127,1) 0,rgba(14,18,66,1) 100%);
+    color: white;
+    text-align: center;
+}
+.login-carousel img{
+    width: auto;
+    margin: 0 auto;
+}
+#login-carousel .carousel-inner > :first-child{
+    background-color: #0b0f36;
+}
+#login-carousel .carousel-inner .carousel-item a{
+    color: white !important;
+    border-color: white !important;
+}
+#login-carousel .carousel-inner .carousel-item a:hover{
+    border-color: #17a2b8 !important;
+}
