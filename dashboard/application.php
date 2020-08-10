@@ -1925,45 +1925,49 @@
         };
 
 
-    $.ajax(settings).done(function (response) {
+        $.ajax(settings).done(function (response) {
 
-        var response = JSON.parse(response);
+            var response = JSON.parse(response);
 
-        for (var i = 0; i < response.data.length; i++) {
+            for (var i = 0; i < response.data.length; i++) {
 
-            $("#ip_list").append('<tr><td class="p-2">' + response.data[i].ip + '</td><td class="p-2">2</td><td class="p-2">' + response.data[i].count + '</td></tr>');
-        }
-        //asdasd
-
-
-        for (var i = 0; i < response.urls.length; i++) {
-
-            var tmp = response.urls[i].url.split(',');
-
-            $("#url_list").append('<tr><td class="p-2">' + tmp[0] + '</td><td class="p-2">2</td><td class="p-2">' + response.urls[i].count + '</td></tr>');
-
-            if (parseInt(tmp[1]) > 0) {
-
-                $("#requested_page").append(' <tr><td class="p-2">' + tmp[0] + '</td><td class="p-2">1</td><td class="p-2">' + tmp[1] + 'ms</td></tr>');
+                $("#ip_list").append('<tr><td class="p-2">' + response.data[i].ip + '</td><td class="p-2">2</td><td class="p-2">' + response.data[i].count + '</td></tr>');
             }
-        }
-
-        //asdasd
-
-        for (var i = 0; i < response.urls.length; i++){
-            $("#url_list").append('<tr><td class="p-2">' + response.urls[i].url + '</td><td class="p-2">2</td><td class="p-2">' + response.urls[i].count + '</td></tr>');
-        }
+  //asdasd
 
 
-        for (var i = 0; i < response.status.length; i++) {
+            for(var i=0; i<response.urls.length; i++){
+
+                var tmp = response.urls[i].url.split(',');
+
+                $("#url_list").append('<tr><td class="p-2">'+tmp[0]+'</td><td class="p-2">2</td><td class="p-2">'+response.urls[i].count+'</td></tr>');
+
+                if(parseInt(tmp[1])>0){
+                    $("#requested_page").append(' <tr><td class="p-2">'+tmp[0]+'</td><td class="p-2">1</td><td class="p-2">'+tmp[1]+'ms</td></tr>');
+                }
+
+            }
 
 
-            $("#status_list").append('<tr><td class="p-2">' + response.status[i].status + '</td><td class="p-2">2</td><td class="p-2">' + response.status[i].count + '</td></tr>');
-        }
+            //asdasd
+
+            for (var i = 0; i < response.urls.length; i++) {
+
+
+                $("#url_list").append('<tr><td class="p-2">' + response.urls[i].url + '</td><td class="p-2">2</td><td class="p-2">' + response.urls[i].count + '</td></tr>');
+            }
+
+
+            for (var i = 0; i < response.status.length; i++) {
+
+
+                $("#status_list").append('<tr><td class="p-2">' + response.status[i].status + '</td><td class="p-2">2</td><td class="p-2">' + response.status[i].count + '</td></tr>');
+            }
 
 
         });
 
+    });
 
     $("#php_link").click(function (e) {
         $("#main_content").html($("#php_content").html());
