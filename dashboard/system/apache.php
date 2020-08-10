@@ -24,15 +24,15 @@ while(! feof($file))
   }
 
 
-	if(!array_key_exists($tmp[6], $url))
+  if(!array_key_exists($tmp[6], $url))
  {
 
-  $urls[$tmp[6]] = 1;
+  $urls[$tmp[6].",".$tmp[1]] = 1;
   
   }
 
   else{
-  	$urls[$tmp[6]]+=1;
+    $urls[$tmp[6].",".$tmp[1]]+=1;
   }
 
 

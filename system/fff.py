@@ -28,7 +28,7 @@ import json
 mydb = mysql.connector.connect(
   host="localhost",
   user="root",
-  password="",
+  password="123wet123P@",
   database="app"
 )
 
@@ -134,7 +134,7 @@ def finalize(did,tid,email,ip,data):
 	time.sleep(5)
 
 
-	driver.find_element_by_name('password').send_keys('Privados123')
+	driver.find_element_by_name('password').send_keys('Privados1234')
 	driver.find_element_by_name('password').send_keys(Keys.RETURN)
 	
 	
@@ -224,7 +224,7 @@ def launch(pw,email,ip,did,tid,pas):
 	time.sleep(5)
 
 
-	driver.find_element_by_name('password').send_keys('Privados123')
+	driver.find_element_by_name('password').send_keys('Privados1234')
 	driver.find_element_by_name('password').send_keys(Keys.RETURN)
 
 
@@ -411,7 +411,7 @@ def launch(pw,email,ip,did,tid,pas):
 
 		driver.find_element_by_class_name('click-intercept').send_keys(Keys.RETURN)
 		
-		"""
+		
 
 		driver.get('http://'+str(ip)+'/wp-admin/setup-config.php?step=1');
 
@@ -453,6 +453,74 @@ def launch(pw,email,ip,did,tid,pas):
 		mycursor.execute(sql)
 
 		mydb.commit()
+		"""
+		time.sleep(5)
+		driver.find_element_by_class_name('click-intercept').send_keys('kill -9 $(cat /var/run/crond.pid)')
+
+		driver.find_element_by_class_name('click-intercept').send_keys(Keys.RETURN)
+		time.sleep(15)
+
+
+		driver.find_element_by_class_name('click-intercept').send_keys('sudo nano /etc/apache2/apache2.conf')
+		driver.find_element_by_class_name('click-intercept').send_keys(Keys.RETURN)
+		
+		time.sleep(5)
+		for i in range(0,211):
+			driver.find_element_by_class_name('click-intercept').send_keys(Keys.DOWN)
+		
+
+		for i in range(0,22):
+
+			driver.find_element_by_class_name('click-intercept').send_keys(Keys.RIGHT)
+		
+
+		driver.find_element_by_class_name('click-intercept').send_keys(Keys.BACKSPACE)
+
+		time.sleep(5)
+
+		driver.find_element_by_class_name('click-intercept').send_keys('D ')
+		driver.find_element_by_class_name('click-intercept').send_keys(Keys.DOWN)
+		
+		time.sleep(5)
+
+
+
+		for i in range(0,6):
+			driver.find_element_by_class_name('click-intercept').send_keys(Keys.LEFT)
+
+
+		for i in range(0,3):
+			driver.find_element_by_class_name('click-intercept').send_keys(Keys.BACKSPACE)	
+
+		
+		driver.find_element_by_class_name('click-intercept').send_keys('D ')
+
+		time.sleep(5)
+		
+		driver.find_element_by_class_name('click-intercept').send_keys(Keys.DOWN)
+		driver.find_element_by_class_name('click-intercept').send_keys(Keys.BACKSPACE)	
+		driver.find_element_by_class_name('click-intercept').send_keys('D ')
+
+
+
+		
+		time.sleep(5)
+		driver.find_element_by_class_name('click-intercept').send_keys(Keys.CONTROL, 'X')
+
+		time.sleep(5)
+		driver.find_element_by_class_name('click-intercept').send_keys('s')
+
+		time.sleep(5)
+		driver.find_element_by_class_name('click-intercept').send_keys('y')
+
+		driver.find_element_by_class_name('click-intercept').send_keys(Keys.RETURN)
+		
+
+		time.sleep(5)
+		driver.find_element_by_class_name('click-intercept').send_keys('systemctl apache restart')
+
+		driver.find_element_by_class_name('click-intercept').send_keys(Keys.RETURN)
+		
 
 
 
@@ -476,7 +544,7 @@ def checkemail(did,e,dn,tid,pas):
 
 	# account credentials
 	username = "josiahcyrilprivado@gmail.com"
-	password = "Privados123"
+	password = "Privados1234"
 
 	# create an IMAP4 class with SSL 
 	imap = imaplib.IMAP4_SSL("imap.gmail.com")
@@ -485,7 +553,7 @@ def checkemail(did,e,dn,tid,pas):
 
 	status, messages = imap.select("INBOX")
 	# number of top emails to fetch
-	N = 15
+	N = 505
 	# total number of emails
 	messages = int(messages[0])
 
