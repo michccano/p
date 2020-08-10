@@ -1,9 +1,11 @@
 <!DOCTYPE html>
 <html>
 <head>
+
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>AdminLTE 3 | Log in</title>
+    <title>Parvaty Cloud</title>
+
     <!-- Tell the browser to be responsive to screen width -->
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
@@ -121,15 +123,18 @@
 <script src="../../plugins/bootstrap/js/bootstrap.bundle.min.js"></script>
 <!-- AdminLTE App -->
 <script src="../../dist/js/adminlte.min.js"></script>
+
+
 <script>
     function login() {
+
         var settings = {
             "url": "system/login.php",
             "method": "POST",
             "timeout": 0,
             "headers": {
                 "Content-Type": "application/x-www-form-urlencoded",
-                "Authorization": "Bearer 8181eecdf383dc2f28484a441a5ca5c4ef91c9cff6cb94909d0d9c1848e2924c"
+             
             },
             "data": {
                 "email": $("#email").val(),
@@ -137,17 +142,20 @@
             }
         };
 
+
         $.ajax(settings).done(function (response) {
+            
             localStorage.email = $("#email").val();
             // localStorage.token = response.access_token;
             var tmp = JSON.parse(response);
-
+            alert(tmp.message);
             if (tmp.message == "god") {
                 window.location = 'applications.php';
             }
 
         });
     }
+
 
     jQuery(document).ready(function () {
         jQuery('#login-carousel').carousel({

@@ -46,7 +46,7 @@
                     <div class="row">
                         <div class="col-6">
                             <div class="input-group mb-3">
-                                <input type="text" class="form-control" placeholder="First Name">
+                                <input type="text" class="form-control" placeholder="First Name" id="first_name">
                                 <div class="input-group-append">
                                     <div class="input-group-text">
                                         <span class="fas fa-user"></span>
@@ -57,7 +57,7 @@
 
                         <div class="col-6">
                             <div class="input-group mb-3">
-                                <input type="text" class="form-control" placeholder="Last Name">
+                                <input type="text" id="last_name" class="form-control" placeholder="Last Name">
                                 <div class="input-group-append">
                                     <div class="input-group-text">
                                         <span class="fas fa-user"></span>
@@ -68,7 +68,7 @@
 
                         <div class="col-12">
                             <div class="input-group mb-3">
-                                <input type="text" class="form-control" placeholder="Email">
+                                <input type="text" class="form-control" placeholder="Email" id="email">
                                 <div class="input-group-append">
                                     <div class="input-group-text">
                                         <span class="fas fa-envelope"></span>
@@ -79,7 +79,7 @@
 
                         <div class="col-6">
                             <div class="input-group mb-3">
-                                <input type="text" class="form-control" placeholder="Password">
+                                <input type="text" class="form-control" placeholder="Password" id="password">
                                 <div class="input-group-append">
                                     <div class="input-group-text">
                                         <span class="fas fa-lock"></span>
@@ -90,7 +90,7 @@
 
                         <div class="col-6">
                             <div class="input-group mb-3">
-                                <input type="text" class="form-control" placeholder="Retype Password">
+                                <input type="text" class="form-control" placeholder="Retype Password" id="confirm_password">
                                 <div class="input-group-append">
                                     <div class="input-group-text">
                                         <span class="fas fa-lock"></span>
@@ -100,7 +100,7 @@
                         </div>
 
                         <div class="col-12 mb-3">
-                            <select class="form-control " >
+                            <select class="form-control " id="industry" >
                                 <option>I would best describe myself as</option>
                                 <option>Digital Agency</option>
                                 <option>Ecommerce</option>
@@ -111,7 +111,7 @@
                         </div>
 
                         <div class="col-12 mb-3">
-                            <select class="form-control" >
+                            <select class="form-control" id="spending">
                                 <option>My monthly hosting spending is</option>
                                 <option>0 - $50</option>
                                 <option>$50 - $250</option>
@@ -165,19 +165,22 @@
 <script src="../../dist/js/adminlte.min.js"></script>
 
 <script>
+
     function register() {
+
         var settings = {
-            "url": "http://localhost:8000/api/register",
+            "url": "system/register.php",
             "method": "POST",
             "timeout": 0,
             "headers": {
                 "Content-Type": "application/x-www-form-urlencoded"
             },
+
             "data": {
-                "name": "asdasd",
-                "email": "mccano@protonmail.com",
-                "password": "123ewt123",
-                "password_confirmation": "123ewt123"
+                "name": $("#first_name").val()+" "+$("#last_name").val(),
+                "email": $("#email").val(),
+                "password": $("#password").val(),
+                "password_confirmation": $("#password_confirmation").val()
             }
         };
 

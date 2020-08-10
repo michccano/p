@@ -1,20 +1,38 @@
 <!DOCTYPE html>
 <html>
 <head>
+
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <title>AdminLTE 3 | Boxed Layout</title>
+  <title>Parvaty Cloud</title>
   <!-- Tell the browser to be responsive to screen width -->
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
   <!-- Font Awesome -->
   <link rel="stylesheet" href="./plugins/fontawesome-free/css/all.min.css">
+
   <!-- Ionicons -->
   <link rel="stylesheet" href="https://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css">
+
   <!-- Theme style -->
   <link rel="stylesheet" href="./dist/css/adminlte.min.css">
+
+ <link rel="stylesheet" href="./dist/css/adminlte.min.css">
+
+ <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-slider/11.0.2/css/bootstrap-slider.css">
+
+
   <!-- Google Font: Source Sans Pro -->
   <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700" rel="stylesheet">
+
+<style>
+
+.slider.slider-horizontal{
+  width:100%; /* sample value - set it as you like*/
+}
+</style>
+
+
 </head>
 <body class="hold-transition sidebar-mini layout-boxed">
 <!-- Site wrapper -->
@@ -150,7 +168,7 @@
       <div class="container-fluid">
         <div class="row mb-2">
           <div class="col-sm-6">
-            <h1>Applications</h1>
+            <h1>Create Application</h1>
           </div>
           <div class="col-sm-6">
             <ol class="breadcrumb float-sm-right">
@@ -168,56 +186,136 @@
       <div class="container-fluid">
 
 
-
-  <div class="row">
+        <div class="row">
           <div class="col-12">
             <!-- Default box -->
-            <div class="card  card-primary card-outline">
+            <div class="card">
               <div class="card-header">
                 <h3 class="card-title"></h3>
 
                 <div class="card-tools">
-                   <a href="createapplication.php" class="btn btn-primary">START A NEW APPLICATION</a>
+                  <button type="button" class="btn btn-tool" data-card-widget="collapse" data-toggle="tooltip" title="Collapse">
+                    <i class="fas fa-minus"></i></button>
+                  <button type="button" class="btn btn-tool" data-card-widget="remove" data-toggle="tooltip" title="Remove">
+                    <i class="fas fa-times"></i></button>
                 </div>
               </div>
 
+
+              <!--Work on this-->
 
               <div class="card-body">
 
+                <div class="row">
 
-             <div  class="row">
-            <div  id="huddles" class="col-12">
-
-            </div>
-            
-
-
-                      </div>
-                      </div>
-
+ <div class="col-md-3">
+                 <select class="form-control">
+                       <option value="" disabled selected>Wordpress</option>
+                          <option>Version 5.4.2</option>
+                          <option>Version 5.4.2 with WooCommerce Version 4.3.0</option>
+                          <option>Multisite Version 5.4.2</option>
+                          <option>Clean (No cloudways optimization) Version 5.4.2</option>
+                        </select>
 
                   </div>
 
-
-
-          
-
-                  <!-- /.card-body -->
-                  <div class="card-footer">
-                   
+                  <div class="col-md-3">
+                  <input type="text" class="form-control" id="Namemanageapp" placeholder="Name your Managed App">
                   </div>
-                  <!-- /.card-footer-->
+                  
+                  <div class="col-md-3">
+                  <input type="text" class="form-control" id="Namemanageserver" placeholder="Name your Managed Server">
+                  </div>
+
+                   <div class="col-md-3">
+                  <input type="text" class="form-control" id="Selectyourproj" placeholder="Select your Project">
+                  </div>
+               
                 </div>
-                <!--/.direct-chat -->
 
+            <br>
 
+                 <div class="row">
+                 <div class="col-12">
+                <h3 class="card-title">Server Size</h3>
 
               </div>
-              <!-- /.col -->
 
-           
+
+                 </div>
+
+          
+              <div class="row">
+
+                <div class="col-12">
+          
+        
+        <input id="ex19" type="text"
+              data-provide="slider"
+              data-slider-ticks="[1, 2, 3, 4, 5,6,7,8,9,10,11]"
+              data-slider-ticks-labels='["1GB", "2GB", "4gb","8gb","16gb","32gb","48gb","64gb","96gb","128gb","192gb"]'
+              data-slider-min="1"
+              data-slider-max="11"
+              data-slider-step="1"
+              data-slider-value="3"
+              data-slider-tooltip="hide" />
+              </div>
+
+            </div>
+
+
+              <br>
+              <div class="row ">
+
+                <div class="col-8">
+              <h3 class="card-title">LOCATION</h3>
+                
+                <br>
+
+
+
+
+
+            <div class="form-group">
+            <label for="exampleInputEmail1">Please select your server location.</label>
+            <select id="locations" class="form-control">
+           <option value="lon1" selected>London</option>
+              <option>San Francisco</option>
+              <option value="sgp1">Singapore</option>
+              <option value="nyc1">New York</option>
+              <option value="ams3">Amsterdam</option>
+              <option value="fra1">Frankfurt</option>
+              <option value="tor1">Toronto</option>
+              <option value="blr1">Bangalore</option>
+              
+            </select>
+
+                  </div>
+              </div>
+
+            </div>
+
+    
+                 </div>
+
+
+
+    <div class="card-footer">
+            <button type="button" onclick="create_droplet()" class="btn btn-primary">LAUNCH NOW</button>
+           </div>
+            
+   </div>
+
+
+          </div>
+        </div>
+
       </div>
+
     </section>
+
+
+
     <!-- /.content -->
   </div>
   <!-- /.content-wrapper -->
@@ -251,51 +349,146 @@
 <script src="./dist/js/adminlte.min.js"></script>
 <!-- AdminLTE for demo purposes -->
 <script src="./dist/js/demo.js"></script>
+<!-- FLOT CHARTS -->
+<script src="./plugins/flot/jquery.flot.js"></script>
+<!-- FLOT RESIZE PLUGIN - allows the chart to redraw when the window is resized -->
+<script src="./plugins/flot-old/jquery.flot.resize.min.js"></script>
+<!-- FLOT PIE PLUGIN - also used to draw donut charts -->
+<script src="./plugins/flot-old/jquery.flot.pie.min.js"></script>
+<!-- Page script -->
 
 
+<script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-slider/11.0.2/bootstrap-slider.min.js"></script>
 
 <!-- Page script -->
+
 <script>
 
-  if(localStorage.token==undefined){
-  //  window.location="login.php";
-  }
+var dic = {}
+dic[1] = "1gb";
+dic[2] = "2gb";
+dic[3] = "4gb";
+dic[4] = "8gb";
+dic[5] = "16gb";
+dic[6] = "32gb";
+dic[7] = "48gb";
+dic[8] = "64gb";
+dic[9] = "s-20vcpu-96gb";
+dic[10] = "s-24vcpu-128gb";
+dic[11] = "s-32vcpu-192gb";
+
+
+
+//init_droplet({"droplet":{"droplet_id":"example1.com"}});
+
+ //  data-slider-ticks="[1, 2, 3, 4, 5,6,7,8,9,10,11]"
+          //    data-slider-ticks-labels='["1GB", "2GB", "4gb","8gb","16gb","32gb","48gb","64gb","96gb","128gb","192gb"]'
+
+
+
+//init_droplet({"droplet":{"droplet_id":123123}});
+
+
+
+
+function create_droplet(){
+
+var value = $("#ex19").slider('getValue');
 
 var settings = {
-  "url": "system/applications.php",
+  "url": "https://api.digitalocean.com/v2/droplets",
+  "method": "POST",
+  "timeout": 0,
+  "headers": {
+    "Content-Type": "application/x-www-form-urlencoded",
+    "Authorization": "Bearer 8181eecdf383dc2f28484a441a5ca5c4ef91c9cff6cb94909d0d9c1848e2924c"
+  },
+
+//wordpress-18-04
+ "data":{"name":"example1.com","region":$("#locations").val(),"size":dic[value],"image":"ubuntu-18-04-x64","ssh_keys":[107149],"backups":false,"ipv6":true,"user_data":null,"private_networking":null,"volumes": null,"tags":["web"],"monitoring":true}
+
+};
+
+
+$.ajax(settings).done(function (response) {
+
+console.log(response);
+
+init_droplet({"droplet":{"droplet_id":response.droplet.id,"droplet_name":response.droplet.name}});
+
+//retrieve_droplet(response.droplet.droplet_id);
+//init_droplet(response);
+
+
+
+});
+
+
+}
+
+
+
+
+
+function retrieve_droplet(id){
+
+var settings = {
+  "url": "https://api.digitalocean.com/v2/droplets/"+id,
   "method": "GET",
   "timeout": 0,
   "headers": {
     "Content-Type": "application/x-www-form-urlencoded",
-    "Authorization": "Bearer "+localStorage.token
+    "Authorization": "Bearer 8181eecdf383dc2f28484a441a5ca5c4ef91c9cff6cb94909d0d9c1848e2924c"
   },
-  
 };
-
-
-//asdasd
 
 $.ajax(settings).done(function (response) {
 
-  var response = JSON.parse(response);
 
-  for(var i=0; i<response.data.length; i++){
-
-        $("#huddles").append('<div onclick="goto_app('+response.data[i].id+')" class="row"><div class="col-md-12"><!-- DIRECT CHAT --><div class="card direct-chat direct-chat-warning card-primary card-outline"><div class="card-header"><div class="row"><div class="col-9"><h3 class="card-title">'+response.data[i].droplet_name+'</h3></div><div class="col-3"><ul class="navbar-nav ml-auto"><!-- Messages Dropdown Menu --><li class="nav-item dropdown"><a class="nav-link" data-toggle="dropdown" href="#" aria-expanded="false"><i class="far fa-comments"></i></a><div class="dropdown-menu dropdown-menu-lg dropdown-menu-right" style="left: inherit; right: 0px;"><a href="#" class="dropdown-item"><!-- Message Start --><div class="media"><img src="../dist/img/user1-128x128.jpg" alt="User Avatar" class="img-size-50 mr-3 img-circle"><div class="media-body"><h3 class="dropdown-item-title">Brad Diesel<span class="float-right text-sm text-danger"><i class="fas fa-star"></i></span></h3><p class="text-sm">Call me whenever you can...</p><p class="text-sm text-muted"><i class="far fa-clock mr-1"></i> 4 Hours Ago</p></div></div><!-- Message End --></a><div class="dropdown-divider"></div><a href="#" class="dropdown-item"><!-- Message Start --><div class="media"><img src="../dist/img/user8-128x128.jpg" alt="User Avatar" class="img-size-50 img-circle mr-3"><div class="media-body"><h3 class="dropdown-item-title">John Pierce<span class="float-right text-sm text-muted"><i class="fas fa-star"></i></span></h3><p class="text-sm">I got your message bro</p><p class="text-sm text-muted"><i class="far fa-clock mr-1"></i> 4 Hours Ago</p></div></div><!-- Message End --></a><div class="dropdown-divider"></div><a href="#" class="dropdown-item"><!-- Message Start --><div class="media"><img src="../dist/img/user3-128x128.jpg" alt="User Avatar" class="img-size-50 img-circle mr-3"><div class="media-body"><h3 class="dropdown-item-title">Nora Silvester<span class="float-right text-sm text-warning"><i class="fas fa-star"></i></span></h3><p class="text-sm">The subject goes here</p><p class="text-sm text-muted"><i class="far fa-clock mr-1"></i> 4 Hours Ago</p></div></div><!-- Message End --></a><div class="dropdown-divider"></div><a href="#" class="dropdown-item dropdown-footer">See All Messages</a></div></li></ul></div></div></div><div class="card-header">sdfsdf</div></div></br></br>');
-
-  }
 });
 
 
 
-function goto_app(id){
-  localStorage.id = id;
-  window.location = 'application.php';
 }
 
 
+
+
+function init_droplet(response){
+var settings = {
+  "url": "http://localhost:8000/system/droplet.php",
+  "method": "POST",
+  "timeout": 0,
+  "headers": {
+    "Content-Type": "application/x-www-form-urlencoded",
+    "Authorization": "Bearer 8181eecdf383dc2f28484a441a5ca5c4ef91c9cff6cb94909d0d9c1848e2924c"
+  },
+  "data": {
+    "name": response.droplet.droplet_name,
+    "email": localStorage.email,
+    "droplet_id": response.droplet.droplet_id,
+    "droplet_name": response.droplet.droplet_name,
+  }
+};
+
+$.ajax(settings).done(function (response) {
+  console.log(response);
+});
+
+}
+
+function team(){
+ window.location = "team.php";
+}
+
+
+
+
   $(function () {
+
+
     /*
+
      * Flot Interactive Chart
      * -----------------------
      */
@@ -494,6 +687,8 @@ function goto_app(id){
       }
     })
 
+
+
     /* END AREA CHART */
 
     /*
@@ -580,6 +775,8 @@ function goto_app(id){
       + '<br>'
       + Math.round(series.percent) + '%</div>'
   }
+
+
 </script>
 
 
