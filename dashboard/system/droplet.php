@@ -1,7 +1,7 @@
 <?php
 $servername = "localhost";
 $username = "root";
-$password = "";
+$password = "123wet123P@";
 $dbname = "app";
 
 // Create connection

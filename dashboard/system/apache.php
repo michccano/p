@@ -1,16 +1,35 @@
 <?php
 
-$file = fopen("/var/log/apache2/access.log","r");
+shell_exec("cp /var/log/apache2/access.log ./1access.log");
+
+$myfile = "./1access.log";
+$command = "tac $myfile > ./myfilereversed.txt";
+exec($command);
+
+$lines =array();
+$currentRow = 0;
+$numRows = 20;  // stops after this number of rows
+$handle = fopen("./myfilereversed.txt", "r");
+while (!feof($handle) && $currentRow <= $numRows) {
+   $currentRow++;
+   $buffer = fgets($handle, 4096);
+  array_push($lines,$buffer);
+}
+fclose($handle);
+
+
+
+//$file = fopen("/var/log/apache2/access.log","r");
 
 $dic = [];
 $urls = [];
 $status = [];
 
-
-while(! feof($file))
+foreach($lines as $f)
+//while(! feof($file))
   {
   	
-  $tmp = explode(" ",fgets($file));
+  $tmp = explode(" ",$f);
 
   if(!array_key_exists($tmp[0], $dic))
  {
@@ -24,15 +43,15 @@ while(! feof($file))
   }
 
 
-	if(!array_key_exists($tmp[6], $url))
+  if(!array_key_exists($tmp[6], $url))
  {
 
-  $urls[$tmp[6]] = 1;
+  $urls[$tmp[6].",".$tmp[1]] = 1;
   
   }
 
   else{
-  	$urls[$tmp[6]]+=1;
+    $urls[$tmp[6].",".$tmp[1]]+=1;
   }
 
 

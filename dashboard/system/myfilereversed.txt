@@ -1,0 +1,5 @@
+127.0.0.1 204 - [10/Aug/2020:06:42:43 -0400] "GET /test.htm HTTP/1.1" 200 288 "-" "Mozilla/5.0 (X11; Ubuntu; Linux x86_64; rv:79.0) Gecko/20100101 Firefox/79.0"
+127.0.0.1 107 - [10/Aug/2020:06:36:51 -0400] "GET /favicon.ico HTTP/1.1" 404 487 "-" "Mozilla/5.0 (X11; Ubuntu; Linux x86_64; rv:79.0) Gecko/20100101 Firefox/79.0"
+127.0.0.1 15080 - [10/Aug/2020:06:36:51 -0400] "GET /icons/ubuntu-logo.png HTTP/1.1" 200 3623 "http://localhost/" "Mozilla/5.0 (X11; Ubuntu; Linux x86_64; rv:79.0) Gecko/20100101 Firefox/79.0"
+127.0.0.1 591 - [10/Aug/2020:06:36:51 -0400] "GET / HTTP/1.1" 200 3477 "-" "Mozilla/5.0 (X11; Ubuntu; Linux x86_64; rv:79.0) Gecko/20100101 Firefox/79.0"
+127.0.0.1 10384 - [10/Aug/2020:06:36:13 -0400] "GET / HTTP/1.1" 200 3477 "-" "Mozilla/5.0 (X11; Ubuntu; Linux x86_64; rv:79.0) Gecko/20100101 Firefox/79.0"
