@@ -12,7 +12,7 @@
     <!-- Ionicons -->
     <link rel="stylesheet" href="https://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css">
     <!-- Theme style -->
-    <link rel="stylesheet" href="./dist/css/adminlte.min.css">
+    <link rel="stylesheet" href="./dist/css/adminlte.css">
     <link rel="stylesheet" href="./dist/css/style.css">
     <!-- Google Font: Source Sans Pro -->
     <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700" rel="stylesheet">
@@ -120,9 +120,12 @@
                                     <p>Error Log</p>
                                 </a>
                             </li>
-
-
                         </ul>
+                    </li>
+                    <li class="nav-item">
+                        <a href="#" id="cron_job_link" class="nav-link">
+                            <p>Cron Job Management</p>
+                        </a>
                     </li>
 
 
@@ -858,6 +861,174 @@
     <div class="card-footer"></div>
 
 </div>
+
+
+
+<div id="cron_management_content" style="display:none;">
+    <div class="card  card-primary card-outline">
+        <div class="card-header">
+            <h3 class="card-title text-uppercase">CRON JOB MANAGEMENT</h3>
+
+            <!--<div class="card-tools">
+               <a href="create-huddle.php" class="btn btn-primary">START A NEW APPLICATION</a>
+            </div>-->
+        </div>
+
+        <div class="card-body">
+            <p>Cron Job Manager for your application.</p>
+            <button class="btn btn-info text-uppercase mt-5 mb-3" data-toggle="modal" data-target="#cron_job_modal">add new cron job</button>
+
+            <div class="row">
+                <div class="col-12">
+                    <div class="card card-primary card-outline card-outline-tabs">
+                        <div class="card-header p-0 border-bottom-0">
+                            <ul class="nav nav-tabs" id="custom-tabs-for-tab" role="tablist">
+                                <li class="nav-item">
+                                    <a class="nav-link active text-uppercase" id="custom-tabs-for-basic-tab"
+                                       data-toggle="pill" href="#custom-tabs-for-basic" role="tab"
+                                       aria-controls="custom-tabs-for-basic" aria-selected="true">Basic</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link text-uppercase" id="custom-tabs-for-advanced-tab" data-toggle="pill"
+                                       href="#custom-tabs-for-advanced" role="tab" aria-controls="custom-tabs-for-advanced"
+                                       aria-selected="false">Advanced</a>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="card-body">
+                            <div class="tab-content" id="custom-tabs-for-tabContent">
+                                <div class="tab-pane fade show active" id="custom-tabs-for-basic" role="tabpanel"
+                                     aria-labelledby="custom-tabs-for-basic-tab">
+                                    <div class="row">
+                                        <div class="col-md-9">
+                                            <div class="row">
+                                                <div class="col-md-8"><span class="text-uppercase"><b>CRON JOB MANAGEMENT</b></span></div>
+
+                                                <div class="col-md-12">
+<!--                                                    <table class="w-100 mt-3">-->
+<!--                                                        <thead class="font-weight-bold bg-gray">-->
+<!--                                                        <tr>-->
+<!--                                                            <td class="p-2">Page URLs</td>-->
+<!--                                                            <td class="p-2">Avg. Duration-->
+<!--                                                                <small>(in sec)</small>-->
+<!--                                                            </td>-->
+<!--                                                            <td class="p-2">Request Count</td>-->
+<!--                                                        </tr>-->
+<!--                                                        </thead>-->
+<!--                                                        <tbody>-->
+<!--                                                        <tr>-->
+<!--                                                            <td class="p-2">/index.php</td>-->
+<!--                                                            <td class="p-2">1</td>-->
+<!--                                                            <td class="p-2">1</td>-->
+<!--                                                        </tr>-->
+<!--                                                        </tbody>-->
+<!--                                                    </table>-->
+                                                    <p>No Cron Jobs here. Add one now.</p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="tab-pane fade" id="custom-tabs-for-advanced" role="tabpanel"
+                                     aria-labelledby="custom-tabs-for-advanced-tab">
+                                    <div class="row">
+                                        <div class="col-md-9">
+                                            <div class="row">
+                                                <div class="col-md-8 mb-4"><span class="text-uppercase"><b>advanced cron</b></span></div>
+
+                                                <div class="col-md-12">
+                                                    <textarea class="w-100 border-0 p-2" rows="15" placeholder="This is your Advanced Cron editor"></textarea>
+                                                    <p><button class="btn btn-info text-uppercase mt-3 mb-3 disabled">save changes</button></p>
+                                                    <small class="">*Please use this editor carefully. You can easily break your crons if you are not careful.</small>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- /.card -->
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="card-footer"></div>
+
+</div>
+
+
+<div class="modal" id="cron_job_modal" tabindex="-1" role="dialog">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title text-uppercase">cron job management</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <form>
+                    <div class="row">
+                        <div class="col-12">
+                            <label class="font-weight-normal">Common Settings</label>
+                            <select class="form-control border-bottom">
+                                <option>Select common settings</option>
+                                <option>Every minute (* * * * *)</option>
+                                <option>Every 5 minutes (*/5 * * * *)</option>
+                                <option>Twice an hour (0,30 * * * *)</option>
+                                <option>Once a day (0 0 * * *)</option>
+                                <option>Once a week (0 0 * * 0)</option>
+                                <option>1st and 15th (0 0 1,15 * *)</option>
+                                <option>Once a month (0 0 1 * *)</option>
+                                <option>Once a year (0 0 1 1 *)</option>
+                            </select>
+                        </div>
+                        <div class="col-12">
+                            <label class="font-weight-normal">Minutes</label>
+                            <input name="" value="*" class="form-control border-bottom" >
+                        </div>
+                        <div class="col-12">
+                            <label class="font-weight-normal">Hours</label>
+                            <input name="" value="*" class="form-control border-bottom" >
+                        </div>
+                        <div class="col-12">
+                            <label class="font-weight-normal">Days</label>
+                            <input name="" value="*" class="form-control border-bottom" >
+                        </div>
+                        <div class="col-12">
+                            <label class="font-weight-normal">Month</label>
+                            <input name="" value="*" class="form-control border-bottom" >
+                        </div>
+                        <div class="col-12">
+                            <label class="font-weight-normal">Weeks</label>
+                            <input name="" value="*" class="form-control border-bottom" >
+                        </div>
+                        <div class="col-12">
+                            <label class="font-weight-normal">Type</label>
+                            <select class="form-control border-bottom">
+                                <option>PHP</option>
+                                <option>cURL</option>
+                                <option>Wget</option>
+                            </select>
+                        </div>
+                        <div class="col-12">
+                            <label class="font-weight-normal">Command</label>
+                            <p>/qhjkstaxqr/public_html/<input name="" value="*" class="form-control border-bottom" ></p>
+                        </div>
+                    </div>
+                </form>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                <button type="button" class="btn btn-primary">Save changes</button>
+            </div>
+        </div>
+    </div>
+</div>
+
 
 <div id="php_content" style="display:none;">
     <div class="card  card-primary card-outline">
@@ -1978,6 +2149,11 @@
 
     $("#error_log_link").click(function (e) {
         $("#main_content").html($("#error_log_content").html());
+
+    });
+
+    $("#cron_job_link").click(function (e) {
+        $("#main_content").html($("#cron_management_content").html());
 
     });
 

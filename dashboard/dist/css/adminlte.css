@@ -12809,7 +12809,7 @@ body.sidebar-collapse:not(.sidebar-mini-md):not(.sidebar-mini) .main-header::bef
 .layout-boxed .content-wrapper,
 .layout-boxed .main-header,
 .layout-boxed .main-footer {
-  z-index: 9999;
+  /*z-index: 9999;*/
   position: relative;
 }
 
