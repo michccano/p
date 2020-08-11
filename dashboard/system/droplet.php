@@ -12,7 +12,10 @@ if ($conn->connect_error) {
 }
 
 $sql = "insert into droplets (droplet_id,droplet_name) values ('".$_POST["droplet_id"]."','".$_POST["droplet_name"]."')";
+
+
 $result = $conn->query($sql);
+
 
 $arr = array("message"=>"Good");
 
