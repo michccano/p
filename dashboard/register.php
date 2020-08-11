@@ -21,7 +21,7 @@
 </head>
 <body class="hold-transition register-page">
 
-<div class="register-box" style="width: 40%;">
+<div class="register-box" >
     <div class="register-logo">
         <a href="../../index2.html" class=""><b>Pavarty</a>
     </div>
@@ -44,7 +44,7 @@
             <form action="../../index.html" method="post">
                 <div class="container">
                     <div class="row">
-                        <div class="col-6">
+                        <div class="col-sm-12 col-md-6">
                             <div class="input-group mb-3">
                                 <input type="text" class="form-control" placeholder="First Name">
                                 <div class="input-group-append">
@@ -55,7 +55,7 @@
                             </div>
                         </div>
 
-                        <div class="col-6">
+                        <div class="col-sm-12 col-md-6">
                             <div class="input-group mb-3">
                                 <input type="text" class="form-control" placeholder="Last Name">
                                 <div class="input-group-append">
@@ -77,7 +77,7 @@
                             </div>
                         </div>
 
-                        <div class="col-6">
+                        <div class="col-sm-12 col-md-6">
                             <div class="input-group mb-3">
                                 <input type="text" class="form-control" placeholder="Password">
                                 <div class="input-group-append">
@@ -88,7 +88,7 @@
                             </div>
                         </div>
 
-                        <div class="col-6">
+                        <div class="col-sm-12 col-md-6">
                             <div class="input-group mb-3">
                                 <input type="text" class="form-control" placeholder="Retype Password">
                                 <div class="input-group-append">

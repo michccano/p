@@ -1889,16 +1889,10 @@
 
                     $("#files_list").append("<div class='row'><div class='col-3'><p>" + response.disk_data.message[i].folder + "</div><div class='col-3'><p class='text-right'>" + response.disk_data.message[i].size + "</p></div></div></p>");
                 }
-
             }
 
-
             for (var i = 0; i < response.db_data.tables.length; i++) {
-
-
                 $("#db_list").append("<div class='row'><div class='col-3'><p>" + response.db_data.tables[i].table_name + "</div><div class='col-3'><p class='text-right'>" + response.db_data.tables[i].size + "</p></div></div></p>");
-
-
             }
 
 
@@ -1930,12 +1924,9 @@
             var response = JSON.parse(response);
 
             for (var i = 0; i < response.data.length; i++) {
-
                 $("#ip_list").append('<tr><td class="p-2">' + response.data[i].ip + '</td><td class="p-2">2</td><td class="p-2">' + response.data[i].count + '</td></tr>');
             }
   //asdasd
-
-
             for(var i=0; i<response.urls.length; i++){
 
                 var tmp = response.urls[i].url.split(',');
@@ -1948,12 +1939,9 @@
 
             }
 
-
             //asdasd
 
             for (var i = 0; i < response.urls.length; i++) {
-
-
                 $("#url_list").append('<tr><td class="p-2">' + response.urls[i].url + '</td><td class="p-2">2</td><td class="p-2">' + response.urls[i].count + '</td></tr>');
             }
 

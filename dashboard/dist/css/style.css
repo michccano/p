@@ -20,6 +20,10 @@
 }
 
 /* -- Register Page CSS -- */
+
+.register-box{
+    width: 40%;
+}
 .login-box-msg{
     color: #000;
 }
@@ -71,7 +75,7 @@
     color: white;
     text-align: center;
 }
-.login-carousel img{
+#login-carousel img{
     width: auto;
     margin: 0 auto;
 }
@@ -84,4 +88,15 @@
 }
 #login-carousel .carousel-inner .carousel-item a:hover{
     border-color: #17a2b8 !important;
+}
+
+
+@media only screen and (max-width: 768px) {
+    /* For mobile phones: */
+    .register-box{
+        width: 100%;
+    }
+    #login-carousel img{
+        width: 100%;
+    }
 }
