@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <title>AdminLTE 3 | Boxed Layout</title>
+  <title>Parvaty Cloud</title>
   <!-- Tell the browser to be responsive to screen width -->
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
@@ -262,7 +262,7 @@
   }
 
 var settings = {
-  "url": "system/applications.php",
+  "url": "system/droplet.php",
   "method": "GET",
   "timeout": 0,
   "headers": {
