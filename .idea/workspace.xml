@@ -1,13 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="42b3606f-c0bc-4ca0-bcde-7449e9c3788c" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/dashboard/application.php" beforeDir="false" afterPath="$PROJECT_DIR$/dashboard/application.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/dashboard/dist/css/adminlte.css" beforeDir="false" afterPath="$PROJECT_DIR$/dashboard/dist/css/adminlte.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/dashboard/dist/css/style.css" beforeDir="false" afterPath="$PROJECT_DIR$/dashboard/dist/css/style.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/dashboard/login.php" beforeDir="false" afterPath="$PROJECT_DIR$/dashboard/login.php" afterDir="false" />
-    </list>
+    <list default="true" id="42b3606f-c0bc-4ca0-bcde-7449e9c3788c" name="Default Changelist" comment="" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -183,19 +177,6 @@
               <item name="p" type="462c0819:PsiDirectoryNode" />
               <item name="dashboard" type="462c0819:PsiDirectoryNode" />
             </path>
-            <path>
-              <item name="p" type="b2602c69:ProjectViewProjectNode" />
-              <item name="p" type="462c0819:PsiDirectoryNode" />
-              <item name="dashboard" type="462c0819:PsiDirectoryNode" />
-              <item name="dist" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="p" type="b2602c69:ProjectViewProjectNode" />
-              <item name="p" type="462c0819:PsiDirectoryNode" />
-              <item name="dashboard" type="462c0819:PsiDirectoryNode" />
-              <item name="dist" type="462c0819:PsiDirectoryNode" />
-              <item name="css" type="462c0819:PsiDirectoryNode" />
-            </path>
           </expand>
           <select />
         </subPane>
@@ -241,12 +222,12 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1596714566255</updated>
-      <workItem from="1596714567908" duration="50546000" />
+      <workItem from="1596714567908" duration="51331000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="50546000" />
+    <option name="totallyTimeSpent" value="51331000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="22" width="1440" height="824" extended-state="6" />
