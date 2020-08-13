@@ -963,6 +963,7 @@
 <div class="modal" id="cron_job_modal" tabindex="-1" role="dialog">
     <div class="modal-dialog" role="document">
         <div class="modal-content">
+            <form id="cron_data_form" role="form">
             <div class="modal-header">
                 <h5 class="modal-title text-uppercase">cron job management</h5>
                 <button type="button" class="close" data-dismiss="modal" aria-label="Close">
@@ -970,61 +971,64 @@
                 </button>
             </div>
             <div class="modal-body">
-                <form>
+
                     <div class="row">
-                        <div class="col-12">
+                        <div class="col-12 form-group">
                             <label class="font-weight-normal">Common Settings</label>
-                            <select class="form-control border-bottom">
-                                <option>Select common settings</option>
-                                <option>Every minute (* * * * *)</option>
-                                <option>Every 5 minutes (*/5 * * * *)</option>
-                                <option>Twice an hour (0,30 * * * *)</option>
-                                <option>Once a day (0 0 * * *)</option>
-                                <option>Once a week (0 0 * * 0)</option>
-                                <option>1st and 15th (0 0 1,15 * *)</option>
-                                <option>Once a month (0 0 1 * *)</option>
-                                <option>Once a year (0 0 1 1 *)</option>
+                            <select class="form-control border-bottom cron_setting_options">
+                                <option value="0">Select common settings</option>
+                                <option value="1">Every minute (* * * * *)</option>
+                                <option value="2">Every 5 minutes (*/5 * * * *)</option>
+                                <option value="3">Twice an hour (0,30 * * * *)</option>
+                                <option value="4">Once an hour (0 * * * *)</option>
+                                <option value="5">Twice a day (0 0,12 * * * *)</option>
+                                <option value="6">Once a day (0 0 * * *)</option>
+                                <option value="7">Once a week (0 0 * * 0)</option>
+                                <option value="8">1st and 15th (0 0 1,15 * *)</option>
+                                <option value="9">Once a month (0 0 1 * *)</option>
+                                <option value="10">Once a year (0 0 1 1 *)</option>
                             </select>
                         </div>
-                        <div class="col-12">
+                        <div class="col-12 form-group">
                             <label class="font-weight-normal">Minutes</label>
-                            <input name="" value="*" class="form-control border-bottom" >
+                            <input name="minutes" value="" class="form-control border-bottom minutes" >
                         </div>
-                        <div class="col-12">
+                        <div class="col-12 form-group">
                             <label class="font-weight-normal">Hours</label>
-                            <input name="" value="*" class="form-control border-bottom" >
+                            <input name="hours" value="" class="form-control border-bottom hours" >
                         </div>
-                        <div class="col-12">
+                        <div class="col-12 form-group">
                             <label class="font-weight-normal">Days</label>
-                            <input name="" value="*" class="form-control border-bottom" >
+                            <input name="days" value="" class="form-control border-bottom days" >
                         </div>
-                        <div class="col-12">
+                        <div class="col-12 form-group">
                             <label class="font-weight-normal">Month</label>
-                            <input name="" value="*" class="form-control border-bottom" >
+                            <input name="month" value="" class="form-control border-bottom month" >
                         </div>
-                        <div class="col-12">
+                        <div class="col-12 form-group">
                             <label class="font-weight-normal">Weeks</label>
-                            <input name="" value="*" class="form-control border-bottom" >
+                            <input name="week" value="" class="form-control border-bottom week" >
                         </div>
-                        <div class="col-12">
+                        <div class="col-12 form-group">
                             <label class="font-weight-normal">Type</label>
-                            <select class="form-control border-bottom">
-                                <option>PHP</option>
-                                <option>cURL</option>
-                                <option>Wget</option>
+                            <select class="form-control border-bottom" name="corn_type">
+                                <option value="1">PHP</option>
+                                <option value="2">cURL</option>
+                                <option value="3">Wget</option>
                             </select>
                         </div>
-                        <div class="col-12">
+                        <div class="col-12 form-group">
                             <label class="font-weight-normal">Command</label>
-                            <p>/qhjkstaxqr/public_html/<input name="" value="*" class="form-control border-bottom" ></p>
+                            <p>/qhjkstaxqr/public_html/<input name="cron_name" value="" class="form-control border-bottom cron_name" ></p>
                         </div>
                     </div>
-                </form>
+
             </div>
             <div class="modal-footer">
                 <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                <button type="button" class="btn btn-primary">Save changes</button>
+                <button type="submit" class="btn btn-primary save_cron_btn">Submit</button>
             </div>
+            </form>
         </div>
     </div>
 </div>
@@ -1993,6 +1997,7 @@
 <script src="./plugins/flot-old/jquery.flot.resize.min.js"></script>
 <!-- FLOT PIE PLUGIN - also used to draw donut charts -->
 <script src="./plugins/flot-old/jquery.flot.pie.min.js"></script>
+<script src="./plugins/jquery-validation/jquery.validate.min.js"></script>
 <!-- Page script -->
 
 <script>
@@ -2027,6 +2032,83 @@
 
 
     });
+
+    jQuery(document).on('change', '.cron_setting_options', function (e) {
+        var selectedOption = jQuery(this).val();
+        setCronInputFieldsValues(selectedOption);
+    });
+
+    // jQuery(document).on('click', '.save_cron_btn', function () {
+    //     alert();
+        jQuery('#cron_data_form').validate({
+            rules: {
+                minutes: {
+                    required: true,
+                },
+                hours: {
+                    required: true,
+                },
+                days: {
+                    required: true
+                },
+                weeks: {
+                    required: true
+                },
+                month: {
+                    required: true
+                },
+            },
+            messages: {
+                minutes: {
+                    required: "Field Required!"
+                },
+                hours: {
+                    required: "Field Required!"
+                },
+                days: {
+                    required: "Field Required!"
+                },
+                weeks: {
+                    required: "Field Required!"
+                },
+                month: {
+                    required: "Field Required!"
+                }
+            },
+            errorElement: 'span',
+            errorPlacement: function (error, element) {
+                error.addClass('invalid-feedback');
+                element.closest('#cron_data_form .form-group').append(error);
+            },
+            highlight: function (element, errorClass, validClass) {
+                jQuery(element).addClass('is-invalid');
+            },
+            unhighlight: function (element, errorClass, validClass) {
+                jQuery(element).removeClass('is-invalid');
+            },
+            submitHandler: function () {
+                var settings = {
+                    "url": "system/createCron.php",
+                    "method": "POST",
+                    "timeout": 0,
+                    "headers": {
+                        "Content-Type": "application/x-www-form-urlencoded",
+                        "Authorization": "Bearer " + localStorage.token
+                    },
+                    "data": jQuery('#cron_data_form').serializeArray()
+                };
+
+                $.ajax(settings).done(function (response) {
+
+                    var response = JSON.parse(response);
+
+                    alert('request sent');
+
+
+                });
+            }
+        });
+    //});
 
 
     $("#disk_usage").click(function (e) {
@@ -2076,7 +2158,7 @@
     $("#traffic_link").click(function (e) {
         $("#main_content").html($("#traffic_content").html());
 
-    
+
 
   var settings = {
   "url": "http://localhost:5000/",
@@ -2086,14 +2168,14 @@
     "Content-Type": "application/x-www-form-urlencoded",
     "Authorization": "Bearer "+localStorage.token
   }
-  
+
 };
 
 
 $.ajax(settings).done(function (response) {
 
   var response = JSON.parse(response);
-        
+
 
             for(var i=0; i<response.urls.length; i++){
 
@@ -2125,7 +2207,7 @@ $.ajax(settings).done(function (response) {
             }
 
   });
-      
+
 
     });
 
@@ -2446,7 +2528,7 @@ $.ajax(settings).done(function (response) {
          * END DONUT CHART
          */
 
-    })
+    });
 
     /*
      * Custom Label formatter
@@ -2457,6 +2539,87 @@ $.ajax(settings).done(function (response) {
             + label
             + '<br>'
             + Math.round(series.percent) + '%</div>'
+    }
+    function setCronInputFieldsValues($option){
+        var $option = parseInt($option);
+        switch ($option) {
+            case 1 :
+                jQuery('form#cron_data_form input.minutes').val('*');
+                jQuery('form#cron_data_form input.hours').val('*');
+                jQuery('form#cron_data_form input.days').val('*');
+                jQuery('form#cron_data_form input.month').val('*');
+                jQuery('form#cron_data_form input.week').val('*');
+                break;
+            case 2 :
+                jQuery('form#cron_data_form input.minutes').val('*/5');
+                jQuery('form#cron_data_form input.hours').val('*');
+                jQuery('form#cron_data_form input.days').val('*');
+                jQuery('form#cron_data_form input.month').val('*');
+                jQuery('form#cron_data_form input.week').val('*');
+                break;
+            case 3 :
+                jQuery('form#cron_data_form input.minutes').val('0,30');
+                jQuery('form#cron_data_form input.hours').val('*');
+                jQuery('form#cron_data_form input.days').val('*');
+                jQuery('form#cron_data_form input.month').val('*');
+                jQuery('form#cron_data_form input.week').val('*');
+                break;
+            case 4 :
+                jQuery('form#cron_data_form input.minutes').val('0');
+                jQuery('form#cron_data_form input.hours').val('*');
+                jQuery('form#cron_data_form input.days').val('*');
+                jQuery('form#cron_data_form input.month').val('*');
+                jQuery('form#cron_data_form input.week').val('*');
+                break;
+            case 5 :
+                jQuery('form#cron_data_form input.minutes').val('0');
+                jQuery('form#cron_data_form input.hours').val('0,12');
+                jQuery('form#cron_data_form input.days').val('*');
+                jQuery('form#cron_data_form input.month').val('*');
+                jQuery('form#cron_data_form input.week').val('*');
+                break;
+            case 6 :
+                jQuery('form#cron_data_form input.minutes').val('0');
+                jQuery('form#cron_data_form input.hours').val('0');
+                jQuery('form#cron_data_form input.days').val('*');
+                jQuery('form#cron_data_form input.month').val('*');
+                jQuery('form#cron_data_form input.week').val('*');
+                break;
+            case 7 :
+                jQuery('form#cron_data_form input.minutes').val('0');
+                jQuery('form#cron_data_form input.hours').val('0');
+                jQuery('form#cron_data_form input.days').val('*');
+                jQuery('form#cron_data_form input.month').val('*');
+                jQuery('form#cron_data_form input.week').val('0');
+                break;
+            case 8 :
+                jQuery('form#cron_data_form input.minutes').val('0');
+                jQuery('form#cron_data_form input.hours').val('0');
+                jQuery('form#cron_data_form input.days').val('1,15');
+                jQuery('form#cron_data_form input.month').val('*');
+                jQuery('form#cron_data_form input.week').val('*');
+                break;
+            case 9 :
+                jQuery('form#cron_data_form input.minutes').val('0');
+                jQuery('form#cron_data_form input.hours').val('0');
+                jQuery('form#cron_data_form input.days').val('1');
+                jQuery('form#cron_data_form input.month').val('*');
+                jQuery('form#cron_data_form input.week').val('*');
+                break;
+            case 10 :
+                jQuery('form#cron_data_form input.minutes').val('0');
+                jQuery('form#cron_data_form input.hours').val('0');
+                jQuery('form#cron_data_form input.days').val('1');
+                jQuery('form#cron_data_form input.month').val('1');
+                jQuery('form#cron_data_form input.week').val('*');
+                break;
+            default:
+                jQuery('form#cron_data_form input.minutes').val('');
+                jQuery('form#cron_data_form input.hours').val('');
+                jQuery('form#cron_data_form input.days').val('');
+                jQuery('form#cron_data_form input.month').val('');
+                jQuery('form#cron_data_form input.week').val('');
+        }
     }
 </script>
 
