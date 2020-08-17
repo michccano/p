@@ -644,6 +644,7 @@ myresult = mycursor.fetchall()
 
 if len(myresult)>0:
 	for x in myresult:
+		print("####")
 		checkemail(x[1],x[2],x[7],x[0],x[8])
 
 else:
