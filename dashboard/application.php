@@ -123,7 +123,12 @@
                         </ul>
                     </li>
                     <li class="nav-item">
-                        <a href="#" id="cron_job_link" class="nav-link">
+                        <a href="javascript:void(0)" id="domain_management_link" class="nav-link">
+                            <p>Domain Management</p>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="javascript:void(0)" id="cron_job_link" class="nav-link">
                             <p>Cron Job Management</p>
                         </a>
                     </li>
@@ -168,102 +173,7 @@
             <div class="container-fluid">
                 <div class="row">
                     <div id="main_content" class="col-12">
-                        <div class="card card-primary card-outline">
-                            <div class="card-header">
-                                <div class="float-right">
-                                    <i class="fa fa-step-backward"></i>&nbsp;
-                                    <i class="fa fa-chevron-left"></i>&nbsp;
-                                    <span>1 to 3 of 3 Applications</span>&nbsp;
-                                    <i class="fa fa-chevron-right"></i>&nbsp;
-                                    <i class="fa fa-step-forward"></i>
-                                </div>
-                                <div class="col-3 float-right pt-1">
-                                    <div class="btn-group pl-3 float-right">
-                                        <i class="fas fa-bars" data-toggle="dropdown"
-                                           aria-haspopup="true" aria-expanded="false"></i>
-                                        <div class="dropdown-menu">
-                                            <a class="dropdown-item" href="#">Name</a>
-                                            <a class="dropdown-item" href="#">Created Date</a>
-                                            <a class="dropdown-item" href="#">Projects</a>
-                                            <a class="dropdown-item" href="#">Servers</a>
-                                            <a class="dropdown-item" href="#">Staging</a>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="card-body">
-                                <div class="col-12 application_page_cards">
-                                    <div class="card card-outline">
-                                        <div class="card-body">
-                                            <div class="row mb-2">
-                                                <div class="col-10 application_page_card_info">
-                                                    <a href="">
-                                                        <div class="row">
-                                                            <div class="col-1">
-                                                                <img src="./dist/img/wordpress.png" />
-                                                            </div>
-                                                            <div class="col-11">
-                                                                <h6><b>LifeHack</b></h6>
-                                                                <p class="m-0">Server: Lifehacks Server</p>
-                                                                <p class="m-0">Project: Lifehacks World Conquering</p>
-                                                                <p class="mt-3"><small>Created: 12 March, 2020</small></p>
-                                                            </div>
-                                                        </div>
-                                                    </a>
-                                                </div>
-                                                <div class="col-2 text-right application_page_card_actions">
-                                                    <a href="" class="pl-3"><i class="fa fa-external-link-square-alt"></i></a>
-                                                    <a href="" class="pl-3"><i class="fa fa-user">&nbsp<span class="number_of_users">0</span></i></a>
-                                                    <!-- Small button group -->
-                                                    <div class="btn-group pl-3 dropleft">
-                                                        <i class="fas fa-ellipsis-v" data-toggle="dropdown"
-                                                               aria-haspopup="true" aria-expanded="false"></i>
-                                                        <div class="dropdown-menu">
-                                                            <a class="dropdown-item" href="#"><i class="fa fa-trash danger"></i>&nbsp;Delete</a>
-                                                            <a class="dropdown-item" href="#"><i class="fa fa-clone info"></i>&nbsp;Clone App/Create Staging</a>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="card card-outline">
-                                        <div class="card-body">
-                                            <div class="row mb-2">
-                                                <div class="col-10 application_page_card_info">
-                                                    <a href="">
-                                                        <div class="row">
-                                                            <div class="col-1">
-                                                                <img src="./dist/img/wordpress.png" />
-                                                            </div>
-                                                            <div class="col-11">
-                                                                <h6><b>Test</b></h6>
-                                                                <p class="m-0">Server: Lifehacks Server</p>
-                                                                <p class="m-0">Project: Lifehacks World Conquering</p>
-                                                                <p class="mt-3"><small>Created: 12 March, 2020</small></p>
-                                                            </div>
-                                                        </div>
-                                                    </a>
-                                                </div>
-                                                <div class="col-2 text-right application_page_card_actions">
-                                                    <a href="" class="pl-3"><i class="fa fa-external-link-square-alt"></i></a>
-                                                    <a href="" class="pl-3"><i class="fa fa-user">&nbsp<span class="number_of_users">0</span></i></a>
-                                                    <div class="btn-group pl-3 dropleft">
-                                                        <i class="fas fa-ellipsis-v" data-toggle="dropdown"
-                                                           aria-haspopup="true" aria-expanded="false"></i>
-                                                        <div class="dropdown-menu">
-                                                            <a class="dropdown-item" href="#"><i class="fa fa-trash danger"></i>&nbsp;Delete</a>
-                                                            <a class="dropdown-item" href="#"><i class="fa fa-clone info"></i>&nbsp;Clone App/Create Staging</a>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="card-footer"></div>
-                        </div>
+
 
                     </div>
                 </div>
@@ -323,31 +233,21 @@
                     <p>You can create and use multiple Application credentials for SFTP or SSH access to this
                         Application</p>
 
-
                     </br></br>
-
-
                     <p><b>MYSQL ACCESS</b></p>
                     <p>DB Name:</p>
                     <p>Username:</p>
                     <p>Password:</p>
                 </div>
-
-
             </div>
-
-
         </div>
-
-
+        <div class="card-footer"></div>
     </div>
-
-    <div class="card-footer">
-
-    </div>
-
 </div>
-</div>
+
+
+
+<!-- Default box -->
 
 
 <div id="access_details_content" style="display:none;">
@@ -399,7 +299,7 @@
     <!-- Default box -->
     <div class="card  card-primary card-outline">
         <div class="card-header">
-            <h3 class="card-title">Disk Usage</h3>
+            <h3 class="card-title text-uppercase">Disk Usage</h3>
 
             <!--<div class="card-tools">
                <a href="create-huddle.php" class="btn btn-primary">START A NEW APPLICATION</a>
@@ -508,9 +408,7 @@
 
     </div>
 
-    <div class="card-footer">
-
-    </div>
+    <div class="card-footer"></div>
 
 </div>
 </div>
@@ -1046,6 +944,41 @@
     </div>
 
     <div class="card-footer"></div>
+
+</div>
+
+<div id="domain_management_content" style="display:none;">
+    <div class="card  card-primary card-outline">
+        <div class="card-header">
+            <h3 class="card-title text-uppercase">DOMAIN MANAGEMENT</h3>
+
+            <!--<div class="card-tools">
+               <a href="create-huddle.php" class="btn btn-primary">START A NEW APPLICATION</a>
+            </div>-->
+        </div>
+
+        <div class="card-body">
+            <p>Point your domain to your web app.</p>
+            <div class="row">
+                <div class="col-md-6 col-sm-12">
+                    <h6 class="text-uppercase text-bold">primary domain <i class="fa fa-info-circle" data-toggle="tooltip" data-placement="left" title="This should be the fully qualified domain name for your application. For example, www.example.com and example.com are valid values for primary domain."></i> </h6>
+                    <input name="primary_domain_name" class="form-control border-bottom w-50 primary_domain_input border-bottom" type="text" />
+                    <p class="mt-3"><button class="btn btn-info text-uppercase">save changes</button> <button class="btn btn-default text-uppercase ml-2">delete</button> </p>
+                    <p>How to point your Domain to wordpress-381373-1413369.cloudwaysapps.com. <a href="" class="text-bold"><u>More Details</u></a></p>
+                </div>
+                <div class="col-md-6 col-sm-12 border-left pl-5 additional_domain_section">
+                    <h6 class="text-uppercase text-bold">additional domains</h6>
+                    <div class="w-100 " id="additional_domain_name_container">
+                        <div class="w-100 domain_name_actions float-left">
+                            <span class="float-left pt-1 mt-1">Domain:</span> <input name="domain_name" type="text" class="border-bottom form-control w-50 float-left" > <span class="float-left pt-1 mt-1 pl-3"><i class="fa fa-check-square"></i> <i class="fa fa-window-close pl-3 delete_additional_domain"></i></span>
+                        </div>
+                    </div>
+                    <p class="mt-3 float-left"><button class="btn btn-default text-uppercase add_additional_domain">add domain</button> <button class="btn btn-default text-uppercase  ml-2">save changes</button> </p>
+                </div>
+            </div>
+        </div>
+        <div class="card-footer"></div>
+    </div>
 
 </div>
 
@@ -2059,10 +1992,14 @@
                 </div>
             </div>
         </div>
+        <div class="card-footer"></div>
     </div>
+</div>
 
-    <div class="card-footer"></div>
-
+<div id="additional_domain_name_content" style="display:none;">
+    <div class="w-100 domain_name_actions float-left mt-3">
+        <span class="float-left pt-1 mt-1">Domain:</span> <input name="domain_name" type="text" class="border-bottom form-control w-50 float-left" > <span class="float-left pt-1 mt-1 pl-3"><i class="fa fa-check-square"></i> <i class="fa fa-window-close pl-3 delete_additional_domain"></i></span>
+    </div>
 </div>
 
 
@@ -2091,7 +2028,20 @@
 <!-- Page script -->
 
 <script>
+    $( document ).ready(function() {
+        $('[data-toggle="tooltip"]').tooltip();
 
+        $(document).on("click",".add_additional_domain", function (e) {
+            var clonedData = $('#additional_domain_name_content .domain_name_actions').clone();
+            $("#additional_domain_name_container").append(clonedData);
+
+        });
+
+        $(document).on("click",".delete_additional_domain", function (e) {
+            var divCount = $("#additional_domain_name_container").find('.domain_name_actions').length;
+            $(this).closest('.domain_name_actions').remove();
+        });
+    });
 
     $("#access_details").click(function (e) {
 
@@ -2366,6 +2316,14 @@ $.ajax(settings).done(function (response) {
 
     });
 
+    $("#domain_management_link").click(function (e) {
+        //$("#access_details_content").css('display','none');
+        $("#main_content").html($("#domain_management_content").html());
+
+    });
+
+
+
 
     if (localStorage.token == undefined) {
         //  window.location="login.php";
@@ -2525,7 +2483,7 @@ $.ajax(settings).done(function (response) {
             position: 'absolute',
             display: 'none',
             opacity: 0.8
-        }).appendTo('body')
+        }).appendTo('body');
         $('#line-chart').bind('plothover', function (event, pos, item) {
 
             if (item) {

@@ -110,6 +110,20 @@
 .application_page_card_info img{
     width: 50px;
 }
+.primary_domain_input{
+    border: none;
+}
+
+.additional_domain_section button{
+    color: #192072;
+}
+
+#additional_domain_name_container input{
+    border: none;
+}
+#additional_domain_name_container i{
+    cursor: pointer;
+}
 
 
 @media only screen and (max-width: 768px) {
