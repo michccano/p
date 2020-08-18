@@ -1384,7 +1384,7 @@
                                                             class="text-uppercase"><b>CONNECTIONS</b></span><a href="#"><i
                                                                 class="fa fa-redo ml-2"></i></a></div>
                                                 <div class="col-md-12 border-bottom pb-4 mb-2">
-                                                    <span class="">Active Connections: 0</span>
+                                                    <span class="" id="active_connections">Active Connections: </span>
                                                 </div>
                                                 <div class="col-md-12"><span
                                                             class="text-uppercase"><b>QUERIES</b></span></div>
@@ -2317,7 +2317,28 @@ $.ajax(settings).done(function (response) {
     $("#mysql_link").click(function (e) {
         $("#main_content").html($("#mysql_content").html());
 
+  var settings = {
+  "url": "system/mysql.php",
+  "method": "GET",
+  "timeout": 0,
+  "headers": {
+    "Content-Type": "application/x-www-form-urlencoded",
+    "Authorization": "Bearer "+localStorage.token
+  }
+
+};
+
+
+    $.ajax(settings).done(function (response) {
+
+      var response = JSON.parse(response);
+      $("#active_connections").text("Active Connections: "+response.Threads_connected);
     });
+
+
+    });
+
+
 
     $("#running_crons_link").click(function (e) {
         $("#main_content").html($("#running_crons_content").html());
