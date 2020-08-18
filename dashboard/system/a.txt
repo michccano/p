@@ -1,4 +1,0 @@
-127.0.0.1 330 - [11/Aug/2020:09:00:53 -0400] "GET /system/apache2.php HTTP/1.1" 404 488 "-" "Mozilla/5.0 (X11; Ubuntu; Linux x86_64; rv:79.0) Gecko/20100101 Firefox/79.0"
-127.0.0.1 267 - [11/Aug/2020:09:00:19 -0400] "GET /favicon.ico HTTP/1.1" 404 488 "-" "Mozilla/5.0 (X11; Ubuntu; Linux x86_64; rv:79.0) Gecko/20100101 Firefox/79.0"
-127.0.0.1 13354 - [11/Aug/2020:09:00:19 -0400] "GET /icons/ubuntu-logo.png HTTP/1.1" 200 3623 "http://localhost/" "Mozilla/5.0 (X11; Ubuntu; Linux x86_64; rv:79.0) Gecko/20100101 Firefox/79.0"
-127.0.0.1 18849 - [11/Aug/2020:09:00:19 -0400] "GET / HTTP/1.1" 200 3477 "-" "Mozilla/5.0 (X11; Ubuntu; Linux x86_64; rv:79.0) Gecko/20100101 Firefox/79.0"
