@@ -19,7 +19,7 @@
 </head>
 <body class="hold-transition sidebar-mini layout-boxed">
 <!-- Site wrapper -->
-<div class="wrapper">
+<div class="container-fluid p-0">
 
 
     <!-- Main Sidebar Container -->
@@ -167,7 +167,105 @@
         <section class="content">
             <div class="container-fluid">
                 <div class="row">
-                    <div id="main_content" class="col-12"></div>
+                    <div id="main_content" class="col-12">
+                        <div class="card card-primary card-outline">
+                            <div class="card-header">
+                                <div class="float-right">
+                                    <i class="fa fa-step-backward"></i>&nbsp;
+                                    <i class="fa fa-chevron-left"></i>&nbsp;
+                                    <span>1 to 3 of 3 Applications</span>&nbsp;
+                                    <i class="fa fa-chevron-right"></i>&nbsp;
+                                    <i class="fa fa-step-forward"></i>
+                                </div>
+                                <div class="col-3 float-right pt-1">
+                                    <div class="btn-group pl-3 float-right">
+                                        <i class="fas fa-bars" data-toggle="dropdown"
+                                           aria-haspopup="true" aria-expanded="false"></i>
+                                        <div class="dropdown-menu">
+                                            <a class="dropdown-item" href="#">Name</a>
+                                            <a class="dropdown-item" href="#">Created Date</a>
+                                            <a class="dropdown-item" href="#">Projects</a>
+                                            <a class="dropdown-item" href="#">Servers</a>
+                                            <a class="dropdown-item" href="#">Staging</a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="card-body">
+                                <div class="col-12 application_page_cards">
+                                    <div class="card card-outline">
+                                        <div class="card-body">
+                                            <div class="row mb-2">
+                                                <div class="col-10 application_page_card_info">
+                                                    <a href="">
+                                                        <div class="row">
+                                                            <div class="col-1">
+                                                                <img src="./dist/img/wordpress.png" />
+                                                            </div>
+                                                            <div class="col-11">
+                                                                <h6><b>LifeHack</b></h6>
+                                                                <p class="m-0">Server: Lifehacks Server</p>
+                                                                <p class="m-0">Project: Lifehacks World Conquering</p>
+                                                                <p class="mt-3"><small>Created: 12 March, 2020</small></p>
+                                                            </div>
+                                                        </div>
+                                                    </a>
+                                                </div>
+                                                <div class="col-2 text-right application_page_card_actions">
+                                                    <a href="" class="pl-3"><i class="fa fa-external-link-square-alt"></i></a>
+                                                    <a href="" class="pl-3"><i class="fa fa-user">&nbsp<span class="number_of_users">0</span></i></a>
+                                                    <!-- Small button group -->
+                                                    <div class="btn-group pl-3 dropleft">
+                                                        <i class="fas fa-ellipsis-v" data-toggle="dropdown"
+                                                               aria-haspopup="true" aria-expanded="false"></i>
+                                                        <div class="dropdown-menu">
+                                                            <a class="dropdown-item" href="#"><i class="fa fa-trash danger"></i>&nbsp;Delete</a>
+                                                            <a class="dropdown-item" href="#"><i class="fa fa-clone info"></i>&nbsp;Clone App/Create Staging</a>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="card card-outline">
+                                        <div class="card-body">
+                                            <div class="row mb-2">
+                                                <div class="col-10 application_page_card_info">
+                                                    <a href="">
+                                                        <div class="row">
+                                                            <div class="col-1">
+                                                                <img src="./dist/img/wordpress.png" />
+                                                            </div>
+                                                            <div class="col-11">
+                                                                <h6><b>Test</b></h6>
+                                                                <p class="m-0">Server: Lifehacks Server</p>
+                                                                <p class="m-0">Project: Lifehacks World Conquering</p>
+                                                                <p class="mt-3"><small>Created: 12 March, 2020</small></p>
+                                                            </div>
+                                                        </div>
+                                                    </a>
+                                                </div>
+                                                <div class="col-2 text-right application_page_card_actions">
+                                                    <a href="" class="pl-3"><i class="fa fa-external-link-square-alt"></i></a>
+                                                    <a href="" class="pl-3"><i class="fa fa-user">&nbsp<span class="number_of_users">0</span></i></a>
+                                                    <div class="btn-group pl-3 dropleft">
+                                                        <i class="fas fa-ellipsis-v" data-toggle="dropdown"
+                                                           aria-haspopup="true" aria-expanded="false"></i>
+                                                        <div class="dropdown-menu">
+                                                            <a class="dropdown-item" href="#"><i class="fa fa-trash danger"></i>&nbsp;Delete</a>
+                                                            <a class="dropdown-item" href="#"><i class="fa fa-clone info"></i>&nbsp;Clone App/Create Staging</a>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="card-footer"></div>
+                        </div>
+
+                    </div>
                 </div>
             </div>
         </section>
@@ -292,15 +390,8 @@
             </div>
 
         </div>
-
-
+        <div class="card-footer"></div>
     </div>
-
-    <div class="card-footer">
-
-    </div>
-
-</div>
 </div>
 
 
@@ -641,9 +732,8 @@
                 </div>
             </div>
         </div>
+        <div class="card-footer"></div>
     </div>
-
-    <div class="card-footer"></div>
 
 </div>
 
@@ -2057,6 +2147,9 @@
                 month: {
                     required: true
                 },
+                cron_name: {
+                    required: true
+                }
             },
             messages: {
                 minutes: {
@@ -2072,6 +2165,9 @@
                     required: "Field Required!"
                 },
                 month: {
+                    required: "Field Required!"
+                },
+                cron_name: {
                     required: "Field Required!"
                 }
             },

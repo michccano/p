@@ -74,11 +74,6 @@
       <textMaps />
     </LinkMapSettings>
   </component>
-  <component name="PhpUnit">
-    <phpunit_settings>
-      <PhpUnitSettings />
-    </phpunit_settings>
-  </component>
   <component name="VagrantProjectSettings">
     <option name="instanceFolder" value="" />
     <option name="provider" value="" />

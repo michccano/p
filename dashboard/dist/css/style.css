@@ -96,6 +96,21 @@
     border: none;
 }
 
+/* -- Applications page css -- */
+.application_page_cards a{
+    color: #212529;
+}
+.application_page_card_actions .fa-trash{
+    color: #ff897f;
+}
+
+.application_page_card_actions .fa-clone{
+    color: blue;
+}
+.application_page_card_info img{
+    width: 50px;
+}
+
 
 @media only screen and (max-width: 768px) {
     /* For mobile phones: */
