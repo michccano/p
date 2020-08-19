@@ -398,16 +398,9 @@
                         <!-- /.card -->
                     </div>
                 </div>
-
-
             </div>
-
-
         </div>
-
-
     </div>
-
     <div class="card-footer"></div>
 
 </div>
@@ -998,7 +991,7 @@
                     <div class="row">
                         <div class="col-12 form-group">
                             <label class="font-weight-normal">Common Settings</label>
-                            <select class="form-control border-bottom cron_setting_options">
+                            <select name="cron_option" class="form-control border-bottom cron_setting_options">
                                 <option value="0">Select common settings</option>
                                 <option value="1">Every minute (* * * * *)</option>
                                 <option value="2">Every 5 minutes (*/5 * * * *)</option>
@@ -1034,7 +1027,7 @@
                         </div>
                         <div class="col-12 form-group">
                             <label class="font-weight-normal">Type</label>
-                            <select class="form-control border-bottom" name="corn_type">
+                            <select class="form-control border-bottom" name="cron_type">
                                 <option value="1">PHP</option>
                                 <option value="2">cURL</option>
                                 <option value="3">Wget</option>
@@ -1241,18 +1234,18 @@
                                                 <div class="col-md-12">
                                                     <table class="w-100 mt-3">
                                                         <thead class="font-weight-bold bg-gray">
-                                                        <tr>
-                                                            <td class="p-2">Top 10 IP Addresses</td>
-                                                            <td class="p-2">Request Count</td>
-                                                            <td class="p-2"></td>
-                                                        </tr>
+                                                            <tr>
+                                                                <td class="p-2">Top 10 IP Addresses</td>
+                                                                <td class="p-2">Request Count</td>
+                                                                <td class="p-2"></td>
+                                                            </tr>
                                                         </thead>
                                                         <tbody>
-                                                        <tr>
-                                                            <td class="p-2">404</td>
-                                                            <td class="p-2">2</td>
-                                                            <td class="p-2">Details +</td>
-                                                        </tr>
+                                                            <tr>
+                                                                <td class="p-2">404</td>
+                                                                <td class="p-2">2</td>
+                                                                <td class="p-2">Details +</td>
+                                                            </tr>
                                                         </tbody>
                                                     </table>
                                                 </div>
@@ -2145,7 +2138,7 @@
                 };
 
                 $.ajax(settings).done(function (response) {
-
+                    console.log(response);
                     var response = JSON.parse(response);
 
                     alert('request sent');
