@@ -2,9 +2,11 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="42b3606f-c0bc-4ca0-bcde-7449e9c3788c" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/dashboard/system/DatabaseConnection.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/dashboard/system/AppHelper.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/dashboard/application.php" beforeDir="false" afterPath="$PROJECT_DIR$/dashboard/application.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dashboard/dist/css/style.css" beforeDir="false" afterPath="$PROJECT_DIR$/dashboard/dist/css/style.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dashboard/system/DatabaseConnection.php" beforeDir="false" afterPath="$PROJECT_DIR$/dashboard/system/DatabaseConnection.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/dashboard/system/createCron.php" beforeDir="false" afterPath="$PROJECT_DIR$/dashboard/system/createCron.php" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -28,13 +30,13 @@
       </usages-collector>
       <usages-collector id="statistics.file.extensions.open">
         <counts>
-          <entry key="css" value="56" />
+          <entry key="css" value="57" />
           <entry key="htaccess" value="2" />
           <entry key="html" value="15" />
           <entry key="jpg" value="2" />
           <entry key="js" value="1" />
           <entry key="json" value="1" />
-          <entry key="php" value="325" />
+          <entry key="php" value="371" />
           <entry key="scss" value="3" />
           <entry key="sql" value="3" />
           <entry key="txt" value="1" />
@@ -42,12 +44,12 @@
       </usages-collector>
       <usages-collector id="statistics.file.types.open">
         <counts>
-          <entry key="CSS" value="56" />
+          <entry key="CSS" value="57" />
           <entry key="HTML" value="15" />
           <entry key="Image" value="2" />
           <entry key="JSON" value="1" />
           <entry key="JavaScript" value="1" />
-          <entry key="PHP" value="325" />
+          <entry key="PHP" value="371" />
           <entry key="PLAIN_TEXT" value="1" />
           <entry key="SCSS" value="3" />
           <entry key="SQL" value="3" />
@@ -58,14 +60,14 @@
         <counts>
           <entry key="css" value="704" />
           <entry key="html" value="17" />
-          <entry key="php" value="7928" />
+          <entry key="php" value="8721" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
           <entry key="CSS" value="704" />
           <entry key="HTML" value="17" />
-          <entry key="PHP" value="7916" />
+          <entry key="PHP" value="8709" />
           <entry key="SQL" value="12" />
         </counts>
       </usages-collector>
@@ -79,12 +81,12 @@
   <component name="FileEditorManager">
     <leaf>
       <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/dashboard/system/DatabaseConnection.php">
+        <entry file="file://$PROJECT_DIR$/dashboard/application.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="157">
-              <caret line="21" column="46" selection-start-line="21" selection-start-column="46" selection-end-line="21" selection-end-column="46" />
+            <state relative-caret-position="997">
+              <caret line="2619" column="10" selection-start-line="2619" selection-start-column="10" selection-end-line="2619" selection-end-column="10" />
               <folding>
-                <element signature="e#6#84#0#PHP" expanded="true" />
+                <element signature="n#style#0;n#div#0;n#!!top" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -101,10 +103,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>error_log_link</find>
-      <find>text-al</find>
-      <find>center</find>
-      <find>login</find>
       <find>register-logo</find>
       <find>min-hei</find>
       <find>register-box</find>
@@ -116,7 +114,6 @@
       <find>id=&quot;cron_data_form</find>
       <find>alert</find>
       <find>cron_setting_options</find>
-      <find>save_cron_btn</find>
       <find>another</find>
       <find>Applications</find>
       <find>domain_management_content</find>
@@ -131,6 +128,11 @@
       <find>delete_additional_domain</find>
       <find>application_</find>
       <find>cron_data_form</find>
+      <find>CRON JOB MANAGEMENT</find>
+      <find>cron_job_link</find>
+      <find>disk_usage_details_content</find>
+      <find>cron_management_content</find>
+      <find>save_cron_btn</find>
     </findStrings>
     <dirStrings>
       <dir>$PROJECT_DIR$</dir>
@@ -148,12 +150,13 @@
         <option value="$PROJECT_DIR$/dashboard/dist/css/adminlte.css" />
         <option value="$PROJECT_DIR$/dashboard/login.php" />
         <option value="$PROJECT_DIR$/dashboard/system/login.php" />
-        <option value="$PROJECT_DIR$/dashboard/dist/css/style.css" />
         <option value="$PROJECT_DIR$/dashboard/applications.php" />
         <option value="$PROJECT_DIR$/dashboard/system/mysql.php" />
-        <option value="$PROJECT_DIR$/dashboard/application.php" />
-        <option value="$PROJECT_DIR$/dashboard/system/createCron.php" />
+        <option value="$PROJECT_DIR$/dashboard/system/AppHelper.php" />
         <option value="$PROJECT_DIR$/dashboard/system/DatabaseConnection.php" />
+        <option value="$PROJECT_DIR$/dashboard/system/createCron.php" />
+        <option value="$PROJECT_DIR$/dashboard/dist/css/style.css" />
+        <option value="$PROJECT_DIR$/dashboard/application.php" />
       </list>
     </option>
   </component>
@@ -241,6 +244,7 @@
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/dashboard/system" />
       <recent name="$PROJECT_DIR$/dashboard/dist/img" />
       <recent name="$PROJECT_DIR$/dashboard" />
     </key>
@@ -268,12 +272,12 @@
       <option name="presentableId" value="Default" />
       <updated>1596714566255</updated>
       <workItem from="1596714567908" duration="56993000" />
-      <workItem from="1597304426289" duration="66603000" />
+      <workItem from="1597304426289" duration="88251000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="123596000" />
+    <option name="totallyTimeSpent" value="145244000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="22" width="1440" height="824" extended-state="6" />
@@ -407,13 +411,6 @@
     <entry file="file://$PROJECT_DIR$/dashboard/navbar.php">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/dashboard/dist/css/style.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1485">
-          <caret line="99" column="23" selection-start-line="99" selection-start-column="1" selection-end-line="99" selection-end-column="23" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/dashboard/applications.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-210">
@@ -454,13 +451,6 @@
     <entry file="file://$PROJECT_DIR$/dashboard/system/myfilereversed.txt">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/dashboard/system/login.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="270">
-          <caret line="18" column="94" selection-start-line="18" selection-start-column="86" selection-end-line="18" selection-end-column="94" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/dashboard/system/droplet.php">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
@@ -474,6 +464,16 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/dashboard/system/apache2.php">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/dashboard/system/AppHelper.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="135">
+          <caret line="9" column="47" selection-start-line="9" selection-start-column="47" selection-end-line="9" selection-end-column="47" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/dashboard/system/register.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="355">
@@ -481,10 +481,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/dashboard/application.php">
+    <entry file="file://$PROJECT_DIR$/dashboard/system/login.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="236">
-          <caret line="2140" column="40" selection-start-line="2140" selection-start-column="40" selection-end-line="2140" selection-end-column="40" />
+        <state relative-caret-position="270">
+          <caret line="18" column="94" selection-start-line="18" selection-start-column="86" selection-end-line="18" selection-end-column="94" />
         </state>
       </provider>
     </entry>
@@ -497,20 +497,34 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/dashboard/system/createCron.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="452">
-          <caret line="42" selection-start-line="39" selection-start-column="29" selection-end-line="42" />
+        <state relative-caret-position="445">
+          <caret line="78" column="50" selection-start-line="78" selection-start-column="50" selection-end-line="78" selection-end-column="50" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/dashboard/system/apache2.php">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
     <entry file="file://$PROJECT_DIR$/dashboard/system/DatabaseConnection.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="157">
-          <caret line="21" column="46" selection-start-line="21" selection-start-column="46" selection-end-line="21" selection-end-column="46" />
+        <state relative-caret-position="570">
+          <caret line="38" column="52" lean-forward="true" selection-start-line="38" selection-start-column="52" selection-end-line="38" selection-end-column="52" />
           <folding>
             <element signature="e#6#84#0#PHP" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/dashboard/dist/css/style.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="679">
+          <caret line="161" column="1" selection-start-line="161" selection-start-column="1" selection-end-line="161" selection-end-column="1" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/dashboard/application.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="997">
+          <caret line="2619" column="10" selection-start-line="2619" selection-start-column="10" selection-end-line="2619" selection-end-column="10" />
+          <folding>
+            <element signature="n#style#0;n#div#0;n#!!top" expanded="true" />
           </folding>
         </state>
       </provider>

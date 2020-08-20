@@ -37,7 +37,6 @@ class DatabaseConnection{
             if($queryType == 'select'){
                 if (mysqli_num_rows($result) > 0) {
                     $response['records'] =  $result;
-
                 } else {
                     $response['records'] = '';
                 }

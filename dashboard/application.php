@@ -246,7 +246,6 @@
 </div>
 
 
-
 <!-- Default box -->
 
 
@@ -844,7 +843,6 @@
 </div>
 
 
-
 <div id="cron_management_content" style="display:none;">
     <div class="card  card-primary card-outline">
         <div class="card-header">
@@ -857,7 +855,9 @@
 
         <div class="card-body">
             <p>Cron Job Manager for your application.</p>
-            <button class="btn btn-info text-uppercase mt-5 mb-3" data-toggle="modal" data-target="#cron_job_modal">add new cron job</button>
+            <button class="btn btn-info text-uppercase mt-5 mb-3" data-toggle="modal" data-target="#cron_job_modal">add
+                new cron job
+            </button>
 
             <div class="row">
                 <div class="col-12">
@@ -870,8 +870,10 @@
                                        aria-controls="custom-tabs-for-basic" aria-selected="true">Basic</a>
                                 </li>
                                 <li class="nav-item">
-                                    <a class="nav-link text-uppercase" id="custom-tabs-for-advanced-tab" data-toggle="pill"
-                                       href="#custom-tabs-for-advanced" role="tab" aria-controls="custom-tabs-for-advanced"
+                                    <a class="nav-link text-uppercase" id="custom-tabs-for-advanced-tab"
+                                       data-toggle="pill"
+                                       href="#custom-tabs-for-advanced" role="tab"
+                                       aria-controls="custom-tabs-for-advanced"
                                        aria-selected="false">Advanced</a>
                                 </li>
                             </ul>
@@ -881,30 +883,11 @@
                                 <div class="tab-pane fade show active" id="custom-tabs-for-basic" role="tabpanel"
                                      aria-labelledby="custom-tabs-for-basic-tab">
                                     <div class="row">
-                                        <div class="col-md-9">
+                                        <div class="col-md-12">
                                             <div class="row">
-                                                <div class="col-md-8"><span class="text-uppercase"><b>CRON JOB MANAGEMENT</b></span></div>
 
-                                                <div class="col-md-12">
-<!--                                                    <table class="w-100 mt-3">-->
-<!--                                                        <thead class="font-weight-bold bg-gray">-->
-<!--                                                        <tr>-->
-<!--                                                            <td class="p-2">Page URLs</td>-->
-<!--                                                            <td class="p-2">Avg. Duration-->
-<!--                                                                <small>(in sec)</small>-->
-<!--                                                            </td>-->
-<!--                                                            <td class="p-2">Request Count</td>-->
-<!--                                                        </tr>-->
-<!--                                                        </thead>-->
-<!--                                                        <tbody>-->
-<!--                                                        <tr>-->
-<!--                                                            <td class="p-2">/index.php</td>-->
-<!--                                                            <td class="p-2">1</td>-->
-<!--                                                            <td class="p-2">1</td>-->
-<!--                                                        </tr>-->
-<!--                                                        </tbody>-->
-<!--                                                    </table>-->
-                                                    <p>No Cron Jobs here. Add one now.</p>
+                                                <div class="col-md-12 crons_row_container mb-2 mt-4">
+
                                                 </div>
                                             </div>
                                         </div>
@@ -916,12 +899,20 @@
                                     <div class="row">
                                         <div class="col-md-9">
                                             <div class="row">
-                                                <div class="col-md-8 mb-4"><span class="text-uppercase"><b>advanced cron</b></span></div>
+                                                <div class="col-md-8 mb-4"><span
+                                                            class="text-uppercase"><b>advanced cron</b></span></div>
 
                                                 <div class="col-md-12">
-                                                    <textarea class="w-100 border-0 p-2" rows="15" placeholder="This is your Advanced Cron editor"></textarea>
-                                                    <p><button class="btn btn-info text-uppercase mt-3 mb-3 disabled">save changes</button></p>
-                                                    <small class="">*Please use this editor carefully. You can easily break your crons if you are not careful.</small>
+                                                    <textarea class="w-100 border-0 p-2" rows="15"
+                                                              placeholder="This is your Advanced Cron editor"></textarea>
+                                                    <p>
+                                                        <button class="btn btn-info text-uppercase mt-3 mb-3 disabled">
+                                                            save changes
+                                                        </button>
+                                                    </p>
+                                                    <small class="">*Please use this editor carefully. You can easily
+                                                        break your crons if you are not careful.
+                                                    </small>
                                                 </div>
                                             </div>
                                         </div>
@@ -954,19 +945,34 @@
             <p>Point your domain to your web app.</p>
             <div class="row">
                 <div class="col-md-6 col-sm-12">
-                    <h6 class="text-uppercase text-bold">primary domain <i class="fa fa-info-circle" data-toggle="tooltip" data-placement="left" title="This should be the fully qualified domain name for your application. For example, www.example.com and example.com are valid values for primary domain."></i> </h6>
-                    <input name="primary_domain_name" class="form-control border-bottom w-50 primary_domain_input border-bottom" type="text" />
-                    <p class="mt-3"><button class="btn btn-info text-uppercase">save changes</button> <button class="btn btn-default text-uppercase ml-2">delete</button> </p>
-                    <p>How to point your Domain to wordpress-381373-1413369.cloudwaysapps.com. <a href="" class="text-bold"><u>More Details</u></a></p>
+                    <h6 class="text-uppercase text-bold">primary domain <i class="fa fa-info-circle"
+                                                                           data-toggle="tooltip" data-placement="left"
+                                                                           title="This should be the fully qualified domain name for your application. For example, www.example.com and example.com are valid values for primary domain."></i>
+                    </h6>
+                    <input name="primary_domain_name"
+                           class="form-control border-bottom w-50 primary_domain_input border-bottom" type="text"/>
+                    <p class="mt-3">
+                        <button class="btn btn-info text-uppercase">save changes</button>
+                        <button class="btn btn-default text-uppercase ml-2">delete</button>
+                    </p>
+                    <p>How to point your Domain to wordpress-381373-1413369.cloudwaysapps.com. <a href=""
+                                                                                                  class="text-bold"><u>More
+                                Details</u></a></p>
                 </div>
                 <div class="col-md-6 col-sm-12 border-left pl-5 additional_domain_section">
                     <h6 class="text-uppercase text-bold">additional domains</h6>
                     <div class="w-100 " id="additional_domain_name_container">
                         <div class="w-100 domain_name_actions float-left">
-                            <span class="float-left pt-1 mt-1">Domain:</span> <input name="domain_name" type="text" class="border-bottom form-control w-50 float-left" > <span class="float-left pt-1 mt-1 pl-3"><i class="fa fa-check-square"></i> <i class="fa fa-window-close pl-3 delete_additional_domain"></i></span>
+                            <span class="float-left pt-1 mt-1">Domain:</span> <input name="domain_name" type="text"
+                                                                                     class="border-bottom form-control w-50 float-left">
+                            <span class="float-left pt-1 mt-1 pl-3"><i class="fa fa-check-square"></i> <i
+                                        class="fa fa-window-close pl-3 delete_additional_domain"></i></span>
                         </div>
                     </div>
-                    <p class="mt-3 float-left"><button class="btn btn-default text-uppercase add_additional_domain">add domain</button> <button class="btn btn-default text-uppercase  ml-2">save changes</button> </p>
+                    <p class="mt-3 float-left">
+                        <button class="btn btn-default text-uppercase add_additional_domain">add domain</button>
+                        <button class="btn btn-default text-uppercase  ml-2">save changes</button>
+                    </p>
                 </div>
             </div>
         </div>
@@ -980,13 +986,13 @@
     <div class="modal-dialog" role="document">
         <div class="modal-content">
             <form id="cron_data_form" role="form">
-            <div class="modal-header">
-                <h5 class="modal-title text-uppercase">cron job management</h5>
-                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                    <span aria-hidden="true">&times;</span>
-                </button>
-            </div>
-            <div class="modal-body">
+                <div class="modal-header">
+                    <h5 class="modal-title text-uppercase">cron job management</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
 
                     <div class="row">
                         <div class="col-12 form-group">
@@ -1007,23 +1013,23 @@
                         </div>
                         <div class="col-12 form-group">
                             <label class="font-weight-normal">Minutes</label>
-                            <input name="minutes" value="" class="form-control border-bottom minutes" >
+                            <input name="minutes" value="" class="form-control border-bottom minutes">
                         </div>
                         <div class="col-12 form-group">
                             <label class="font-weight-normal">Hours</label>
-                            <input name="hours" value="" class="form-control border-bottom hours" >
+                            <input name="hours" value="" class="form-control border-bottom hours">
                         </div>
                         <div class="col-12 form-group">
                             <label class="font-weight-normal">Days</label>
-                            <input name="days" value="" class="form-control border-bottom days" >
+                            <input name="days" value="" class="form-control border-bottom days">
                         </div>
                         <div class="col-12 form-group">
                             <label class="font-weight-normal">Month</label>
-                            <input name="month" value="" class="form-control border-bottom month" >
+                            <input name="month" value="" class="form-control border-bottom month">
                         </div>
                         <div class="col-12 form-group">
                             <label class="font-weight-normal">Weeks</label>
-                            <input name="week" value="" class="form-control border-bottom week" >
+                            <input name="week" value="" class="form-control border-bottom week">
                         </div>
                         <div class="col-12 form-group">
                             <label class="font-weight-normal">Type</label>
@@ -1035,15 +1041,16 @@
                         </div>
                         <div class="col-12 form-group">
                             <label class="font-weight-normal">Command</label>
-                            <p>/qhjkstaxqr/public_html/<input name="cron_name" value="" class="form-control border-bottom cron_name" ></p>
+                            <p>/qhjkstaxqr/public_html/<input name="cron_name" value=""
+                                                              class="form-control border-bottom cron_name"></p>
                         </div>
                     </div>
 
-            </div>
-            <div class="modal-footer">
-                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                <button type="submit" class="btn btn-primary save_cron_btn">Submit</button>
-            </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                    <button type="submit" class="btn btn-primary save_cron_btn">Submit</button>
+                </div>
             </form>
         </div>
     </div>
@@ -1234,18 +1241,18 @@
                                                 <div class="col-md-12">
                                                     <table class="w-100 mt-3">
                                                         <thead class="font-weight-bold bg-gray">
-                                                            <tr>
-                                                                <td class="p-2">Top 10 IP Addresses</td>
-                                                                <td class="p-2">Request Count</td>
-                                                                <td class="p-2"></td>
-                                                            </tr>
+                                                        <tr>
+                                                            <td class="p-2">Top 10 IP Addresses</td>
+                                                            <td class="p-2">Request Count</td>
+                                                            <td class="p-2"></td>
+                                                        </tr>
                                                         </thead>
                                                         <tbody>
-                                                            <tr>
-                                                                <td class="p-2">404</td>
-                                                                <td class="p-2">2</td>
-                                                                <td class="p-2">Details +</td>
-                                                            </tr>
+                                                        <tr>
+                                                            <td class="p-2">404</td>
+                                                            <td class="p-2">2</td>
+                                                            <td class="p-2">Details +</td>
+                                                        </tr>
                                                         </tbody>
                                                     </table>
                                                 </div>
@@ -1991,11 +1998,18 @@
 
 <div id="additional_domain_name_content" style="display:none;">
     <div class="w-100 domain_name_actions float-left mt-3">
-        <span class="float-left pt-1 mt-1">Domain:</span> <input name="domain_name" type="text" class="border-bottom form-control w-50 float-left" > <span class="float-left pt-1 mt-1 pl-3"><i class="fa fa-check-square"></i> <i class="fa fa-window-close pl-3 delete_additional_domain"></i></span>
+        <span class="float-left pt-1 mt-1">Domain:</span> <input name="domain_name" type="text"
+                                                                 class="border-bottom form-control w-50 float-left">
+        <span class="float-left pt-1 mt-1 pl-3"><i class="fa fa-check-square"></i> <i
+                    class="fa fa-window-close pl-3 delete_additional_domain"></i></span>
     </div>
 </div>
 
-
+<div id="overlay" style="display:none;">
+    <div class="spinner"></div>
+    <br/>
+    Loading...
+</div>
 <!-- ./wrapper -->
 
 <!-- jQuery -->
@@ -2021,16 +2035,16 @@
 <!-- Page script -->
 
 <script>
-    $( document ).ready(function() {
+    $(document).ready(function () {
         $('[data-toggle="tooltip"]').tooltip();
 
-        $(document).on("click",".add_additional_domain", function (e) {
+        $(document).on("click", ".add_additional_domain", function (e) {
             var clonedData = $('#additional_domain_name_content .domain_name_actions').clone();
             $("#additional_domain_name_container").append(clonedData);
 
         });
 
-        $(document).on("click",".delete_additional_domain", function (e) {
+        $(document).on("click", ".delete_additional_domain", function (e) {
             var divCount = $("#additional_domain_name_container").find('.domain_name_actions').length;
             $(this).closest('.domain_name_actions').remove();
         });
@@ -2073,80 +2087,79 @@
 
     // jQuery(document).on('click', '.save_cron_btn', function () {
     //     alert();
-        jQuery('#cron_data_form').validate({
-            rules: {
-                minutes: {
-                    required: true,
-                },
-                hours: {
-                    required: true,
-                },
-                days: {
-                    required: true
-                },
-                weeks: {
-                    required: true
-                },
-                month: {
-                    required: true
-                },
-                cron_name: {
-                    required: true
-                }
+    jQuery('#cron_data_form').validate({
+        rules: {
+            minutes: {
+                required: true,
             },
-            messages: {
-                minutes: {
-                    required: "Field Required!"
-                },
-                hours: {
-                    required: "Field Required!"
-                },
-                days: {
-                    required: "Field Required!"
-                },
-                weeks: {
-                    required: "Field Required!"
-                },
-                month: {
-                    required: "Field Required!"
-                },
-                cron_name: {
-                    required: "Field Required!"
-                }
+            hours: {
+                required: true,
             },
-            errorElement: 'span',
-            errorPlacement: function (error, element) {
-                error.addClass('invalid-feedback');
-                element.closest('#cron_data_form .form-group').append(error);
+            days: {
+                required: true
             },
-            highlight: function (element, errorClass, validClass) {
-                jQuery(element).addClass('is-invalid');
+            weeks: {
+                required: true
             },
-            unhighlight: function (element, errorClass, validClass) {
-                jQuery(element).removeClass('is-invalid');
+            month: {
+                required: true
             },
-            submitHandler: function () {
-                var settings = {
-                    "url": "system/createCron.php",
-                    "method": "POST",
-                    "timeout": 0,
-                    "headers": {
-                        "Content-Type": "application/x-www-form-urlencoded",
-                        "Authorization": "Bearer " + localStorage.token
-                    },
-                    "data": jQuery('#cron_data_form').serializeArray()
-                };
-
-                $.ajax(settings).done(function (response) {
-                    console.log(response);
-                    var response = JSON.parse(response);
-
-                    alert('request sent');
-
-
-                });
+            cron_name: {
+                required: true
             }
-        });
+        },
+        messages: {
+            minutes: {
+                required: "Field Required!"
+            },
+            hours: {
+                required: "Field Required!"
+            },
+            days: {
+                required: "Field Required!"
+            },
+            weeks: {
+                required: "Field Required!"
+            },
+            month: {
+                required: "Field Required!"
+            },
+            cron_name: {
+                required: "Field Required!"
+            }
+        },
+        errorElement: 'span',
+        errorPlacement: function (error, element) {
+            error.addClass('invalid-feedback');
+            element.closest('#cron_data_form .form-group').append(error);
+        },
+        highlight: function (element, errorClass, validClass) {
+            jQuery(element).addClass('is-invalid');
+        },
+        unhighlight: function (element, errorClass, validClass) {
+            jQuery(element).removeClass('is-invalid');
+        },
+        submitHandler: function () {
+            var settings = {
+                "url": "system/createCron.php",
+                "method": "POST",
+                "timeout": 0,
+                "headers": {
+                    "Content-Type": "application/x-www-form-urlencoded",
+                    "Authorization": "Bearer " + localStorage.token
+                },
+                "data": jQuery('#cron_data_form').serializeArray()
+            };
+            $('#overlay').fadeIn();
+            $.ajax(settings).done(function (response) {
+                var response = JSON.parse(response);
+                $('#cron_job_modal').modal('hide');
+                $("#cron_management_content .crons_row_container").html(response.cronJobsHTML);
+                $("#main_content").html($("#cron_management_content").html());
+                $('#overlay').fadeOut();
+            });
+        }
+    });
     //});
 
 
@@ -2198,39 +2211,38 @@
         $("#main_content").html($("#traffic_content").html());
 
 
+        var settings = {
+            "url": "http://localhost:5000/",
+            "method": "GET",
+            "timeout": 0,
+            "headers": {
+                "Content-Type": "application/x-www-form-urlencoded",
+                "Authorization": "Bearer " + localStorage.token
+            }
 
-  var settings = {
-  "url": "http://localhost:5000/",
-  "method": "GET",
-  "timeout": 0,
-  "headers": {
-    "Content-Type": "application/x-www-form-urlencoded",
-    "Authorization": "Bearer "+localStorage.token
-  }
-
-};
-
-
-$.ajax(settings).done(function (response) {
-
-  var response = JSON.parse(response);
+        };
 
 
-            for(var i=0; i<response.urls.length; i++){
+        $.ajax(settings).done(function (response) {
+
+            var response = JSON.parse(response);
+
+
+            for (var i = 0; i < response.urls.length; i++) {
 
                 var tmp = response.urls[i].url.split(',');
 
-                $("#url_list").append('<tr><td class="p-2">'+tmp[0]+'</td><td class="p-2">2</td><td class="p-2">'+response.urls[i].count+'</td></tr>');
+                $("#url_list").append('<tr><td class="p-2">' + tmp[0] + '</td><td class="p-2">2</td><td class="p-2">' + response.urls[i].count + '</td></tr>');
 
-                if(parseInt(tmp[1])>0){
-                    $("#requested_page").append(' <tr><td class="p-2">'+tmp[0]+'</td><td class="p-2">'+tmp[1]+'ms</td><td class="p-2">'+response.urls[i].count+'</td></tr>');
+                if (parseInt(tmp[1]) > 0) {
+                    $("#requested_page").append(' <tr><td class="p-2">' + tmp[0] + '</td><td class="p-2">' + tmp[1] + 'ms</td><td class="p-2">' + response.urls[i].count + '</td></tr>');
                 }
 
             }
             for (var i = 0; i < response.data.length; i++) {
                 $("#ip_list").append('<tr><td class="p-2">' + response.data[i].ip + '</td><td class="p-2">2</td><td class="p-2">' + response.data[i].count + '</td></tr>');
             }
-  //asdasd
+            //asdasd
 
             //asdasd
 
@@ -2245,11 +2257,10 @@ $.ajax(settings).done(function (response) {
                 $("#status_list").append('<tr><td class="p-2">' + response.status[i].status + '</td><td class="p-2">2</td><td class="p-2">' + response.status[i].count + '</td></tr>');
             }
 
-  });
+        });
 
 
     });
-
 
 
     $("#php_link").click(function (e) {
@@ -2260,27 +2271,26 @@ $.ajax(settings).done(function (response) {
     $("#mysql_link").click(function (e) {
         $("#main_content").html($("#mysql_content").html());
 
-  var settings = {
-  "url": "system/mysql.php",
-  "method": "GET",
-  "timeout": 0,
-  "headers": {
-    "Content-Type": "application/x-www-form-urlencoded",
-    "Authorization": "Bearer "+localStorage.token
-  }
+        var settings = {
+            "url": "system/mysql.php",
+            "method": "GET",
+            "timeout": 0,
+            "headers": {
+                "Content-Type": "application/x-www-form-urlencoded",
+                "Authorization": "Bearer " + localStorage.token
+            }
 
-};
+        };
 
 
-    $.ajax(settings).done(function (response) {
+        $.ajax(settings).done(function (response) {
 
-      var response = JSON.parse(response);
-      $("#active_connections").text("Active Connections: "+response.Threads_connected);
+            var response = JSON.parse(response);
+            $("#active_connections").text("Active Connections: " + response.Threads_connected);
+        });
+
+
     });
-
-
-    });
-
 
 
     $("#running_crons_link").click(function (e) {
@@ -2298,7 +2308,26 @@ $.ajax(settings).done(function (response) {
     });
 
     $("#cron_job_link").click(function (e) {
-        $("#main_content").html($("#cron_management_content").html());
+        var settings = {
+            "url": "system/createCron.php",
+            "method": "GET",
+            "timeout": 0,
+            "headers": {
+                "Content-Type": "application/x-www-form-urlencoded",
+                "Authorization": "Bearer " + localStorage.token
+            },
+
+            "data": {"id": localStorage.id}
+
+        };
+
+        $('#overlay').fadeIn();
+        $.ajax(settings).done(function (response) {
+            var response = JSON.parse(response);
+            $("#cron_management_content .crons_row_container").html(response.cronJobsHTML);
+            $("#main_content").html($("#cron_management_content").html());
+            $('#overlay').fadeOut();
+        });
 
     });
 
@@ -2314,8 +2343,6 @@ $.ajax(settings).done(function (response) {
         $("#main_content").html($("#domain_management_content").html());
 
     });
-
-
 
 
     if (localStorage.token == undefined) {
@@ -2585,7 +2612,6 @@ $.ajax(settings).done(function (response) {
                         formatter: labelFormatter,
                         threshold: 0.1
                     }
-
                 }
             },
             legend: {
@@ -2608,7 +2634,8 @@ $.ajax(settings).done(function (response) {
             + '<br>'
             + Math.round(series.percent) + '%</div>'
     }
-    function setCronInputFieldsValues($option){
+
+    function setCronInputFieldsValues($option) {
         var $option = parseInt($option);
         switch ($option) {
             case 1 :
