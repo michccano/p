@@ -10,15 +10,86 @@ $dataToView = array();
 if ($requestType === 'POST'){
 
     if(!empty($_POST)){
-        function saveCron(){
-            $postedData = $_POST;
 
-            // Insert Cron Data into DB
+        $postedData = $_POST;
+
+        if ($postedData['action_type'] == 'editCron'){
+            $cron_id = $postedData['cron_id'];
+            if ($cron_id){
             $databaseConn = new DatabaseConnection();
-            $sqlQuery = "INSERT INTO cron_jobs (application_id, cron_option, minutes, hours, days, month, week, cron_type, command, created_at, updated_at) 
+            $sqlQuery = "SELECT id, application_id, cron_option, minutes, hours, days, month, week, cron_type, command, created_at, updated_at FROM cron_jobs where id=".$cron_id;
+            $response = $databaseConn->query($sqlQuery, 'select');
+
+            $cron = array();
+            if ($response['records'] != ''){
+                while($row = mysqli_fetch_assoc($response['records'])) {
+                    $cron = $row;
+                }
+            }
+            $databaseConn->destroyConnection();
+
+            $dataToView['cron'] = $cron;
+            $dataToView['status'] = 'success';
+            }else{
+                $dataToView['status'] = 'fail';
+                $dataToView['message'] = 'Cron is not saved';
+            }
+
+            echo json_encode($dataToView);
+
+        }else if ($postedData['action_type'] == 'create'){
+
+            function saveCron($postedData){
+
+                if($postedData['update_create'] == 0){
+                    // Insert Cron Data into DB
+                    $databaseConn = new DatabaseConnection();
+                    $sqlQuery = "INSERT INTO cron_jobs (application_id, cron_option, minutes, hours, days, month, week, cron_type, command, created_at, updated_at) 
                       VALUES (4, '". $postedData['cron_option']. "', '". $postedData['minutes']. "', '". $postedData['hours']. "',
                       '". $postedData['days']. "', '". $postedData['month']. "', '". $postedData['week']. "', '". $postedData['cron_type']. "', 
                       '". $postedData['cron_name']. "', '". date('Y-m-d h:m:s'). "','". date('Y-m-d h:m:s'). "')";
+                    $response = $databaseConn->query($sqlQuery);
+                    $databaseConn->destroyConnection();
+                }elseif ($postedData['update_create'] == 1){
+                    // update Cron Data into DB
+                    $databaseConn = new DatabaseConnection();
+                    $sqlQuery = "UPDATE cron_jobs SET application_id = 4, cron_option = '". $postedData['cron_option']. "', minutes = '". $postedData['minutes']. "', hours = '". $postedData['hours']. "', days = '". $postedData['days']. "', month = '". $postedData['month']. "', week = '". $postedData['week']. "', cron_type = '". $postedData['cron_type']. "', command = '". $postedData['cron_name']. "', updated_at = '". date('Y-m-d h:m:s'). "' WHERE id = ".$postedData['cron_db_id'];
+                    $response = $databaseConn->query($sqlQuery);
+                    $databaseConn->destroyConnection();
+                }
+
+
+                // Fetch Crons Data from DB
+                if($response['status']){
+                    $databaseConn = new DatabaseConnection();
+                    $sqlQuery = "SELECT id, application_id, cron_option, minutes, hours, days, month, week, cron_type, command, created_at, updated_at FROM cron_jobs ORDER BY id DESC";
+                    $response = $databaseConn->query($sqlQuery, 'select');
+
+                    $dataToView['crons'] = array();
+                    if ($response['records'] != ''){
+                        while($row = mysqli_fetch_assoc($response['records'])) {
+                            $dataToView['crons'][] = $row;
+                        }
+                    }
+                    $databaseConn->destroyConnection();
+
+                    $dataToView['cronJobsHTML'] = cronJobsHTML($dataToView['crons']);
+                    $dataToView['status'] = 'success';
+                }else{
+                    $dataToView['status'] = 'fail';
+                    $dataToView['message'] = 'Cron is not saved';
+                }
+
+                echo json_encode($dataToView);
+            }
+
+
+            saveCron($postedData);
+
+        }else if ($postedData['action_type'] == 'delete'){
+            // Delete Cron Data from DB
+            $databaseConn = new DatabaseConnection();
+            $sqlQuery = "DELETE FROM cron_jobs WHERE id=".$postedData['cron_id'];
             $response = $databaseConn->query($sqlQuery);
             $databaseConn->destroyConnection();
 
@@ -40,14 +111,12 @@ if ($requestType === 'POST'){
                 $dataToView['status'] = 'success';
             }else{
                 $dataToView['status'] = 'fail';
-                $dataToView['message'] = 'Cron is not saved';
+                $dataToView['message'] = 'Cron is not deleted';
             }
 
             echo json_encode($dataToView);
         }
 
-
-        saveCron();
     }
 
 }elseif ($requestType === 'GET'){

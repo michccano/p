@@ -855,7 +855,7 @@
 
         <div class="card-body">
             <p>Cron Job Manager for your application.</p>
-            <button class="btn btn-info text-uppercase mt-5 mb-3" data-toggle="modal" data-target="#cron_job_modal">add
+            <button class="btn btn-info text-uppercase mr-0 mt-5 mb-3" data-toggle="modal" data-target="#cron_job_modal">add
                 new cron job
             </button>
 
@@ -993,7 +993,8 @@
                     </button>
                 </div>
                 <div class="modal-body">
-
+                    <input name="update_create" value="0" type="hidden" class="update_create">
+                    <input name="cron_db_id" value="" type="hidden" class="cron_db_id">
                     <div class="row">
                         <div class="col-12 form-group">
                             <label class="font-weight-normal">Common Settings</label>
@@ -1013,23 +1014,23 @@
                         </div>
                         <div class="col-12 form-group">
                             <label class="font-weight-normal">Minutes</label>
-                            <input name="minutes" value="" class="form-control border-bottom minutes">
+                            <input name="minutes" value="" type="text" class="form-control border-bottom minutes">
                         </div>
                         <div class="col-12 form-group">
                             <label class="font-weight-normal">Hours</label>
-                            <input name="hours" value="" class="form-control border-bottom hours">
+                            <input name="hours" value="" type="text" class="form-control border-bottom hours">
                         </div>
                         <div class="col-12 form-group">
                             <label class="font-weight-normal">Days</label>
-                            <input name="days" value="" class="form-control border-bottom days">
+                            <input name="days" value="" type="text" class="form-control border-bottom days">
                         </div>
                         <div class="col-12 form-group">
                             <label class="font-weight-normal">Month</label>
-                            <input name="month" value="" class="form-control border-bottom month">
+                            <input name="month" value="" type="text" class="form-control border-bottom month">
                         </div>
                         <div class="col-12 form-group">
                             <label class="font-weight-normal">Weeks</label>
-                            <input name="week" value="" class="form-control border-bottom week">
+                            <input name="week" value="" type="text" class="form-control border-bottom week">
                         </div>
                         <div class="col-12 form-group">
                             <label class="font-weight-normal">Type</label>
@@ -1041,7 +1042,7 @@
                         </div>
                         <div class="col-12 form-group">
                             <label class="font-weight-normal">Command</label>
-                            <p>/qhjkstaxqr/public_html/<input name="cron_name" value=""
+                            <p>/qhjkstaxqr/public_html/<input name="cron_name" value="" type="text"
                                                               class="form-control border-bottom cron_name"></p>
                         </div>
                     </div>
@@ -2032,6 +2033,7 @@
 <!-- FLOT PIE PLUGIN - also used to draw donut charts -->
 <script src="./plugins/flot-old/jquery.flot.pie.min.js"></script>
 <script src="./plugins/jquery-validation/jquery.validate.min.js"></script>
+<script src="./plugins/sweetalert2/sweetalert2.all.js"></script>
 <!-- Page script -->
 
 <script>
@@ -2140,23 +2142,30 @@
             jQuery(element).removeClass('is-invalid');
         },
         submitHandler: function () {
+            var data = jQuery('#cron_data_form').serializeArray();
+            data.push({name: 'action_type', value: 'create'});
             var settings = {
-                "url": "system/createCron.php",
+                "url": "system/CronActions.php",
                 "method": "POST",
                 "timeout": 0,
                 "headers": {
                     "Content-Type": "application/x-www-form-urlencoded",
                     "Authorization": "Bearer " + localStorage.token
                 },
-                "data": jQuery('#cron_data_form').serializeArray()
+                "data": data
             };
-            $('#overlay').fadeIn();
+            $('#overlay').show();
             $.ajax(settings).done(function (response) {
                 var response = JSON.parse(response);
                 $('#cron_job_modal').modal('hide');
                 $("#cron_management_content .crons_row_container").html(response.cronJobsHTML);
                 $("#main_content").html($("#cron_management_content").html());
-                $('#overlay').fadeOut();
+                $('#overlay').hide();
+                Swal.fire(
+                    'Saved!',
+                    'Cron data has been saved.',
+                    'success'
+                )
             });
         }
     });
@@ -2291,6 +2300,104 @@
 
 
     });
+    $(document).on("click", ".delete_cron", function (e) {
+        Swal.fire({
+            title: 'Are you sure?',
+            text: 'You will not be able to recover this cron!',
+            type: 'warning',
+            showCancelButton: true,
+            confirmButtonText: 'Yes, delete it!',
+            cancelButtonText: 'No, keep it'
+        }).then((result) => {
+            if (result.value) {
+                var cronId = $(this).attr('data-cron-id');
+                var dataToSend = 'cron_id='+cronId+'&action_type=delete';
+
+                var settings = {
+                    "url": "system/CronActions.php",
+                    "method": "POST",
+                    "timeout": 0,
+                    "headers": {
+                        "Content-Type": "application/x-www-form-urlencoded",
+                        "Authorization": "Bearer " + localStorage.token
+                    },
+                    "data": dataToSend
+
+                };
+
+
+                $.ajax(settings).done(function (response) {
+                    var response = JSON.parse(response);
+                    if(response.status == 'success'){
+                        Swal.fire(
+                            'Deleted!',
+                            'Your cron has been deleted.',
+                            'success'
+                        );
+                        $("#cron_management_content .crons_row_container").html(response.cronJobsHTML);
+                        $("#main_content").html($("#cron_management_content").html());
+                        $('#overlay').hide();
+                    }else{
+                        Swal.fire(
+                            'Deleted!',
+                            response.msg,
+                            'success'
+                        )
+                    }
+
+                });
+
+                // For more information about handling dismissals please visit
+                // https://sweetalert2.github.io/#handling-dismissals
+            } else if (result.dismiss === Swal.DismissReason.cancel) {
+                Swal.fire(
+                    'Cancelled',
+                    'Your cron is safe :)',
+                    'error'
+                )
+            }
+        });
+    });
+
+    $(document).on("click", ".edit_cron", function (e) {
+        var cronId = $(this).attr('data-cron-id');
+        var actionType = 'editCron';
+
+        var dataToSend = 'cron_id='+cronId+'&action_type='+ actionType;
+
+        var settings = {
+            "url": "system/CronActions.php",
+            "method": "POST",
+            "timeout": 0,
+            "headers": {
+                "Content-Type": "application/x-www-form-urlencoded",
+                "Authorization": "Bearer " + localStorage.token
+            },
+            "data": dataToSend
+
+        };
+
+
+        $.ajax(settings).done(function (response) {
+            var response = JSON.parse(response);
+
+            $('#cron_data_form').find('select.cron_setting_options option[value="'+response.cron.cron_option+'"]').prop('selected', true);
+            $('#cron_data_form').find('.cron_db_id').val(response.cron.id);
+            $('#cron_data_form').find('.update_create').val(1);
+            $('#cron_data_form').find('.minutes').val(response.cron.minutes);
+            $('#cron_data_form').find('.minutes').val(response.cron.minutes);
+            $('#cron_data_form').find('.hours').val(response.cron.hours);
+            $('#cron_data_form').find('.days').val(response.cron.days);
+            $('#cron_data_form').find('.month').val(response.cron.month);
+            $('#cron_data_form').find('.week').val(response.cron.week);
+            $('#cron_data_form').find('.cron_name').val(response.cron.command);
+            $('#cron_data_form').find('select.cron_name option[value="'+response.cron.cron_type+'"]').prop('selected', true);
+
+            $('#cron_job_modal').modal('show');
+        });
+
+
+    });
 
 
     $("#running_crons_link").click(function (e) {
@@ -2309,7 +2416,7 @@
 
     $("#cron_job_link").click(function (e) {
         var settings = {
-            "url": "system/createCron.php",
+            "url": "system/CronActions.php",
             "method": "GET",
             "timeout": 0,
             "headers": {
@@ -2321,12 +2428,12 @@
 
         };
 
-        $('#overlay').fadeIn();
+        $('#overlay').show();
         $.ajax(settings).done(function (response) {
             var response = JSON.parse(response);
             $("#cron_management_content .crons_row_container").html(response.cronJobsHTML);
             $("#main_content").html($("#cron_management_content").html());
-            $('#overlay').fadeOut();
+            $('#overlay').hide();
         });
 
     });
