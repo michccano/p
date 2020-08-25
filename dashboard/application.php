@@ -40,7 +40,17 @@
                     <img src="dist/img/user2-160x160.jpg" class="img-circle elevation-2" alt="User Image">
                 </div>
                 <div class="info">
-                    <a href="#" class="d-block">Alexander Pierce</a>
+                    <a href="javascript:void(0)" class="float-left pr-2 " id="">Server Name</a>
+                    <i class="fa fa-edit float-left pr-2 "></i>
+                    <a href="createapplication.php"><i class="fa fa-plus-circle float-left pr-2  "></i></a>
+                    <div class="btn-group dropright">
+                        <i class="fa fa-chevron-down float-left" data-toggle="dropdown"
+                           aria-haspopup="true" aria-expanded="false"></i>
+                        <div class="dropdown-menu">
+                            <a class="dropdown-item" href="#">Delete</a>
+                            <a class="dropdown-item" href="#">Clone App/Create Staging</a>
+                        </div>
+                    </div>
                 </div>
             </div>
 
@@ -173,7 +183,7 @@
             <div class="container-fluid">
                 <div class="row">
                     <div id="main_content" class="col-12">
-
+                        <a href="javascript:void(0)" class="float-left pr-2 " id="server_name">Server Name</a>
 
                     </div>
                 </div>
@@ -266,13 +276,11 @@
 
             <div class="row">
                 <div class="col-6">
-                    <p><b>APPLICATION URL</b></p>
-                    </br></br>
+                    <p class="mb-4"><b>APPLICATION URL</b></p>
                     <p><b>ADMIN PANEL </b></p>
                     <p>URL:&nbsp;<span id="wpurl"></span></p>
                     <p>Username:&nbsp;<span>root</span></p>
-                    <p>Password:&nbsp;<span id="dbpass"></span></p>
-                    </br></br>
+                    <p class="mb-4">Password:&nbsp;<span id="dbpass"></span></p>
 
 
                     <p><b>MYSQL ACCESS</b></p>
@@ -282,12 +290,8 @@
                 </div>
 
                 <div class="col-6">
-
                 </div>
-
-
             </div>
-
         </div>
         <div class="card-footer"></div>
     </div>
@@ -2038,6 +2042,15 @@
 
 <script>
     $(document).ready(function () {
+        $("[data-toggle=popover]").popover();
+        $('#server_name').editable({
+            type:  'text',
+            pk:    1,
+            name:  'username',
+            url:   'post.php',
+            title: 'Enter username'
+        });
+
         $('[data-toggle="tooltip"]').tooltip();
 
         $(document).on("click", ".add_additional_domain", function (e) {

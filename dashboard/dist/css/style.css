@@ -124,6 +124,21 @@
 #additional_domain_name_container i{
     cursor: pointer;
 }
+
+.user-panel .fa{
+    font-size: 12px;
+    color: #C2C7D0;
+    line-height: 25px;
+    cursor: pointer;
+}
+
+.user-panel, .user-panel .info{
+    overflow: visible !important;
+}
+.user-panel .fa:hover{
+    color: white;
+}
+
 #overlay {
     background: #ffffff;
     color: #666666;
@@ -147,6 +162,7 @@
     border-right-color: transparent;
     border-radius: 50%;
 }
+
 @keyframes rotate {
     0% {
         transform: rotate(0deg);
