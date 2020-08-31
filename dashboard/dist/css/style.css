@@ -99,7 +99,8 @@
 
 
 /* -- Cron page css -- */
-#cron_job_modal input, #cron_job_modal select, #backup_restore_body select{
+#cron_job_modal input, #cron_job_modal select, #backup_restore_body select,
+.varnishRuleBody select, .varnishRuleBody input{
     border: none;
 }
 

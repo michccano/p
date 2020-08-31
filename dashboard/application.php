@@ -1711,20 +1711,10 @@
                                     <div class="row">
                                         <div class="col-md-9">
                                             <div class="row">
-                                                <div class="col-md-8"><span class="text-uppercase"><b>SLOW REQUESTED PHP PAGES</b></span><a
-                                                            href="#"><i class="fa fa-redo ml-2"></i></a></div>
-                                                <div class="col-md-4">
-                                                    <select class="form-control border-bottom">
-                                                        <option>15 Minutes</option>
-                                                        <option>30 Minutes</option>
-                                                        <option>1 Hour</option>
-                                                        <option>1 Day</option>
-                                                    </select>
+                                                <div class="col-md-12">
+                                                    <button class="btn btn-info text-uppercase addVarnishRule">Add new rule</button>
                                                 </div>
-                                                <div class="col-md-8"></div>
-                                                <div class="col-md-4">
-                                                    <span class="small">06/08/2020 18:22 - 06/08/2020 18:37</span>
-                                                </div>
+
                                                 <div class="col-md-12">
                                                     <table class="w-100 mt-3">
                                                         <thead class="font-weight-bold bg-gray">
@@ -2285,6 +2275,42 @@
     </div>
 </div>
 
+<div class="modal fade" id="varnishRuleModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title" id="myModalLabel">ADD NEW RULE</h4>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+            </div>
+            <div class="modal-body varnishRuleBody">
+                <div class="row">
+                    <div class="col-12 form-group">
+                        <label class="font-weight-normal">Type <i class="fa fa-info-circle" data-toggle="tooltip" title="You can define Varnish VCL rules for both URL and Cookie Type"></i> </label>
+                        <select name="varnish_type" class="form-control border-bottom varnish_type">
+                            <option value="0">Url</option>
+                            <option value="1">Cookie</option>
+                        </select>
+                    </div>
+                    <div class="col-12 form-group">
+                        <label class="font-weight-normal">Method <i class="fa fa-info-circle" data-toggle="tooltip" title="Selecting 'Exclude' will not apply varnish cache to the provided URL or Cookie value. Selecting 'Include' will allow you to force Cookie removal through varnish and make pages/objects cacheable."></i></label>
+                        <select name="varnish_method" class="form-control border-bottom varnish_method">
+                            <option value="0">Exclude</option>
+                        </select>
+                    </div>
+                    <div class="col-12 form-group">
+                        <label class="font-weight-normal">Value <i class="fa fa-info-circle" data-toggle="tooltip" title="For URL type, this field will take relative URL paths only. For Cookie type, cookie names are supported. Regular expressions are also supported. "></i> </label>
+                        <input type="text" class="form-control border-bottom varnish_value" name="" placeholder="/index.php">
+                    </div>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal">Cancel</button>
+                <button type="button" class="btn btn-primary">Confirm</button>
+            </div>
+        </div>
+    </div>
+</div>
+
 
 <div id="additional_domain_name_content" style="display:none;">
     <div class="w-100 domain_name_actions float-left mt-3">
@@ -2338,6 +2364,24 @@
                     subtitle: 'Subtitle',
                     body: 'Lorem ipsum dolor sit amet, consetetur sadipscing elitr.'
                 })
+            }
+        });
+
+        $(document).on("click", ".addVarnishRule", function (e) {
+            $('#varnishRuleModal').modal('show');
+        });
+
+        $(document).on("change", ".varnish_type", function (e) {
+            var selectedVal = $(this).val();
+            if(selectedVal == 0){
+                $(".varnish_method option[value='1']").remove();
+                $('.varnish_value').attr('placeholder', '/index.php');
+            }else{
+                $('.varnish_method')
+                    .append($("<option></option>")
+                        .attr("value", 1)
+                        .text('Include'));
+                $('.varnish_value').attr('placeholder', 'COOKIE_NAME');
             }
         });
 
