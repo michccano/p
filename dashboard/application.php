@@ -16,6 +16,7 @@
     <link rel="stylesheet" href="./dist/css/style.css">
     <!-- Google Font: Source Sans Pro -->
     <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700" rel="stylesheet">
+    <link rel="stylesheet" href="./plugins/toastr/toastr.min.css">
 </head>
 <body class="hold-transition sidebar-mini layout-boxed">
 <!-- Site wrapper -->
@@ -142,6 +143,16 @@
                             <p>Cron Job Management</p>
                         </a>
                     </li>
+                    <li class="nav-item">
+                        <a href="javascript:void(0)" id="backup_restore_link" class="nav-link">
+                            <p>Backup and Restore</p>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="javascript:void(0)" id="application_settings_link" class="nav-link">
+                            <p>Application Settings</p>
+                        </a>
+                    </li>
 
 
                 </ul>
@@ -182,8 +193,7 @@
         <section class="content">
             <div class="container-fluid">
                 <div class="row">
-                    <div id="main_content" class="col-12">
-                        <a href="javascript:void(0)" class="float-left pr-2 " id="server_name">Server Name</a>
+                    <div id="main_content" class="col-12"
 
                     </div>
                 </div>
@@ -461,7 +471,7 @@
                                                 <div class="col-md-8"><span class="text-uppercase"><b>TOP REQUESTED PHP PAGES</b></span><a
                                                             href="#"><i class="fa fa-redo ml-2"></i></a></div>
                                                 <div class="col-md-4">
-                                                    <select class="form-control">
+                                                    <select class="form-control border-bottom">
                                                         <option>15 Minutes</option>
                                                         <option>30 Minutes</option>
                                                         <option>1 Hour</option>
@@ -539,7 +549,7 @@
                                                 <div class="col-md-8"><span class="text-uppercase"><b>SLOW REQUESTED PHP PAGES</b></span><a
                                                             href="#"><i class="fa fa-redo ml-2"></i></a></div>
                                                 <div class="col-md-4">
-                                                    <select class="form-control">
+                                                    <select class="form-control border-bottom">
                                                         <option>15 Minutes</option>
                                                         <option>30 Minutes</option>
                                                         <option>1 Hour</option>
@@ -586,7 +596,7 @@
                                                 <div class="col-md-8"><span class="text-uppercase"><b>WEB REQUEST STATUS CODES</b></span><a
                                                             href="#"><i class="fa fa-redo ml-2"></i></a></div>
                                                 <div class="col-md-4">
-                                                    <select class="form-control">
+                                                    <select class="form-control border-bottom">
                                                         <option>15 Minutes</option>
                                                         <option>30 Minutes</option>
                                                         <option>1 Hour</option>
@@ -689,7 +699,7 @@
                                                             class="text-uppercase"><b>Top ip requests</b></span><a
                                                             href="#"><i class="fa fa-redo ml-2"></i></a></div>
                                                 <div class="col-md-4">
-                                                    <select class="form-control">
+                                                    <select class="form-control border-bottom">
                                                         <option>15 Minutes</option>
                                                         <option>30 Minutes</option>
                                                         <option>1 Hour</option>
@@ -728,7 +738,7 @@
                                                 <div class="col-md-8"><span class="text-uppercase"><b>TOP BOTS SENDING TRAFFIC</b></span><a
                                                             href="#"><i class="fa fa-redo ml-2"></i></a></div>
                                                 <div class="col-md-4">
-                                                    <select class="form-control">
+                                                    <select class="form-control border-bottom">
                                                         <option>15 Minutes</option>
                                                         <option>30 Minutes</option>
                                                         <option>1 Hour</option>
@@ -767,7 +777,7 @@
                                                 <div class="col-md-8"><span class="text-uppercase"><b>TOP REQUESTING URLS</b></span><a
                                                             href="#"><i class="fa fa-redo ml-2"></i></a></div>
                                                 <div class="col-md-4">
-                                                    <select class="form-control">
+                                                    <select class="form-control border-bottom">
                                                         <option>15 Minutes</option>
                                                         <option>30 Minutes</option>
                                                         <option>1 Hour</option>
@@ -804,7 +814,7 @@
                                                 <div class="col-md-8"><span class="text-uppercase"><b>WEB REQUEST STATUS CODES</b></span><a
                                                             href="#"><i class="fa fa-redo ml-2"></i></a></div>
                                                 <div class="col-md-4">
-                                                    <select class="form-control">
+                                                    <select class="form-control border-bottom">
                                                         <option>15 Minutes</option>
                                                         <option>30 Minutes</option>
                                                         <option>1 Hour</option>
@@ -1111,7 +1121,7 @@
                                                 <div class="col-md-8"><span class="text-uppercase"><b>TOP REQUESTED PHP PAGES</b></span><a
                                                             href="#"><i class="fa fa-redo ml-2"></i></a></div>
                                                 <div class="col-md-4">
-                                                    <select class="form-control">
+                                                    <select class="form-control border-bottom">
                                                         <option>15 Minutes</option>
                                                         <option>30 Minutes</option>
                                                         <option>1 Hour</option>
@@ -1185,7 +1195,7 @@
                                                 <div class="col-md-8"><span class="text-uppercase"><b>SLOW REQUESTED PHP PAGES</b></span><a
                                                             href="#"><i class="fa fa-redo ml-2"></i></a></div>
                                                 <div class="col-md-4">
-                                                    <select class="form-control">
+                                                    <select class="form-control border-bottom">
                                                         <option>15 Minutes</option>
                                                         <option>30 Minutes</option>
                                                         <option>1 Hour</option>
@@ -1232,7 +1242,7 @@
                                                 <div class="col-md-8"><span class="text-uppercase"><b>WEB REQUEST STATUS CODES</b></span><a
                                                             href="#"><i class="fa fa-redo ml-2"></i></a></div>
                                                 <div class="col-md-4">
-                                                    <select class="form-control">
+                                                    <select class="form-control border-bottom">
                                                         <option>15 Minutes</option>
                                                         <option>30 Minutes</option>
                                                         <option>1 Hour</option>
@@ -1362,7 +1372,7 @@
                                                             class="text-uppercase"><b>Top slow queries</b></span><a
                                                             href="#"><i class="fa fa-redo ml-2"></i></a></div>
                                                 <div class="col-md-4">
-                                                    <select class="form-control">
+                                                    <select class="form-control border-bottom">
                                                         <option>15 Minutes</option>
                                                         <option>30 Minutes</option>
                                                         <option>1 Hour</option>
@@ -1400,7 +1410,7 @@
                                                 <div class="col-md-8"><span class="text-uppercase"><b>SLOW REQUESTED PHP PAGES</b></span><a
                                                             href="#"><i class="fa fa-redo ml-2"></i></a></div>
                                                 <div class="col-md-4">
-                                                    <select class="form-control">
+                                                    <select class="form-control border-bottom">
                                                         <option>15 Minutes</option>
                                                         <option>30 Minutes</option>
                                                         <option>1 Hour</option>
@@ -1447,7 +1457,7 @@
                                                 <div class="col-md-8"><span class="text-uppercase"><b>WEB REQUEST STATUS CODES</b></span><a
                                                             href="#"><i class="fa fa-redo ml-2"></i></a></div>
                                                 <div class="col-md-4">
-                                                    <select class="form-control">
+                                                    <select class="form-control border-bottom">
                                                         <option>15 Minutes</option>
                                                         <option>30 Minutes</option>
                                                         <option>1 Hour</option>
@@ -1534,10 +1544,265 @@
                 </div>
             </div>
         </div>
+        <div class="card-footer"></div>
     </div>
+</div>
 
-    <div class="card-footer"></div>
+<div id="backup_restore_content" style="display:none;">
+    <div class="card  card-primary card-outline">
+        <div class="card-header">
+            <h3 class="card-title text-uppercase">BACKUP AND RESTORE</h3>
+            <i class="fa fa-question-circle toastsDefaultSuccess float-right"></i>
+            <!--<div class="card-tools">
+               <a href="create-huddle.php" class="btn btn-primary">START A NEW APPLICATION</a>
+            </div>-->
+        </div>
 
+        <div class="card-body" id="backup_restore_body">
+            <p class="mb-5">This section allows you to back up and restore application data (files and database). You can create multiple on-demand backups. In addition, Cloudways offers option for scheduled and on-demand <a href="javascript:void(0)"><u>Server level backup</u></a> that backs up all the applications deployed on the server.</p>
+
+            <div class="row">
+                <div class="col-md-6 col-sm-12">
+                    <span class="text-uppercase"><b>restore</b></span>
+                    <p class="mb-3">Restore your app (files and database) using one of the
+                        available backups.</p>
+                    <div class="col-md-6 col-sm-9">
+                        <select class="form-control mb-4 border-bottom ">
+                            <option>Test</option>
+                            <option>Test</option>
+                            <option>Test</option>
+                        </select>
+                    </div>
+                    <a class="btn btn-info text-uppercase">Restore application now</a>
+                </div>
+                <div class="col-md-6 col-sm-12 border-left pl-5">
+                    <span class="text-uppercase"><b>BACKUP</b></span>
+                    <p>You can perform an on-demand backup of your application (files and database). This option is useful if you want to backup the application before any changes.</p>
+                    <p>Last Backup Date: 26 August, 2020 - 6:52:28</p>
+                    <a class="btn btn-default text-uppercase">take backup now</a>
+                </div>
+            </div>
+        </div>
+        <div class="card-footer"></div>
+    </div>
+</div>
+
+<div id="application_settings_content" style="display:none;">
+    <div class="card card-primary card-outline">
+        <div class="card-header">
+            <h3 class="card-title text-uppercase">APPLICATION SETTINGS</h3>
+            <i class="fa fa-question-circle toastsDefaultSuccess float-right"></i>
+            <!--<div class="card-tools">
+               <a href="create-huddle.php" class="btn btn-primary">START A NEW APPLICATION</a>
+            </div>-->
+        </div>
+
+        <div class="card-body" id="application_settings_body">
+            <p class="mb-5">Configure several application specific settings for your web app.</p>
+
+            <div class="row">
+                <div class="col-12">
+                    <div class="card card-primary card-outline card-outline-tabs">
+                        <div class="card-header p-0 border-bottom-0">
+                            <ul class="nav nav-tabs" id="custom-tabs-for-tab" role="tablist">
+                                <li class="nav-item">
+                                    <a class="nav-link active text-uppercase" id="custom-tabs-for-general-tab"
+                                       data-toggle="pill" href="#custom-tabs-for-general" role="tab"
+                                       aria-controls="custom-tabs-for-general" aria-selected="true">general</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link text-uppercase" id="custom-tabs-for-php-settings-tab" data-toggle="pill"
+                                       href="#custom-tabs-for-php-settings" role="tab" aria-controls="custom-tabs-for-php-settings"
+                                       aria-selected="false">php fpm settings</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link text-uppercase" id="custom-tabs-for-varnish-settings-tab"
+                                       data-toggle="pill" href="#custom-tabs-for-varnish-settings" role="tab"
+                                       aria-controls="custom-tabs-for-varnish-settings" aria-selected="false">varnish settings</a>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="card-body">
+                            <div class="tab-content" id="custom-tabs-for-tabContent">
+                                <div class="tab-pane fade show active" id="custom-tabs-for-general" role="tabpanel"
+                                     aria-labelledby="custom-tabs-for-general-tab">
+                                    <div class="row">
+                                        <div class="col-md-9">
+                                            <div class="row">
+                                                <div class="col-md-6 col-sm-12">
+                                                    <div class="col-12 mt-3">
+                                                        <label class="text-uppercase font-weight-normal mb-0">folder <i class="fa fa-info-circle" title="This will rename your application folder by creating a symbolic link to your supplied name." data-toggle="tooltip"></i> </label>
+                                                        <input class="form-control w-50" type="text" name="folder" />
+                                                    </div>
+                                                    <div class="col-12 mt-3">
+                                                        <label class="text-uppercase font-weight-normal mb-0">WEBROOT <i class="fa fa-info-circle" title="This will change the default webroot for your application to the value you provide." data-toggle="tooltip"></i> </label>
+                                                        <input class="form-control w-50" type="text" name="folder" />
+                                                    </div>
+                                                    <div class="col-12 mt-3">
+                                                        <label class="text-uppercase font-weight-normal mb-0">FROM ADDRESS <i class="fa fa-info-circle" title="You can set FROM address if your using an email add-on on your server and wish to use a custom email address for the outgoing emails." data-toggle="tooltip"></i> </label>
+                                                        <input class="form-control w-50" type="text" name="folder" />
+                                                    </div>
+                                                    <div class="col-12 mt-3">
+                                                        <label class="text-uppercase font-weight-normal mb-0">RESET FILE / FOLDERS PERMISSIONS <i class="fa fa-info-circle" title="THis will apply our default permissions to all your files in this application and change ownership of all these files to that of your master user or app user." data-toggle="tooltip"></i> </label>
+                                                        <input class="form-control w-50" type="text" name="folder" />
+                                                    </div>
+
+                                                </div>
+                                                <div class="col-md-6 col-sm-12 border-left pl-3">
+                                                    <div class="col-12 mt-3">
+                                                        <label class="text-uppercase font-weight-normal mb-0 d-block">VARNISH <i class="fa fa-info-circle" title="One of several layers of caching for your application(s). You could disable it while developing or testing or staging application(s)." data-toggle="tooltip"></i> </label>
+                                                        <input type="checkbox" name="my-checkbox" id="varnish" checked data-bootstrap-switch data-off-color="danger" data-on-color="success">
+                                                    </div>
+                                                    <div class="col-12 mt-3">
+                                                        <label class="text-uppercase font-weight-normal mb-0 d-block">SSH ACCESS <i class="fa fa-info-circle" title="This will enable or disable application-level SSH access to your Application for your Team members." data-toggle="tooltip"></i> </label>
+                                                        <input type="checkbox" name="my-checkbox" id="ssh_access" checked data-bootstrap-switch data-off-color="danger" data-on-color="success">
+                                                    </div>
+                                                    <div class="col-12 mt-3">
+                                                        <label class="text-uppercase font-weight-normal mb-0 d-block">CORS Headers <i class="fa fa-info-circle" title="Allow Cross-Origin Recource Sharing. Add the 'Access-Control-Allow-Origin: *' header to responses" data-toggle="tooltip"></i> </label>
+                                                        <input type="checkbox" name="my-checkbox" id="cors_headers" checked data-bootstrap-switch data-off-color="danger" data-on-color="success">
+                                                    </div>
+                                                    <div class="col-12 mt-3">
+                                                        <label class="text-uppercase font-weight-normal mb-0 d-block">APPLICATION ACCESS <i class="fa fa-info-circle" title="This will enable or disable access to your Application. Once disabled, you will continue to see your Application on the Platform. However, SSH/SFTP access to the Application will be disabled, any existing crons set up for your Application will be stopped, and your Application will serve a 'Service Unavailable' status when accessed on the web. You can enable your Application at any time." data-toggle="tooltip"></i> </label>
+                                                        <input type="checkbox" name="my-checkbox" id="application_access" checked data-bootstrap-switch data-off-color="danger" data-on-color="success">
+                                                    </div>
+                                                    <div class="col-12 mt-3">
+                                                        <label class="text-uppercase font-weight-normal mb-0 d-block">HTTPS REDIRECTION <i class="fa fa-info-circle" title="Enabling HTTPS Redirection forces your application to use HTTPS by creating a 301 Permanent Redirection for all domains mapped to the application. This enhances application security for all the domains mapped to the application." data-toggle="tooltip"></i> </label>
+                                                        <input type="checkbox" name="my-checkbox" id="http_redirection" checked data-bootstrap-switch data-off-color="danger" data-on-color="success">
+                                                    </div>
+                                                    <div class="col-12 mt-3">
+                                                        <label class="text-uppercase font-weight-normal mb-0 d-block">GEO IP <i class="fa fa-info-circle" title="It is now possible to use GeoIP with your application. It is a method to track various things about your site visitors, such as their geographical location, organization, and other metrics. Once enabled, your application needs to have the inbuilt functionality to operate and process such functionality." data-toggle="tooltip"></i> </label>
+                                                        <input type="checkbox" name="my-checkbox" id="geo_ip" checked data-bootstrap-switch data-off-color="danger" data-on-color="success">
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="tab-pane fade" id="custom-tabs-for-php-settings" role="tabpanel"
+                                     aria-labelledby="custom-tabs-for-php-settings-tab">
+                                    <div class="row">
+                                        <div class="col-md-9">
+                                            <div class="row">
+                                                <p>Cloudways offersbasicandadvanced options to configure PHP settings. To set the advanced options, you can use the editor below.
+                                                    The allowed directives are php_flag, php_admin_flag, php_value and php_admin_value.</p>
+
+                                                <div class="col-md-12">
+                                                    <textarea class="form-control" rows="15x`x">
+;php_admin_flag[log_errors] = on&#01;
+;php_admin_value[memory_limit] = 32M&#013;
+;php_admin_value[max_execution_time] = 120&#013;
+;php_admin_value[date.timezone] = Europe/Berlin&#013;
+;php_admin_value[max_input_time] = 300&#013;
+;php_admin_value[post_max_size] = 25M&#013;
+;php_admin_value[upload_max_filesize] = 20M&#013;
+;php_admin_value[max_input_vars] = 3000&#013;
+;php_admin_value[max_file_uploads] = 20&#013;
+;php_admin_value[display_errors] = off&#013;
+                                                    </textarea>
+
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="tab-pane fade" id="custom-tabs-for-varnish-settings" role="tabpanel"
+                                     aria-labelledby="custom-tabs-for-varnish-settings-tab">
+                                    <div class="row">
+                                        <div class="col-md-9">
+                                            <div class="row">
+                                                <div class="col-md-8"><span class="text-uppercase"><b>SLOW REQUESTED PHP PAGES</b></span><a
+                                                            href="#"><i class="fa fa-redo ml-2"></i></a></div>
+                                                <div class="col-md-4">
+                                                    <select class="form-control border-bottom">
+                                                        <option>15 Minutes</option>
+                                                        <option>30 Minutes</option>
+                                                        <option>1 Hour</option>
+                                                        <option>1 Day</option>
+                                                    </select>
+                                                </div>
+                                                <div class="col-md-8"></div>
+                                                <div class="col-md-4">
+                                                    <span class="small">06/08/2020 18:22 - 06/08/2020 18:37</span>
+                                                </div>
+                                                <div class="col-md-12">
+                                                    <table class="w-100 mt-3">
+                                                        <thead class="font-weight-bold bg-gray">
+                                                        <tr>
+                                                            <td class="p-2">Page Requests</td>
+                                                            <td class="p-2">Request Count</td>
+                                                            <td class="p-2">Max Time
+                                                                <small>(in sec)</small>
+                                                            </td>
+                                                            <td class="p-2">Avg. Time
+                                                                <small>(in sec)</small>
+                                                            </td>
+                                                        </tr>
+                                                        </thead>
+                                                        <tbody>
+                                                        <tr>
+                                                            <td class="p-2">/ReportServer</td>
+                                                            <td class="p-2">2</td>
+                                                            <td class="p-2">30</td>
+                                                            <td class="p-2">20</td>
+                                                        </tr>
+                                                        </tbody>
+                                                    </table>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="tab-pane fade" id="custom-tabs-for-status-codes" role="tabpanel"
+                                     aria-labelledby="custom-tabs-for-status-codes-tab">
+                                    <div class="row">
+                                        <div class="col-md-9">
+                                            <div class="row">
+                                                <div class="col-md-8"><span class="text-uppercase"><b>WEB REQUEST STATUS CODES</b></span><a
+                                                            href="#"><i class="fa fa-redo ml-2"></i></a></div>
+                                                <div class="col-md-4">
+                                                    <select class="form-control border-bottom">
+                                                        <option>15 Minutes</option>
+                                                        <option>30 Minutes</option>
+                                                        <option>1 Hour</option>
+                                                        <option>1 Day</option>
+                                                    </select>
+                                                </div>
+                                                <div class="col-md-8"></div>
+                                                <div class="col-md-4">
+                                                    <span class="small">06/08/2020 18:22 - 06/08/2020 18:37</span>
+                                                </div>
+                                                <div class="col-md-12">
+                                                    <table class="w-100 mt-3">
+                                                        <thead class="font-weight-bold bg-gray">
+                                                        <tr>
+                                                            <td class="p-2">Top 10 IP Addresses</td>
+                                                            <td class="p-2">Request Count</td>
+                                                            <td class="p-2"></td>
+                                                        </tr>
+                                                        </thead>
+                                                        <tbody>
+                                                        <tr>
+                                                            <td class="p-2">404</td>
+                                                            <td class="p-2">2</td>
+                                                            <td class="p-2">Details +</td>
+                                                        </tr>
+                                                        </tbody>
+                                                    </table>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- /.card -->
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="card-footer"></div>
+    </div>
 </div>
 
 
@@ -1883,7 +2148,7 @@
                                                 <div class="col-md-8"><span class="text-uppercase"><b>WEB REQUEST STATUS CODES</b></span><a
                                                             href="#"><i class="fa fa-redo ml-2"></i></a></div>
                                                 <div class="col-md-4">
-                                                    <select class="form-control">
+                                                    <select class="form-control border-bottom">
                                                         <option>15 Minutes</option>
                                                         <option>30 Minutes</option>
                                                         <option>1 Hour</option>
@@ -2001,6 +2266,26 @@
     </div>
 </div>
 
+<!-- Modal -->
+<div class="modal fade" id="showModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title" id="myModalLabel">Confirmation</h4>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+            </div>
+            <div class="modal-body">
+                Are you sure you want to change this?
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal">Cancel</button>
+                <button type="button" class="btn btn-primary">Confirm</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+
 <div id="additional_domain_name_content" style="display:none;">
     <div class="w-100 domain_name_actions float-left mt-3">
         <span class="float-left pt-1 mt-1">Domain:</span> <input name="domain_name" type="text"
@@ -2017,20 +2302,18 @@
 </div>
 <!-- ./wrapper -->
 
+
+<!-- REQUIRED SCRIPTS -->
 <!-- jQuery -->
 <script src="./plugins/jquery/jquery.min.js"></script>
-<!-- Bootstrap 4 -->
+<!-- Bootstrap -->
 <script src="./plugins/bootstrap/js/bootstrap.bundle.min.js"></script>
 <!-- AdminLTE App -->
-<script src="./dist/js/adminlte.min.js"></script>
-<!-- AdminLTE for demo purposes -->
-<script src="./dist/js/demo.js"></script>
+<script src="./dist/js/adminlte.js"></script>
 
-<!-- AdminLTE App -->
-<script src="./dist/js/adminlte.min.js"></script>
-<!-- AdminLTE for demo purposes -->
-<script src="./dist/js/demo.js"></script>
-<!-- FLOT CHARTS -->
+<!-- OPTIONAL SCRIPTS -->
+<script src="dist/js/demo.js"></script>
+
 <script src="./plugins/flot/jquery.flot.js"></script>
 <!-- FLOT RESIZE PLUGIN - allows the chart to redraw when the window is resized -->
 <script src="./plugins/flot-old/jquery.flot.resize.min.js"></script>
@@ -2038,20 +2321,28 @@
 <script src="./plugins/flot-old/jquery.flot.pie.min.js"></script>
 <script src="./plugins/jquery-validation/jquery.validate.min.js"></script>
 <script src="./plugins/sweetalert2/sweetalert2.all.js"></script>
+<script src="./plugins/toastr/toastr.min.js"></script>
+<script src="./plugins/bootstrap-switch/js/bootstrap-switch.min.js"></script>
+
 <!-- Page script -->
 
 <script>
     $(document).ready(function () {
-        $("[data-toggle=popover]").popover();
-        $('#server_name').editable({
-            type:  'text',
-            pk:    1,
-            name:  'username',
-            url:   'post.php',
-            title: 'Enter username'
+
+        $(document).on("click", ".toastsDefaultSuccess", function (e) {
+            var toastCount = $(document).find('.toast').length;
+            if(toastCount == 0){
+                $(document).Toasts('create', {
+                    class: 'bg-success',
+                    title: 'Toast Title',
+                    subtitle: 'Subtitle',
+                    body: 'Lorem ipsum dolor sit amet, consetetur sadipscing elitr.'
+                })
+            }
         });
 
-        $('[data-toggle="tooltip"]').tooltip();
+
+
 
         $(document).on("click", ".add_additional_domain", function (e) {
             var clonedData = $('#additional_domain_name_content .domain_name_actions').clone();
@@ -2415,17 +2706,59 @@
 
     $("#running_crons_link").click(function (e) {
         $("#main_content").html($("#running_crons_content").html());
+        $('[data-toggle="tooltip"]').tooltip();
 
     });
     $("#access_log_link").click(function (e) {
         $("#main_content").html($("#access_log_content").html());
+        $('[data-toggle="tooltip"]').tooltip();
 
     });
 
     $("#error_log_link").click(function (e) {
         $("#main_content").html($("#error_log_content").html());
+        $('[data-toggle="tooltip"]').tooltip();
 
     });
+
+    $("#backup_restore_link").click(function (e) {
+        $("#main_content").html($("#backup_restore_content").html());
+        $('[data-toggle="tooltip"]').tooltip();
+
+    });
+    var application_settings_link_clicked = false;
+    // Application Settings section
+    $("#application_settings_link").click(function (e) {
+        $("#main_content").html($("#application_settings_content").html());
+        if(application_settings_link_clicked == false){
+            $("input[data-bootstrap-switch]").each(function(){
+                $(this).bootstrapSwitch('state', $(this).prop('checked'));
+                application_settings_link_clicked = true;
+            });
+        }
+        $('[data-toggle="tooltip"]').tooltip();
+    });
+
+
+
+
+    // var id = '';
+    // $("input[data-bootstrap-switch]").on('switchChange.bootstrapSwitch', function (e, data) {
+    //     id = $(this).attr('id');
+    //     $("#showModal .modal-footer .btn-primary").attr('id', id);
+    //     $('#'+id).bootstrapSwitch('state', !data, true);
+    //     $('#showModal').modal({
+    //         backdrop: 'static',
+    //         keyboard: false
+    //     });
+    //
+    // });
+
+    // $(".modal-footer .btn-primary").click(function(){
+    //     $('#'+id).bootstrapSwitch('toggleState', true, true);
+    //     $('#showModal').modal('hide')
+    // });
+
 
     $("#cron_job_link").click(function (e) {
         var settings = {
@@ -2469,280 +2802,6 @@
         //  window.location="login.php";
     }
 
-
-    $(function () {
-        /*
-         * Flot Interactive Chart
-         * -----------------------
-         */
-        // We use an inline data source in the example, usually data would
-        // be fetched from a server
-        var data = [],
-            totalPoints = 100
-
-        function getRandomData() {
-
-            if (data.length > 0) {
-                data = data.slice(1)
-            }
-
-            // Do a random walk
-            while (data.length < totalPoints) {
-
-                var prev = data.length > 0 ? data[data.length - 1] : 50,
-                    y = prev + Math.random() * 10 - 5
-
-                if (y < 0) {
-                    y = 0
-                } else if (y > 100) {
-                    y = 100
-                }
-
-                data.push(y)
-            }
-
-            // Zip the generated y values with the x values
-            var res = []
-            for (var i = 0; i < data.length; ++i) {
-                res.push([i, data[i]])
-            }
-
-            return res
-        }
-
-        var interactive_plot = $.plot('#interactive', [
-                {
-                    data: getRandomData(),
-                }
-            ],
-            {
-                grid: {
-                    borderColor: '#f3f3f3',
-                    borderWidth: 1,
-                    tickColor: '#f3f3f3'
-                },
-                series: {
-                    color: '#3c8dbc',
-                    lines: {
-                        lineWidth: 2,
-                        show: true,
-                        fill: true,
-                    },
-                },
-                yaxis: {
-                    min: 0,
-                    max: 100,
-                    show: true
-                },
-                xaxis: {
-                    show: true
-                }
-            }
-        )
-
-        var updateInterval = 500 //Fetch data ever x milliseconds
-        var realtime = 'on' //If == to on then fetch data every x seconds. else stop fetching
-        function update() {
-            interactive_plot.setData([getRandomData()])
-
-            // Since the axes don't change, we don't need to call plot.setupGrid()
-            interactive_plot.draw()
-            if (realtime === 'on') {
-                setTimeout(update, updateInterval)
-            }
-        }
-
-        //INITIALIZE REALTIME DATA FETCHING
-        if (realtime === 'on') {
-            update()
-        }
-        //REALTIME TOGGLE
-        $('#realtime .btn').click(function () {
-            if ($(this).data('toggle') === 'on') {
-                realtime = 'on'
-            }
-            else {
-                realtime = 'off'
-            }
-            update()
-        })
-        /*
-         * END INTERACTIVE CHART
-         */
-
-
-        /*
-         * LINE CHART
-         * ----------
-         */
-        //LINE randomly generated data
-
-        var sin = [],
-            cos = []
-        for (var i = 0; i < 14; i += 0.5) {
-            sin.push([i, Math.sin(i)])
-            cos.push([i, Math.cos(i)])
-        }
-        var line_data1 = {
-            data: sin,
-            color: '#3c8dbc'
-        }
-        var line_data2 = {
-            data: cos,
-            color: '#00c0ef'
-        }
-        $.plot('#line-chart', [line_data1, line_data2], {
-            grid: {
-                hoverable: true,
-                borderColor: '#f3f3f3',
-                borderWidth: 1,
-                tickColor: '#f3f3f3'
-            },
-            series: {
-                shadowSize: 0,
-                lines: {
-                    show: true
-                },
-                points: {
-                    show: true
-                }
-            },
-            lines: {
-                fill: false,
-                color: ['#3c8dbc', '#f56954']
-            },
-            yaxis: {
-                show: true
-            },
-            xaxis: {
-                show: true
-            }
-        })
-        //Initialize tooltip on hover
-        $('<div class="tooltip-inner" id="line-chart-tooltip"></div>').css({
-            position: 'absolute',
-            display: 'none',
-            opacity: 0.8
-        }).appendTo('body');
-        $('#line-chart').bind('plothover', function (event, pos, item) {
-
-            if (item) {
-                var x = item.datapoint[0].toFixed(2),
-                    y = item.datapoint[1].toFixed(2)
-
-                $('#line-chart-tooltip').html(item.series.label + ' of ' + x + ' = ' + y)
-                    .css({
-                        top: item.pageY + 5,
-                        left: item.pageX + 5
-                    })
-                    .fadeIn(200)
-            } else {
-                $('#line-chart-tooltip').hide()
-            }
-
-        })
-        /* END LINE CHART */
-
-        /*
-         * FULL WIDTH STATIC AREA CHART
-         * -----------------
-         */
-        var areaData = [[2, 88.0], [3, 93.3], [4, 102.0], [5, 108.5], [6, 115.7], [7, 115.6],
-            [8, 124.6], [9, 130.3], [10, 134.3], [11, 141.4], [12, 146.5], [13, 151.7], [14, 159.9],
-            [15, 165.4], [16, 167.8], [17, 168.7], [18, 169.5], [19, 168.0]]
-        $.plot('#area-chart', [areaData], {
-            grid: {
-                borderWidth: 0
-            },
-            series: {
-                shadowSize: 0, // Drawing is faster without shadows
-                color: '#00c0ef',
-                lines: {
-                    fill: true //Converts the line chart to area chart
-                },
-            },
-            yaxis: {
-                show: false
-            },
-            xaxis: {
-                show: false
-            }
-        })
-
-        /* END AREA CHART */
-
-        /*
-         * BAR CHART
-         * ---------
-         */
-
-        var bar_data = {
-            data: [[1, 10], [2, 8], [3, 4], [4, 13], [5, 17], [6, 9]],
-            bars: {show: true}
-        }
-        $.plot('#bar-chart', [bar_data], {
-            grid: {
-                borderWidth: 1,
-                borderColor: '#f3f3f3',
-                tickColor: '#f3f3f3'
-            },
-            series: {
-                bars: {
-                    show: true, barWidth: 0.5, align: 'center',
-                },
-            },
-            colors: ['#3c8dbc'],
-            xaxis: {
-                ticks: [[1, 'January'], [2, 'February'], [3, 'March'], [4, 'April'], [5, 'May'], [6, 'June']]
-            }
-        })
-        /* END BAR CHART */
-
-        /*
-         * DONUT CHART
-         * -----------
-         */
-
-        var donutData = [
-            {
-                label: 'Series2',
-                data: 30,
-                color: '#3c8dbc'
-            },
-            {
-                label: 'Series3',
-                data: 20,
-                color: '#0073b7'
-            },
-            {
-                label: 'Series4',
-                data: 50,
-                color: '#00c0ef'
-            }
-        ]
-        $.plot('#donut-chart', donutData, {
-            series: {
-                pie: {
-                    show: true,
-                    radius: 1,
-                    innerRadius: 0.5,
-                    label: {
-                        show: true,
-                        radius: 2 / 3,
-                        formatter: labelFormatter,
-                        threshold: 0.1
-                    }
-                }
-            },
-            legend: {
-                show: false
-            }
-        })
-        /*
-         * END DONUT CHART
-         */
-
-    });
 
     /*
      * Custom Label formatter
