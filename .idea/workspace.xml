@@ -27,13 +27,13 @@
       </usages-collector>
       <usages-collector id="statistics.file.extensions.open">
         <counts>
-          <entry key="css" value="74" />
+          <entry key="css" value="76" />
           <entry key="htaccess" value="2" />
           <entry key="html" value="40" />
           <entry key="jpg" value="2" />
           <entry key="js" value="21" />
           <entry key="json" value="1" />
-          <entry key="php" value="459" />
+          <entry key="php" value="461" />
           <entry key="py" value="1" />
           <entry key="scss" value="3" />
           <entry key="sql" value="3" />
@@ -42,12 +42,12 @@
       </usages-collector>
       <usages-collector id="statistics.file.types.open">
         <counts>
-          <entry key="CSS" value="74" />
+          <entry key="CSS" value="76" />
           <entry key="HTML" value="40" />
           <entry key="Image" value="2" />
           <entry key="JSON" value="1" />
           <entry key="JavaScript" value="21" />
-          <entry key="PHP" value="459" />
+          <entry key="PHP" value="461" />
           <entry key="PLAIN_TEXT" value="2" />
           <entry key="SCSS" value="3" />
           <entry key="SQL" value="3" />
@@ -56,18 +56,18 @@
       </usages-collector>
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
-          <entry key="css" value="802" />
+          <entry key="css" value="822" />
           <entry key="html" value="70" />
           <entry key="js" value="8" />
-          <entry key="php" value="12529" />
+          <entry key="php" value="13316" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
-          <entry key="CSS" value="803" />
+          <entry key="CSS" value="823" />
           <entry key="HTML" value="69" />
           <entry key="JavaScript" value="8" />
-          <entry key="PHP" value="12517" />
+          <entry key="PHP" value="13304" />
           <entry key="SQL" value="12" />
         </counts>
       </usages-collector>
@@ -83,8 +83,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/dashboard/application.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="197">
-              <caret line="2374" column="44" selection-start-line="2374" selection-start-column="44" selection-end-line="2374" selection-end-column="44" />
+            <state relative-caret-position="257">
+              <caret line="2460" column="54" selection-start-line="2460" selection-start-column="33" selection-end-line="2460" selection-end-column="54" />
               <folding>
                 <element signature="n#style#0;n#div#0;n#!!top" expanded="true" />
               </folding>
@@ -103,14 +103,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>info</find>
-      <find>editab</find>
-      <find>APPLICATION URL</find>
-      <find>server_name</find>
-      <find>main_content</find>
-      <find>border-b</find>
-      <find>border:</find>
-      <find>toastsDefaultFull</find>
       <find>toasts-top-right</find>
       <find>toastsDefaultSuccess</find>
       <find>backup_restore_link</find>
@@ -133,6 +125,14 @@
       <find>modal-header</find>
       <find>varnish_value</find>
       <find>varnish_method</find>
+      <find>cron_job_link</find>
+      <find>cron_management_content</find>
+      <find>ssl_management_content</find>
+      <find>ssl_types</find>
+      <find>clone</find>
+      <find>ssl_add_domain_field</find>
+      <find>lets_encrypt_field_container</find>
+      <find>ssl_domain_name_input</find>
     </findStrings>
     <replaceStrings>
       <replace />
@@ -291,12 +291,12 @@
       <updated>1596714566255</updated>
       <workItem from="1596714567908" duration="56993000" />
       <workItem from="1597304426289" duration="171340000" />
-      <workItem from="1598858310263" duration="14770000" />
+      <workItem from="1598858310263" duration="21836000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="243103000" />
+    <option name="totallyTimeSpent" value="250169000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="22" width="1440" height="824" extended-state="6" />
@@ -625,15 +625,15 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/dashboard/dist/css/style.css">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="403">
-          <caret line="102" column="1" selection-start-line="102" selection-start-column="1" selection-end-line="102" selection-end-column="1" />
+        <state relative-caret-position="418">
+          <caret line="103" column="64" selection-start-line="103" selection-start-column="64" selection-end-line="103" selection-end-column="64" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/dashboard/application.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="197">
-          <caret line="2374" column="44" selection-start-line="2374" selection-start-column="44" selection-end-line="2374" selection-end-column="44" />
+        <state relative-caret-position="257">
+          <caret line="2460" column="54" selection-start-line="2460" selection-start-column="33" selection-end-line="2460" selection-end-column="54" />
           <folding>
             <element signature="n#style#0;n#div#0;n#!!top" expanded="true" />
           </folding>

@@ -100,7 +100,9 @@
 
 /* -- Cron page css -- */
 #cron_job_modal input, #cron_job_modal select, #backup_restore_body select,
-.varnishRuleBody select, .varnishRuleBody input{
+.varnishRuleBody select, .varnishRuleBody input,
+.ssl_management_body select, .lets_encrypt_field_container input
+{
     border: none;
 }
 

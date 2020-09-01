@@ -144,6 +144,11 @@
                         </a>
                     </li>
                     <li class="nav-item">
+                        <a href="javascript:void(0)" id="ssl_link" class="nav-link">
+                            <p>SSL Certificate</p>
+                        </a>
+                    </li>
+                    <li class="nav-item">
                         <a href="javascript:void(0)" id="backup_restore_link" class="nav-link">
                             <p>Backup and Restore</p>
                         </a>
@@ -996,6 +1001,73 @@
 </div>
 
 
+<div id="ssl_management_content" style="display:none;">
+    <div class="card  card-primary card-outline">
+        <div class="card-header">
+            <h3 class="card-title text-uppercase">SSL MANAGEMENT</h3>
+
+            <!--<div class="card-tools">
+               <a href="create-huddle.php" class="btn btn-primary">START A NEW APPLICATION</a>
+            </div>-->
+        </div>
+
+        <div class="card-body ssl_management_body">
+            <p>Cloudways supports Let's Encrypt and custom SSL certificates. You can either create a free SSL certificate (choose the Let's Encryption SSL option) or deploy a Paid SSL certificate for your applications (choose an option from Custom SSL).</p>
+            <div class="row">
+                <div class="col-md-12 col-sm-12">
+                    <select class="form-control border-bottom w-25 ssl_types">
+                        <optgroup label="FREE SSL">
+                            <option value="0">Let's Encrypt</option>
+                        </optgroup>
+                        <optgroup label="CUSTOM SSL">
+                            <option value="1">I do not have a certificate</option>
+                            <option value="2">I already have a certificate</option>
+                        </optgroup>
+                    </select>
+
+                    <div class="col-md-7 lets_encrypt" style="display: block">
+                        <p class="sslText">Install a Let's Encrypt SSL certificate by providing the information below. This will override any existing SSL certificate you may have installed.</p>
+                        <div class="lets_encrypt_field_container">
+                            <div class="form-group w-50">
+                                <label>Email Address</label>
+                                <input class="form-control border-bottom" name="" type="text">
+                            </div>
+                            <div class="form-group">
+                                <label class="w-50">Domain Name</label>
+                                <input class="form-control w-50 border-bottom" name="" type="text">
+                                <div class="wild_card_container w-50">
+                                    <input type="checkbox" name="wild_card" class="form-control"> Apply Wild Card <i class="fa fa-info-circle"></i>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <button class="btn btn-info text-uppercase float-left">install certificate</button>
+                            <button class="btn btn-default text-uppercase float-left ml-2 ssl_add_domain_field">add domain</button>
+                        </div>
+                    </div>
+                    <div class="col-md-7 dont_have_ssl"  style="display: none">
+                        <p class="sslText">Create a Certificate Signing Request (CSR) on the server by providing information about your application. This will override any existing CSR and private key generated earlier.</p>
+                        <div class="form-group">
+                            <button class="btn btn-info text-uppercase float-left">Create ssr</button>
+                        </div>
+                    </div>
+                    <div class="col-md-7 have_ssl" style="display: none">
+                        <p class="sslText">Install a custom SSL certificate by providing your application certificate
+                            and the private key.</p>
+                        <div class="form-group">
+                            <button class="btn btn-info text-uppercase float-left">Install ssl</button>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+        <div class="card-footer"></div>
+    </div>
+
+</div>
+
+
 <div class="modal" id="cron_job_modal" tabindex="-1" role="dialog">
     <div class="modal-dialog" role="document">
         <div class="modal-content">
@@ -1545,6 +1617,12 @@
             </div>
         </div>
         <div class="card-footer"></div>
+    </div>
+</div>
+<div id="ssl_domain_name_input" style="display:none;">
+    <div class="form-group w-50">
+        <label>Domain Name</label>
+        <input class="form-control border-bottom" name="" type="text">
     </div>
 </div>
 
@@ -2371,6 +2449,20 @@
             $('#varnishRuleModal').modal('show');
         });
 
+        $(document).on("change", ".ssl_types", function (e) {
+            var sslType = $(this).val();
+            alert(sslType);
+        });
+
+        $(document).on("click", ".ssl_add_domain_field", function (e) {
+            var inputLength = $(".lets_encrypt_field_container").find('.form-group').length;
+            $('#ssl_domain_name_input .form-group').find('label').html('Domain Name '+inputLength);
+
+            var clonedData = $('#ssl_domain_name_input .form-group').clone();
+            $(".lets_encrypt_field_container").append(clonedData);
+
+        });
+
         $(document).on("change", ".varnish_type", function (e) {
             var selectedVal = $(this).val();
             if(selectedVal == 0){
@@ -2825,6 +2917,11 @@
             $("#main_content").html($("#cron_management_content").html());
             $('#overlay').hide();
         });
+
+    });
+
+    $("#ssl_link").click(function (e) {
+        $("#main_content").html($("#ssl_management_content").html());
 
     });
 
